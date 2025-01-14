@@ -51,3 +51,19 @@ The scraper will consist of the following components:
 ## Expected Outcome
 A functional web scraper in C++ that extracts data, including the date and time, from a target website and stores it for analysis.
 
+## Note
+
+Respect robots.txt and the website's policies.
+Limit request rates to avoid overloading the server.
+Use proper headers (e.g., User-Agent) to identify your scraper.
+Avoid scraping sensitive or private data.
+
+## Code
+
+### fstream
+
+[fstream](./markdown/fstream.md) is a C++ class for reading from and writing to files, combining the functionality of both `ifstream` (input file stream) and `ofstream` (output file stream). It allows you to open files, read their contents, write data to them, and manage file operations easily.
+
+### customized exception 
+
+A customized exception in C++ is a user-defined class derived from `std::exception` (or any other base class) that allows developers to throw and handle specific error conditions with tailored messages or additional data. It helps make error-handling more meaningful and specific to the application’s needs. But here in our program it handles more than just handling Exception so its called as [Customized Error](./markdown/error.md).
