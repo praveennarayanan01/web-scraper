@@ -53,51 +53,52 @@ void web_scapper::WebScrapper::scrap(const std::string &file_name)
                 {
                     if (!j == 0)
                     {
-                        // Initialize CURL
-                        CURL *curl;
-                        CURLcode res;
-                        curl_global_init(CURL_GLOBAL_DEFAULT);
-                        curl = curl_easy_init();
-
-                        if (!curl)
+                        if (!data[i][j].empty())
                         {
-                            throw error_handling::ErrorManager(000003);
-                        }
+                            CURL *curl;
+                            CURLcode res;
+                            curl_global_init(CURL_GLOBAL_DEFAULT);
+                            curl = curl_easy_init();
 
-                        std::string url = data[i][j];
-                        std::string readBuffer;
-
-                        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-                        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-                        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-                        curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0");
-
-                        res = curl_easy_perform(curl);
-
-                        if (res != CURLE_OK)
-                        {
-                            std::cerr << "CURL error: " << curl_easy_strerror(res) << std::endl;
-                            throw error_handling::ErrorManager(000004);
-                        }
-                        else
-                        {
-                            std::string new_file_name = "files/fetched/" + data[i][0] + "_" + data[0][j] + ".html";
-                            std::fstream fetched_file;
-
-                            fetched_file.open(new_file_name, std::ios::in | std::ios::out | std::ios::binary | std::ios::trunc);
-
-                            if (!fetched_file.is_open())
+                            if (!curl)
                             {
-                                throw error_handling::ErrorManager(000005);
+                                throw error_handling::ErrorManager(000003);
                             }
 
-                            fetched_file << readBuffer;
-                            fetched_file.close();
+                            std::string url = data[i][j];
+                            std::string readBuffer;
 
+                            curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+                            curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+                            curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+                            curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0");
+
+                            res = curl_easy_perform(curl);
+
+                            if (res != CURLE_OK)
+                            {
+                                std::cerr << "CURL error: " << curl_easy_strerror(res) << std::endl;
+                                throw error_handling::ErrorManager(000004);
+                            }
+                            else
+                            {
+                                std::string new_file_name = "files/fetched/" + data[i][0] + "_" + data[0][j] + ".html";
+                                std::fstream fetched_file;
+
+                                fetched_file.open(new_file_name, std::ios::in | std::ios::out | std::ios::binary | std::ios::trunc);
+
+                                if (!fetched_file.is_open())
+                                {
+                                    throw error_handling::ErrorManager(000005);
+                                }
+
+                                fetched_file << readBuffer;
+                                fetched_file.close();
+                            }
+
+                            curl_easy_cleanup(curl);
+                            curl_global_cleanup();
                         }
-
-                        curl_easy_cleanup(curl);
-                        curl_global_cleanup();
                     }
                 }
             }

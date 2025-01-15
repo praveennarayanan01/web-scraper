@@ -1,0 +1,1219 @@
+ <!DOCTYPE html> <html lang="en" > <head> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"c2da35057c","applicationID":"492039093","transactionName":"YQZSbUNSD0cABRBeV1hMcWphHBJSDBAHR1lRBkNcQ0UIVwRJXFZeBlZSDQceWQRZAEkBD1IBHQEFVQMZBwBUBwgGBwkJAgdUaw8JEF9dWwZvXF8dAEcRHg==","queueTime":0,"applicationTime":306,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"c2da35057c",applicationID:"492039093"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script> <meta name="google-site-verification" content="xatunrX549RT_RGs4DQzzK3W7EYphAqTiZ-1akhRkEw" /> <meta name="viewport" content="initial-scale=1, maximum-scale=1" /> <meta charset="utf-8" /> <meta property="fb:app_id" content="165130350199320" /> <meta name="msapplication-TileImage" content="https://staticcontent.fxsstatic.com/website/static-html/mstile-144x144.png" /> <meta name="msapplication-TileColor" content="#00aba9" /> <!-- ATTENTION: this must be add in header --> <!-- all images must be allocated in the root of the site --> <link rel="icon" type="image/x-icon" href="https://staticcontent.fxsstatic.com/website/static-html/favicon.ico" /> <link rel="apple-touch-icon" sizes="180x180" href="https://staticcontent.fxsstatic.com/website/static-html/apple-touch-icon.png" /> <link rel="icon" type="image/png" sizes="32x32" href="https://staticcontent.fxsstatic.com/website/static-html/favicon-32x32.png" /> <link rel="icon" type="image/png" sizes="16x16" href="https://staticcontent.fxsstatic.com/website/static-html/favicon-16x16.png" /> <link rel="manifest" href="/site.webmanifest" /> <link rel="mask-icon" href="https://staticcontent.fxsstatic.com/website/static-html/safari-pinned-tab.svg" color="#e4871b" /> <meta name="apple-mobile-web-app-title" content="FXStreet" /> <meta name="application-name" content="FXStreet" /> <meta name="msapplication-TileColor" content="#ffffff" /> <meta name="theme-color" content="#ffffff" /> <meta name="robots" content="max-image-preview:large" /> <!--preload--> <link rel="preload" href='https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap' as="style" /> <link rel="preload" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 320px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen320.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 375px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen375.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 420px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen420.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 680px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen680.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 768px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen768.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 920px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen920.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 1024px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen1024.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 1150px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen1150.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 1280px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen1280.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" media="(min-width: 1580px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen1580.min.css?staticContentUpdate=202501141533" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link rel="preload" href="https://staticcontent.fxsstatic.com/website-v2/js/fxs-init-mini.js?staticContentUpdate=202501141533" as="script"> <!--preload--> <link rel="preconnect" href="https://authorization.fxstreet.com" crossorigin /> <link rel="preconnect" href="https://staticcontent.fxsstatic.com" crossorigin /> <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <link rel="preconnect" href="https://use.fontawesome.com" crossorigin /> <link rel="preconnect" href="https://push.ttweb.net" crossorigin /> <link rel="preconnect" href="https://cdn.onesignal.com/" crossorigin /> <link rel="preconnect" href="https://kit.fontawesome.com/" crossorigin /> <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin /> <link rel="preconnect" href="https://adservice.google.com" crossorigin /> <link rel="preconnect" href="https://www.google-analytics.com" crossorigin /> <link rel="preconnect" href="https://securepubads.g.doubleclick.net" crossorigin /> <link rel="preconnect" href="https://push-minor-api.fxstreet.com" crossorigin /> <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet" /> <link href="https://staticcontent.fxsstatic.com/website/css/fxs_screen.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 320px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen320.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 375px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen375.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 420px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen420.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 680px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen680.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 768px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen768.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 920px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen920.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 1024px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen1024.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 1150px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen1150.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 1280px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen1280.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 1580px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_screen1580.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <!--Non critical CSS--> <link href="https://staticcontent.fxsstatic.com/website/css/fontawesome/css/all.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 320px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical320.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 375px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical375.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 420px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical420.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 680px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical680.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 768px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical768.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 920px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical920.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 1024px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical1024.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 1150px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical1150.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 1280px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical1280.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <link media="(min-width: 1580px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical1580.min.css?staticContentUpdate=202501141533" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" /> <noscript> <link href="https://staticcontent.fxsstatic.com/website/css/fontawesome/css/all.min.css" rel="stylesheet" /> <link href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 320px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical320.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 375px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical375.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 420px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical420.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 680px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical680.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 768px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical768.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 920px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical920.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 1024px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical1024.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 1150px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical1150.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 1280px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical1280.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> <link media="(min-width: 1580px)" href="https://staticcontent.fxsstatic.com/website/css/fxs_non_critical1580.min.css?staticContentUpdate=202501141533" rel="stylesheet" /> </noscript> <!--Non critical CSS--> <script data-schema="Organization" type="application/ld+json">
+    {"name":"FXStreet",
+    "url":"http://www.fxstreet.com",
+    "logo":"https://staticcontent.fxstreet.com/website/img/fxs_logo.png",
+    "sameAs":["https://www.facebook.com/FXstreet","https://twitter.com/fxstreetupdate","https://plus.google.com/+fxstreet/","https://www.youtube.com/user/fxstreetcom"],
+    "@type":"Organization",
+    "@context":"http://schema.org"}
+</script> <script src="https://staticcontent.fxsstatic.com/website-v2/js/fxs-init-mini.js?staticContentUpdate=202501141533"></script> <script defer src="https://staticcontent.fxsstatic.com/website-v2/js/fxs-init.js?staticContentUpdate=202501141533"></script> <script type="text/javascript">
+    var fxs_widget_hosts_config =    {
+        "Calendar": "https://calendar.fxsstatic.com",
+        "MarketTools": "https://markettools.fxsstatic.com/",
+        "Post": "https://subscriptions.fxstreet.com/"
+    };
+</script> <script type="text/javascript">
+
+    var fxstreetResource = 'eyJNYWNoaW5lTmFtZSI6InduMXNkd2swMDBOTTEiLCJTdGF0aWNDb250ZW50U2NyaXB0IjoiaHR0cHM6Ly9zdGF0aWNjb250ZW50LmZ4c3N0YXRpYy5jb20vd2Vic2l0ZS9qcy8iLCJTdGF0aWNDb250ZW50Q3NzIjoiaHR0cHM6Ly9zdGF0aWNjb250ZW50LmZ4c3N0YXRpYy5jb20vd2Vic2l0ZS9jc3MvIiwiU3RhdGljQ29udGVudFZpZGVvIjoiaHR0cHM6Ly9zdGF0aWNjb250ZW50LmZ4c3N0YXRpYy5jb20vd2Vic2l0ZS92aWRlby8iLCJTdGF0aWNDb250ZW50Rm9udCI6Imh0dHBzOi8vc3RhdGljY29udGVudC5meHNzdGF0aWMuY29tL3dlYnNpdGUvZm9udC8iLCJTdGF0aWNDb250ZW50SW1hZ2UiOiJodHRwczovL3N0YXRpY2NvbnRlbnQuZnhzc3RhdGljLmNvbS93ZWJzaXRlL2ltZy8iLCJTdGF0aWNDb250ZW50UXVlcnlTdHJpbmdSZWZyZXNoIjoiP3N0YXRpY0NvbnRlbnRVcGRhdGU9MjAyNTAxMTQxNTMzIiwiSXNEZXNpZ25Nb2RlIjoiZmFsc2UiLCJJc1ByZXZpZXdNb2RlIjoiZmFsc2UiLCJGeHNBcGlSb3V0ZXMiOnsiTmV3c2xldHRlclN1YnNjcmliZSI6Ii9hcGkvU3Vic2NyaWJlVG9OZXdzbGV0dGVyQXBpL1N1YnNjcmliZSIsIkNhdGVnb3J5R2V0RmxhdCI6Ii9hcGkvQ2F0ZWdvcnlBcGkvR2V0RmxhdENhdGVnb3JpZXMiLCJHZXRBdXRob3JzRmlsdGVyIjoiL2FwaS9BdXRob3JzQXBpL0dldEF1dGhvcnNGaWx0ZXIiLCJHZXRBdXRob3JzRm9sbG93IjoiL2FwaS9BdXRob3JzRm9sbG93QXBpL0dldEF1dGhvcnMiLCJHZXRTb2NpYWxNZWRpYUJhciI6Ii9hcGkvU29jaWFsTWVkaWFBcGkvR2V0U29jaWFsTWVkaWFCYXIiLCJHZXRDb21wYW5pZXNGaWx0ZXIiOiIvYXBpL0NvbXBhbmllc0FwaS9HZXRDb21wYW5pZXNGaWx0ZXIiLCJSYXRlc1RhYmxlQXNzZXRzIjoiL2FwaS9SYXRlc0RhdGFUYWJsZUFwaS9HZXRBc3NldHMiLCJOZXdzSXRlbUdldEl0ZW1zIjoiL2FwaS9Qb3N0QXBpL0dldEl0ZW1zIiwiTmV3c0l0ZW1HZXRTaWRlYmFySXRlbXMiOiIvYXBpL1Bvc3RBcGkvR2V0U2lkZWJhckl0ZW1zIiwiTmV3c0l0ZW1HZXRSZWxhdGVkIjoiL2FwaS9Qb3N0QXBpL0dldEl0ZW1zUmVsYXRlZCIsIk5ld3NJdGVtR2V0SXRlbUJ5VXJsIjoiL2FwaS9Qb3N0QXBpL0dldEl0ZW1CeVVybCIsIk5ld3NIaWdobGlnaHRlZEl0ZW1HZXRJdGVtQnlVcmwiOiIvYXBpL1Bvc3RBcGkvR2V0SGlnaGxpZ2h0ZWRJdGVtQnlVcmwiLCJBbmFseXNpc0l0ZW1HZXRJdGVtcyI6Ii9hcGkvUG9zdEFwaS9HZXRJdGVtcyIsIkFuYWx5c2lzSXRlbUdldFNpZGViYXJJdGVtcyI6Ii9hcGkvUG9zdEFwaS9HZXRTaWRlYmFySXRlbXMiLCJBbmFseXNpc0l0ZW1HZXRSZWxhdGVkIjoiL2FwaS9Qb3N0QXBpL0dldEl0ZW1zUmVsYXRlZCIsIkFuYWx5c2lzSXRlbUdldEl0ZW1CeVVybCI6Ii9hcGkvUG9zdEFwaS9HZXRJdGVtQnlVcmwiLCJBbmFseXNpc0hpZ2hsaWdodGVkSXRlbUdldEl0ZW1CeVVybCI6Ii9hcGkvUG9zdEFwaS9HZXRIaWdobGlnaHRlZEl0ZW1CeVVybCIsIkNyeXB0b3NJdGVtR2V0SXRlbXMiOiIvYXBpL1Bvc3RBcGkvR2V0SXRlbXMiLCJDcnlwdG9zSXRlbUdldFNpZGViYXJJdGVtcyI6Ii9hcGkvUG9zdEFwaS9HZXRTaWRlYmFySXRlbXMiLCJDcnlwdG9zSXRlbUdldFJlbGF0ZWQiOiIvYXBpL1Bvc3RBcGkvR2V0SXRlbXNSZWxhdGVkIiwiQ3J5cHRvc0l0ZW1HZXRJdGVtQnlVcmwiOiIvYXBpL1Bvc3RBcGkvR2V0SXRlbUJ5VXJsIiwiQ3J5cHRvc0hpZ2hsaWdodGVkSXRlbUdldEl0ZW1CeVVybCI6Ii9hcGkvUG9zdEFwaS9HZXRIaWdobGlnaHRlZEl0ZW1CeVVybCIsIkVkdWNhdGlvbkl0ZW1HZXRJdGVtcyI6Ii9hcGkvUG9zdEFwaS9HZXRJdGVtcyIsIkVkdWNhdGlvbkl0ZW1HZXRTaWRlYmFySXRlbXMiOiIvYXBpL1Bvc3RBcGkvR2V0U2lkZWJhckl0ZW1zIiwiRWR1Y2F0aW9uSXRlbUdldFJlbGF0ZWQiOiIvYXBpL1Bvc3RBcGkvR2V0SXRlbXNSZWxhdGVkIiwiRWR1Y2F0aW9uSXRlbUdldEl0ZW1CeVVybCI6Ii9hcGkvUG9zdEFwaS9HZXRJdGVtQnlVcmwiLCJFZHVjYXRpb25IaWdobGlnaHRlZEl0ZW1HZXRJdGVtQnlVcmwiOiIvYXBpL1Bvc3RBcGkvR2V0SGlnaGxpZ2h0ZWRJdGVtQnlVcmwiLCJWaWRlb0dldEl0ZW1zIjoiL2FwaS9Qb3N0QXBpL0dldEl0ZW1zIiwiVmlkZW9HZXRTaWRlYmFySXRlbXMiOiIvYXBpL1Bvc3RBcGkvR2V0U2lkZWJhckl0ZW1zIiwiVmlkZW9zR2V0SXRlbUJ5VXJsIjoiL2FwaS9Qb3N0QXBpL0dldEl0ZW1CeVVybCIsIlZpZGVvc0dldEhpZ2hsaWdodGVkSXRlbUJ5VXJsIjoiL2FwaS9Qb3N0QXBpL0dldEhpZ2hsaWdodGVkSXRlbUJ5VXJsIiwiVmlkZW9JdGVtR2V0UmVsYXRlZCI6Ii9hcGkvUG9zdEFwaS9HZXRJdGVtc1JlbGF0ZWQiLCJWaWRlb0xlYWQiOiIvYXBpL1Bvc3RBcGkvTGVhZCIsIlJhdGVzQW5kQ2hhcnRzSXRlbUdldEl0ZW1zIjoiL2FwaS9SYXRlc0FuZENoYXJ0c0FwaS9HZXRJdGVtcyIsIlJhdGVzQW5kQ2hhcnRzSXRlbUdldFNpZGViYXJJdGVtcyI6Ii9hcGkvUmF0ZXNBbmRDaGFydHNBcGkvR2V0U2lkZWJhckl0ZW1zIiwiUmF0ZXNBbmRDaGFydHNJdGVtR2V0UmVsYXRlZCI6Ii9hcGkvUmF0ZXNBbmRDaGFydHNBcGkvR2V0SXRlbXNSZWxhdGVkIiwiUmF0ZXNBbmRDaGFydHNJdGVtR2V0SXRlbUJ5VXJsIjoiL2FwaS9SYXRlc0FuZENoYXJ0c0FwaS9HZXRJdGVtQnlVcmwiLCJCcm9rZXJJdGVtR2V0SXRlbXMiOiIvYXBpL0Jyb2tlckFwaS9HZXRJdGVtcyIsIkJyb2tlckl0ZW1HZXRTaWRlYmFySXRlbXMiOiIvYXBpL0Jyb2tlckFwaS9HZXRTaWRlYmFySXRlbXMiLCJCcm9rZXJJdGVtR2V0SXRlbUJ5VXJsIjoiL2FwaS9Ccm9rZXJBcGkvR2V0SXRlbUJ5VXJsIiwiQnJva2VyTGVhZCI6Ii9hcGkvQnJva2VyQXBpL0xlYWQiLCJCcm9rZXJzU3ByZWFkc1JhbmRvbSI6Ii9hcGkvQnJva2VyQXBpL0dldEJyb2tlcnNTcHJlYWRzUmFuZG9tIiwiQnJva2Vyc0Zvb3RlclJhbmRvbSI6Ii9hcGkvQnJva2VyQXBpL0dldEJyb2tlcnNGb290ZXJSYW5kb20iLCJTcG9uc29yQnJva2VyIjoiL2FwaS9Ccm9rZXJBcGkvR2V0U3BvbnNvckJyb2tlciIsIkJyb2tlcnNSYW5kb20iOiIvYXBpL0Jyb2tlckFwaS9HZXRCcm9rZXJzUmFuZG9tIiwiQnJva2Vyc0J5U2x1ZyI6Ii9hcGkvQnJva2VyQXBpL0dldEJyb2tlcnNCeVNsdWciLCJHZXRDdXJyZW5jaWVzIjoiL2FwaS9Bc3NldEFwaS9HZXRDdXJyZW5jaWVzIiwiR2V0Q29tbW9kaXRpZXMiOiIvYXBpL0Fzc2V0QXBpL0dldENvbW1vZGl0aWVzIiwiR2V0SW5kZXhlcyI6Ii9hcGkvQXNzZXRBcGkvR2V0SW5kZXhlcyIsIkdldEFzc2V0cyI6Ii9hcGkvQXNzZXRBcGkvR2V0QXNzZXRzIiwiR2V0QXNzZXRzQ2hhcnRpbmciOiIvYXBpL0Fzc2V0QXBpL0dldEFzc2V0c0NoYXJ0aW5nIiwiR2V0S3RsQXNzZXRzIjoiL2FwaS9Bc3NldEFwaS9HZXRLdGxBc3NldHMiLCJFdmVudHNHZXRJdGVtcyI6Ii9hcGkvRXZlbnRBcGkvR2V0SXRlbXMiLCJGaWx0ZXJlZFBvc3RzR2V0SXRlbXMiOiIvYXBpL0NvbnRyaWJ1dG9yRmlsdGVyZWRQb3N0QXBpL0dldEl0ZW1zIiwiRmlsdGVyZWROZXdzR2V0SXRlbXMiOiIvYXBpL0NvbnRyaWJ1dG9yRmlsdGVyZWRQb3N0QXBpL0dldE5ld3MiLCJGaWx0ZXJlZEFuYWx5c2lzR2V0SXRlbXMiOiIvYXBpL0NvbnRyaWJ1dG9yRmlsdGVyZWRQb3N0QXBpL0dldEFuYWx5c2lzIiwiRmlsdGVyZWRWaWRlb3NHZXRJdGVtcyI6Ii9hcGkvQ29udHJpYnV0b3JGaWx0ZXJlZFBvc3RBcGkvR2V0VmlkZW8iLCJGaWx0ZXJlZEVkdWNhdGlvbkdldEl0ZW1zIjoiL2FwaS9Db250cmlidXRvckZpbHRlcmVkUG9zdEFwaS9HZXRFZHVjYXRpb24iLCJGaWx0ZXJlZExpdmVTaG93c0dldEl0ZW1zIjoiL2FwaS9Db250cmlidXRvckZpbHRlcmVkUG9zdEFwaS9HZXRMaXZlU2hvd3MiLCJGaWx0ZXJlZE5ld3NDcnlwdG9zR2V0SXRlbXMiOiIvYXBpL0NvbnRyaWJ1dG9yRmlsdGVyZWRQb3N0QXBpL0dldENyeXB0b3MiLCJDb3VudHJ5QXBpR2V0QWxsIjoiL2FwaS9Db3VudHJ5QXBpL2dldCIsIkNhZ0FwaUdldE1vZGVsIjoiL2FwaS9DYWdBcGkvR2V0TW9kZWwiLCJUaW1lWm9uZUdldCI6Ii9hcGkvdGltZXpvbmVhcGkvZ2V0IiwiVGltZVpvbmVQdXQiOiIvYXBpL3RpbWV6b25lYXBpL3B1dCIsIlBvc3RMaXN0TXVsdGlGZWVkR2V0SXRlbXMiOiIvYXBpL1Bvc3RMaXN0TXVsdGlGZWVkQXBpL0dldEl0ZW1zIiwiUG9zdExpc3RNdWx0aUZlZWRHZXRJdGVtc1BlcnNvbmFsaXplciI6Ii9hcGkvUG9zdExpc3RNdWx0aUZlZWRBcGkvR2V0SXRlbXNQZXJzb25hbGl6ZXIiLCJQb3N0TGlzdE11bHRpRmVlZEdldEFNUEl0ZW1zIjoiL2FwaS9Qb3N0TGlzdE11bHRpRmVlZEFwaS9HZXRBTVBJdGVtcyIsIkFNUEdldE1lbnUiOiIvYXBpL0FtcEFwaS9HZXRNZW51IiwiQXNzZXROYXZpZ2F0aW9uR2V0QXNzZXRzIjoiL2FwaS9Bc3NldE5hdmlnYXRpb25BcGkvR2V0QXNzZXRzIiwiUGFnZUFwaUdldEFsbCI6Ii9hcGkvcGFnZWFwaS9nZXQiLCJVc2VyQXBpR2V0IjoiL2FwaS91c2VyYXBpL2dldCIsIlZpc2l0b3JDb3VudHJ5QXBpR2V0IjoiL2FwaS9WaXNpdG9yQ291bnRyeUFwaS9nZXQiLCJCcm9rZXJSZWJhdGVJbmZvR2V0QnlJZCI6Ii9hcGkvQnJva2VyUmViYXRlc0FwaS9HZXRCeUlkIiwiQnJva2VyUmViYXRlSW5mb0dldCI6Ii9hcGkvQnJva2VyUmViYXRlc0FwaS9HZXQiLCJJbWFnZUNyZWF0ZUltYWdlIjoiL2FwaWJvL0ltYWdlQXBpL0NyZWF0ZUltYWdlIiwiUG9zdEJPR2V0QnlJZCI6Ii9hcGliby9Qb3N0QXBpQk8vR2V0QnlJZCIsIlBvc3RCT0NyZWF0ZSI6Ii9hcGliby9Qb3N0QXBpQk8vQ3JlYXRlIiwiUG9zdEJPVXBkYXRlIjoiL2FwaWJvL1Bvc3RBcGlCTy9VcGRhdGUiLCJQb3N0Qk9EZWxldGUiOiIvYXBpYm8vUG9zdEFwaUJPL0RlbGV0ZSIsIlBvc3RCT0RlbGV0ZUJ5TW9udGhzIjoiL2FwaWJvL1Bvc3RBcGlCTy9kZWxldGVCeU1vbnRocyIsIlRhZ0JPQ3JlYXRlIjoiL2FwaWJvL1RhZ0FwaUJPL0NyZWF0ZSIsIlRhZ0JPRGVsZXRlIjoiL2FwaWJvL1RhZ0FwaUJPL0RlbGV0ZSIsIlRhZ0JPVXBkYXRlIjoiL2FwaWJvL1RhZ0FwaUJPL1VwZGF0ZSIsIkxvZ291dFVybCI6Ii9jdHJsL3NlY3VyaXR5L2xvZ291dCIsIkV4dGVybmFsTG9naW5VcmwiOiIvY3RybC9zZWN1cml0eS9leHRlcm5hbGxvZ2luIiwiUGFydG5lclNpZ251cCI6Ii9jdHJsL3NlY3VyaXR5L1BhcnRuZXJTaWdudXAifSwiQ3VsdHVyZU5hbWUiOiJlbiIsIkxhbmd1YWdlSWQiOiI3Y2I3YTYxZC01ZDQyLTQ2YWQtYjljMC1mYTgzY2EwZDcxMWUiLCJQYWdlVXJsIjoiaHR0cHM6Ly93d3cuZnhzdHJlZXQuY29tL25ld3MiLCJHb29nbGVSZUNhcHRjaGFTaXRlS2V5IjoiNkxkekFaRVVBQUFBQUVzdGRQU3Z2d1NRbjZpRUVENk9mVWpuNDFRUCIsIlRlbGV0cmFkZXJTZWN1cml0eVVybCI6Imh0dHBzOi8vdGVsZXRyYWRlci1hcGlnYXRld2F5LmZ4c3N0YXRpYy5jb20vdjEvcHJpY2VQcm92aWRlci9QcmljZVByb3ZpZGVyVG9rZW4iLCJBdXRob3JpemF0aW9uVXJsIjoiaHR0cHM6Ly9hdXRob3JpemF0aW9uLmZ4c3RyZWV0LmNvbS90b2tlbiIsIkRhdGFQcm92aWRlclVybCI6Imh0dHBzOi8vcHVzaC50dHdlYi5uZXQvaHR0cF9wdXNoLyIsIlRlbGV0cmFkZXJQcmljZVByb3ZpZGVyVXJsIjoiaHR0cHM6Ly90ZWxldHJhZGVyLWFwaWdhdGV3YXkuZnhzc3RhdGljLmNvbS92MS9wcmljZVByb3ZpZGVyL1ByaWNlUHJvdmlkZXJIaXN0b3J5IiwiVGVsZXRyYWRlclF1b3Rlc1Byb3ZpZGVyVXJsIjoiaHR0cHM6Ly90ZWxldHJhZGVyLWFwaWdhdGV3YXkuZnhzc3RhdGljLmNvbS92MS9wcmljZVByb3ZpZGVyL0hpc3RvcmljUXVvdGVzIiwiVGVsZXRyYWRlclB1c2hVcmwiOiJodHRwczovL3B1c2gtZXUtYzEuYmFoYS5jb20vYXBpIiwiUGhvbmVTZXJ2aWNlVXJsIjoiaHR0cHM6Ly9leHRlcm5hbHNlcnZpY2VzLmZ4c3RyZWV0LmNvbS9BcGkvUGhvbmVTZXJ2aWNlL0dldFBob25lRGF0YT9waG9uZW51bWJlcj17MH0iLCJVc2VySWQiOiIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiLCJUcmFuc2xhdGlvbnMiOnt9LCJHZW5lcmljRGF0YSI6e30sIlNvY2lhbE1lZGlhQmFyIjp7IlNoYXJlRGlzcGxheSI6IlNIQVJFIiwiTW9yZU9wdGlvbnNEaXNwbGF5IjoiTW9yZSBvcHRpb25zIiwiQmFkZ2VMYWJlbCI6Ik5FVyIsIlNoYXJlT3B0aW9uc0Rpc3BsYXkiOiJTaGFyZSBPcHRpb25zIiwiQ2xpcGJvYXJkTGFiZWwiOiJDb3B5IHRvIGNsaXBib2FyZCIsIkNsaXBib2FyZFRvb2x0aXAiOiJDb3BpZWQiLCJFbWFpbExhYmVsIjoiRW1haWwiLCJTb2NpYWxNZWRpYUNoYW5uZWxzIjpbeyJOYW1lIjoiV2hhdHNBcHAiLCJJbWFnZVVybCI6Im5vdXJsIiwiVXJsIjoiaHR0cHM6Ly93d3cud2hhdHNhcHAuY29tLyIsIlNoYXJlVXJsIjoiaHR0cHM6Ly93YS5tZS8/dGV4dD0iLCJTaGFyZVRpdGxlRGlzcGxheSI6IlNoYXJlIG9uIFdoYXRzQXBwIiwiUHJpb3JpdHkiOjB9LHsiTmFtZSI6IlRlbGVncmFtIiwiSW1hZ2VVcmwiOiJub3VybCIsIlVybCI6Imh0dHBzOi8vdGVsZWdyYW0ub3JnLyIsIlNoYXJlVXJsIjoiaHR0cHM6Ly90ZWxlZ3JhbS5tZS9zaGFyZS91cmw/dXJsPSIsIlNoYXJlVGl0bGVEaXNwbGF5IjoiU2hhcmUgb24gVGVsZWdyYW0iLCJQcmlvcml0eSI6MH0seyJOYW1lIjoiTGlua2VkaW4iLCJJbWFnZVVybCI6Im5vdXJsIiwiVXJsIjoiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tLyIsIlNoYXJlVXJsIjoiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL3NoYXJlQXJ0aWNsZT9taW5pPXRydWUmdXJsPSIsIlNoYXJlVGl0bGVEaXNwbGF5IjoiU2hhcmUgb24gTGlua2VkaW4iLCJQcmlvcml0eSI6MH0seyJOYW1lIjoiVHdpdHRlciIsIkltYWdlVXJsIjoibm91cmwiLCJVcmwiOiJodHRwczovL3R3aXR0ZXIuY29tLyIsIlNoYXJlVXJsIjoiaHR0cHM6Ly90d2l0dGVyLmNvbS9pbnRlbnQvdHdlZXQ/dGV4dD0iLCJTaGFyZVRpdGxlRGlzcGxheSI6IlNoYXJlIG9uIFR3aXR0ZXIiLCJQcmlvcml0eSI6MH0seyJOYW1lIjoiRmFjZWJvb2siLCJJbWFnZVVybCI6Im5vdXJsIiwiVXJsIjoiaHR0cDovL3d3dy5mYWNlYm9vay5jb20vIiwiU2hhcmVVcmwiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb20vc2hhcmVyL3NoYXJlci5waHA/dT0iLCJTaGFyZVRpdGxlRGlzcGxheSI6IlNoYXJlIG9uIEZhY2Vib29rIiwiUHJpb3JpdHkiOjB9LHsiTmFtZSI6IlJlZGRpdCIsIkltYWdlVXJsIjoibm91cmwiLCJVcmwiOiJodHRwczovL3d3dy5yZWRkaXQuY29tLyIsIlNoYXJlVXJsIjoiaHR0cHM6Ly93d3cucmVkZGl0LmNvbS9zdWJtaXQ/dXJsPSIsIlNoYXJlVGl0bGVEaXNwbGF5IjoiU2hhcmUgb24gUmVkZGl0IiwiUHJpb3JpdHkiOjB9XX0sIkRmcFNsb3RzIjp7Ik5ld3MiOiIvNzEzOC9GWFMzMC9OZXdzIiwiQW5hbHlzaXMiOiIvNzEzOC9GWFMzMC9BbmFseXNpcyIsIkNyeXB0b2N1cnJlbmNpZXMiOiIvNzEzOC9GWFMzMC9DcnlwdG8iLCJFZHVjYXRpb24iOiIvNzEzOC9GWFMzMC9FZHVjYXRpb24iLCJWaWRlbyI6Ii83MTM4L0ZYUzMwL0xpdmVWaWRlbyIsIkV2ZW50IjoiLzcxMzgvRlhTMzAvTGl2ZVZpZGVvIiwiUmF0ZXNDaGFydHMiOiIvNzEzOC9GWFMzMC9SYXRlc19DaGFydHMiLCJTcG9uc29yQnJva2VyIjoiLzcxMzgvRlhTMzAvU3BvbnNvckJyb2tlciIsIkZvb3Rlck1vYmlsZSI6Ii83MTM4L0ZYUzMwL0Zvb3Rlck1vYmlsZSJ9LCJHb29nbGVDTVBDb25maWciOnsiRGVsYXlDaGVja01pbGxpc2Vjb25kcyI6MjAwMCwiTWF4UmV0cnkiOjMsIkNvb2tpZVB1cnBvc2VzIjp7IjEiOltdLCIyIjpbIlVzZXJNYXRjaEhpc3RvcnkiLCJQb3B1cEFkX3JvYWRibG9ja3MiLCJHb29nbGVBZFNlcnZpbmdUZXN0Il0sIjMiOltdLCI0IjpbIl9fZ3BpIiwiX19nYWRzIl0sIjUiOlsiX2hqVExEVGVzdCIsIl9oalNlc3Npb25Vc2VyXzQ4NDMzMCIsIl9oalNlc3Npb25Vc2VyXzE4NDY2NDYiLCJfaGpTZXNzaW9uXzQ4NDMzMCIsIl9oalNlc3Npb25fMTg0NjY0NiIsIl9oakluY2x1ZGVkSW5TZXNzaW9uU2FtcGxlXzQ4NDMzMCIsIl9oakluY2x1ZGVkSW5TZXNzaW9uU2FtcGxlXzE4NDY2NDYiLCJfaGpGaXJzdFNlZW4iLCJfaGpDb29raWVUZXN0IiwiX2hqQWJzb2x1dGVTZXNzaW9uSW5Qcm9ncmVzcyIsIl9fdXRtYyJdLCI2IjpbImJzY29va2llIl0sIjciOltdLCI4IjpbXSwiOSI6WyJBbmFseXRpY3NTeW5jSGlzdG9yeSIsIl9nYV94eHh4eHh4eHh4IiwiX2dhIiwiX191dG16IiwiX191dG10IiwiX191dG1iIiwiX191dG1hIl0sIjEwIjpbIllTQyIsIlZJU0lUT1JfUFJJVkFDWV9NRVRBREFUQSIsIlZJU0lUT1JfSU5GTzFfTElWRSIsIlVzZXJTZXNzaW9uSWQiLCJ0Zl9yZXNwb25kZW50X2NjIiwidGVzdF9jb29raWUiLCJTRVJWRVJJRCIsIklOR1JFU1NDT09LSUUiLCJJREUiLCJDT05TRU5UIiwiY29tZXRkU3RyZWFtaW5nU3VwcG9ydGVkIiwiQ2FsZW5kYXJfQUJfVGVzdCIsIkFXU0FMQlRHQ09SUyIsIkFXU0FMQlRHIiwiYXR0cmlidXRpb25fdXNlcl9pZCIsIkFTUC5ORVRfU2Vzc2lvbklkIiwiQVJSQWZmaW5pdHlTYW1lU2l0ZSIsIkFSUkFmZmluaXR5IiwiX19ncGkiLCJfX2NmX2JtIiwiT3B0YW5vbkNvbnNlbnQiLCJPcHRhbm9uQWxlcnRCb3hDbG9zZWQiXSwiMTEiOlsiU3Vic2NyaWJlZFRvcENhbGVuZGFyRXZlbnRzIl19fSwiRXZlbnRIdWJUb2tlblVybCI6Imh0dHBzOi8vZXh0ZXJuYWxzZXJ2aWNlcy5meHN0cmVldC5jb20vYXBpL0V2ZW50SHViVG9rZW4vIiwiRXZlbnRIdWJOYW1lc3BhY2VVcmwiOiJodHRwczovL2V2ZW50aHViLWZ4cy1wcm8tbnMuc2VydmljZWJ1cy53aW5kb3dzLm5ldC8iLCJFdmVudEh1YkxvZ2dlckNvbmZpZyI6IntcIkVudGl0eUNvbmZpZ05hbWVcIjpcImh0dHBwdXNoXCIsXCJOYW1lXCI6XCJldmVudGh1Yi1odHRwcHVzaFwiLFwiUHVibGlzaGVyXCI6XCJQdXNoTG9nXCJ9IiwiVXNlckF1dGhBcGlVcmwiOiJodHRwczovL3VzZXJhdXRoYXBpLmZ4c3RyZWV0LmNvbS8iLCJVc2VyUGF5QXBpVXJsIjoiaHR0cHM6Ly91c2VycGF5LWFwaS5meHN0cmVldC5jb20vIiwiVXNlckF1dGhvckZvbGxvd0FwaVVybCI6Imh0dHBzOi8vYXV0aG9yZm9sbG93YXBpLmZ4c3RyZWV0LmNvbS8iLCJVc2VyTmV3c2xldHRlckFwaVVybCI6Imh0dHBzOi8vbmV3c2xldHRlcmFwaS5meHN0cmVldC5jb20vIiwiVXNlclNldHRpbmdzQXBpVXJsIjoiaHR0cHM6Ly91c2Vyc2V0dGluZ3NhcGkuZnhzdHJlZXQuY29tLyIsIlVzZXJFdmVudEZvbGxvd0FwaVVybCI6Imh0dHBzOi8vZXZlbnRmb2xsb3dhcGkuZnhzdHJlZXQuY29tLyIsIk1hcmtldGluZ0xlYWRzUmVjb3JkZXJVcmwiOiJodHRwczovL2Z4c2Z1bmN0aW9ucy5henVyZXdlYnNpdGVzLm5ldC9hcGkvTWFya2V0aW5nTGVhZHNSZWNvcmRlcj9jb2RlPUlWVXRPdktldmNOeER1S0JPNGxhNkM4SkdwYUlYeDRXaGhXSGdOYlgzT0JWYjdjQXI2ZVkwZz09JmU9MSIsIk1hcmtldGluZ0xlYWRzUmVhZGVyVXJsIjoiaHR0cHM6Ly9meHNmdW5jdGlvbnMuYXp1cmV3ZWJzaXRlcy5uZXQvYXBpL01hcmtldGluZ0xlYWRzUmVhZGVyP2NvZGU9MnVnRG5ZR2xvbHFhckNMNTVDUllDbGpzMjdnN2xYaEhrdWhlN20vWWdtbTgyck1ydFN5dHVnPT0mZT0xIiwiUG9wVXBTZWN0aW9uIjpudWxsLCJBcHBsZVN0b3JlQXBwVXJsIjoiaHR0cHM6Ly9hcHBzLmFwcGxlLmNvbS9hcHAvaWQ2MzY0NTM5NzYiLCJQbGF5U3RvcmVBcHBVcmwiOiJodHRwczovL3BsYXkuZ29vZ2xlLmNvbS9zdG9yZS9hcHBzL2RldGFpbHM/aWQ9Y29tLmZ4c3RyZWV0LmZvcmV4bmV3cyIsIkNvb2tpZURvbWFpbiI6Ii5meHN0cmVldC5jb20iLCJDb21wbGlhbnRDb3VudHJpZXMiOlsiQVQiLCJCRSIsIkJHIiwiSFIiLCJDWSIsIkNaIiwiREsiLCJFRSIsIkZJIiwiRlIiLCJERSIsIkdSIiwiSFUiLCJJRSIsIklUIiwiTFYiLCJMVCIsIkxVIiwiTVQiLCJOTCIsIlBMIiwiUFQiLCJSTyIsIlNLIiwiU0kiLCJFUyIsIlNFIiwiR0IiXSwiQWR2ZXJ0aXNlbWVudFRhcmdldGluZ0xhYmVscyI6eyJNYXJrZXRzIjpbXSwiVG9waWNzIjpbXX0sIlRlbGVncmFtQm90QXBpVXJsIjoiaHR0cHM6Ly90ZWxlZ3JhbS1ib3QtYXBpLmZ4c3RyZWV0LmNvbSIsIlRlbGVncmFtTWlncmF0aW9uQm90TmFtZSI6ImZ4c19vZmZpY2lhbF9ib3QiLCJDb29raWVzQWxlcnRFbmFibGVkIjp0cnVlLCJPbmVUcnVzdEFwcElkIjoiMjJmMDk5YzQtMTc0My00NGM4LTg0ZTctMmJhYjIzYzY5MTUyIiwiSXNSQklXYXJuaW5nRW5hYmxlZCI6ZmFsc2UsIlN0YXRpY0NvbnRlbnRTZXJ2ZXJWZXJzaW9uIjoid2Vic2l0ZSJ9';
+    function decodeBase64(base64) {
+        const text = atob(base64);
+        const length = text.length;
+        const bytes = new Uint8Array(length);
+        for (let i = 0; i < length; i++) {
+            bytes[i] = text.charCodeAt(i);
+        }
+        const decoder = new TextDecoder(); // default is utf-8
+        return decoder.decode(bytes);
+    }
+    FXStreet.Resource = JSON.parse(decodeBase64(fxstreetResource));
+</script> <!-- Google Tag Manager --> <script>
+    dataLayer = [{}];
+</script> <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PN69BN');
+</script> <!-- End Google Tag Manager --> <script>
+    window.googletag = window.googletag || { cmd: [] };
+
+    function googleTagOnLoad() {
+        window.googletag.loadedCorrectly = true;
+    }
+
+    function googleTagOnError() {
+        window.googletag.loadedCorrectly = false;
+    }
+</script> <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" onload="googleTagOnLoad();" onerror="googleTagOnError();"></script> <script type="text/javascript">
+    FXStreet.Global.AsyncDfp = true;
+
+    googletag.cmd.push(function () {
+        // Infinite scroll requires SRA
+        googletag.pubads().enableSingleRequest();
+
+        // Disable initial load, we will use refresh() to fetch ads.
+        // Calling this function means that display() calls just
+        // register the slot as ready, but do not fetch ads for it.
+        googletag.pubads().disableInitialLoad();
+
+        // Enable services
+        googletag.enableServices();
+    });
+</script> <script async defer src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script> <script>
+
+    var setRandomABTest = function () {
+        var cookieName = "Calendar_AB_Test";
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var oneSignalCookie = FXStreet.Util.getCookie(cookieName);
+
+            if (oneSignalCookie == null) {
+                OneSignal.sendTags({
+                    calendar_abtest: Math.floor(Math.random() * 2),
+                }).then(function (tagsSent) {
+                    console.log(JSON.stringify(tagsSent));
+                });
+
+                FXStreet.Util.setCookie(cookieName, 1, 365);
+            }
+        });
+    };
+
+    var OneSignal = window.OneSignal || [];
+    var isOneSignalSupportedLanguage = true;
+
+    if (isOneSignalSupportedLanguage) {
+        var json = "[\r\n  {\r\n    \"tag\": \"forex\",\r\n    \"label\": \"Forex\"\r\n  },\r\n  {\r\n    \"tag\": \"crypto\",\r\n    \"label\": \"Crypto\"\r\n  },\r\n  {\r\n    \"tag\": \"commodities\",\r\n    \"label\": \"Commodities\"\r\n  },\r\n  {\r\n    \"tag\": \"stocks\",\r\n    \"label\": \"Stocks\"\r\n  },\r\n  {\r\n    \"tag\": \"gold\",\r\n    \"label\": \"Gold\"\r\n  },\r\n  {\r\n    \"tag\": \"marketing\",\r\n    \"label\": \"Promos \u0026 Discounts\"\r\n  }\r\n]";
+        var categoriesList = JSON.parse(json);
+
+        var promptsOptions = {
+            slidedown: {
+                prompts: [
+                    {
+                        type: "category",
+                        autoPrompt: true,
+                        text: {
+                            actionMessage: "Stay ahead of the curve - Get the most important market moves directly on your device!",
+                            acceptButton: "Allow",
+                            cancelButton: "Cancel",
+
+                            /* CATEGORY SLIDEDOWN SPECIFIC TEXT */
+                            negativeUpdateButton: "Cancel",
+                            positiveUpdateButton: "Save Preferences",
+                            updateMessage: "Update your push notification subscription preferences.",
+                        },
+                        delay: {
+                            pageViews: 1,
+                            timeDelay: 8
+                        },
+                        categories: categoriesList
+                    }
+                ]
+            }
+        };
+        initOneSignal(promptsOptions);
+    } else {
+        initOneSignal({});
+    }
+
+    function initOneSignal(promptOptions) {
+        var userId = FXStreet.Resource.UserId;
+        document.addEventListener("prestitialEvent", (e) => {
+            OneSignal.push(function () {
+                OneSignal.init({
+                    appId: "375191e5-6a0c-4c1a-998b-2741aa62d5c7",
+                    notifyButton: {
+                        enable: false,
+                    },
+                    promptOptions: promptOptions,
+                }).then(() => {
+                    if (FXStreet.Resource.UserInfo.IsLogged) {
+                        OneSignal.setExternalUserId(userId);
+                        OneSignal.sendTags({
+                            "premium": window.FXStreet.Resource.UserInfo.IsPremium ? "1" : ""
+                        });
+                    }
+                });
+            });
+        });
+    }
+
+    OneSignal.push(function () {
+        var json = "{\r\n  \"cryptocurrencies\": \"cryptos\",\r\n  \"/rates-charts/forecast\": \"trading\",\r\n  \"/rates-charts/trading-positions\": \"trading\"\r\n}";
+        var list = JSON.parse(json);
+
+        const keys = Object.keys(list);
+
+        for (const key of keys) {
+            if (window.location.href.includes(key)) {
+                OneSignal.sendTags({
+                    section: list[key]
+                }).then(function (tagsSent) {
+                    console.log(JSON.stringify(tagsSent));
+                });
+            }
+        }
+
+        if (window.location.href.includes("economic-calendar")) {
+            setRandomABTest();
+        }
+    });
+
+    OneSignal.push(function () {
+        onesignal_events = ['popoverShown', 'popoverAllowClick', 'popoverCancelClick'];
+
+        onesignal_events.forEach(event_name =>
+            OneSignal.on(event_name, function () {
+                dataLayer.push({
+                    'event': 'push_event',
+                    'push_event_type': event_name
+                });
+                console.log(event_name);
+            })
+        );
+
+        OneSignal.on('notificationPermissionChange', function (permissionChange) {
+            dataLayer.push({
+                'event': 'push_event',
+                'push_event_type': permissionChange.to
+            });
+            console.log(permissionChange);
+        });
+    });
+
+    if (FXStreet.Util.isMobileDevice()) {
+        OneSignal.push(["sendTag", "mobile", "1"]);
+    } else {
+        OneSignal.push(["sendTag", "desktop", "1"]);
+    }
+
+    OneSignal.push(["sendTag", "site", "en"]);
+
+</script> <script type="text/javascript">var sf_appPath='/';</script> <title>
+	Forex News - FXStreet
+</title><meta name="twitter:image" content="https://editorial.fxstreet.com/images/Psychology/businessman-reading-newspaper-52940474_Small.jpg" /><style>.async-hide { opacity: 0 !important} </style>
+
+<link rel="alternate" type="application/rss+xml" href="https://www.fxstreet.com/rss/news"/><style type="text/css" media="all">.fxs_advanced_search{
+  display:none;
+}
+.search_configurable .fxs_search_content{
+  width:100%;
+}</style><meta name="Generator" content="Sitefinity 11.0.6732.0 PE" /><meta property="og:site_name" content="FXStreet" /><meta property="og:type" content="website" /><meta property="og:title" content="Forex News - FXStreet" /><meta property="og:url" content="https://www.fxstreet.com/news" /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@FXStreetUpdate" /><meta name="twitter:title" content="Forex News - FXStreet" /><meta name="twitter:url" content="https://www.fxstreet.com/news" /><meta name="twitter:description" content="Real-time Forex News and the latest trading updates. Stay updated on the latest news about currencies and commodities markets." /><link href="https://www.fxstreet.com/news" rel="canonical" /><meta name="lang" content="en" /><script data-schema='WebPage' type='application/ld+json'>{"url":"https://www.fxstreet.com/news","@type":"WebPage","@context":"http://schema.org"}</script><meta name="description" content="Real-time Forex News and the latest trading updates. Stay updated on the latest news about currencies and commodities markets." /><meta name="keywords" content="forex, news, trading, currency, currencies, events, eurusd, majors, minors" /></head> <body class="cbp-spmenu-push fxs_has_sponsor 
+fxs_has_hot_topic_bar"> <!-- Google Tag Manager --> <noscript> <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PN69BN"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe> </noscript> <script>
+        if (generatePopup) {
+            generatePopup(["/info/contest","/brokers","/company","/signals","/info/premium","/t/info/premium","/t/landing","/account"]);
+        }
+    </script> <!-- End Google Tag Manager --> <script>
+    FXStreet.Resource.UserInfo = {"Id":"00000000-0000-0000-0000-000000000000","IsLogged":false,"IsPremium":false,"Email":"","EmailEncrypted":"","Phone":"","FirstName":"","CountryCode":"IN","TimezoneOffsetMinutes":0,"EmailConfirmed":false,"Token":null,"PremiumExpirationDate":null,"NameInitial":null};
+    </script> <script type="text/javascript">
+
+            (function (c, l, a, r, i, t, y) {
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "lf1q2yubsd");
+        </script> <a id="" class="fxs_skip" href="#fxs_content">Skip to main content</a> <div class="fxs_seo_bar-mobile fxs_visible_1024"> <div class="fxs_seo_bar_slider-mobile"> <div class="fxs_seo_bar_slider_inner"> <span class="fxs_seo_bar_title">TRENDING:</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/news/uk-cpi-inflation-expected-to-edge-up-slightly-in-december-core-rate-to-ease-202501150315" data-gtmid="lateralnavigation-hottopics-link">UK CPI</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/currencies/eurusd" data-gtmid="lateralnavigation-hottopics-link">EUR/USD</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/currencies/gbpusd" data-gtmid="lateralnavigation-hottopics-link">GBP/USD</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/markets/commodities/metals/gold" data-gtmid="lateralnavigation-hottopics-link">XAU/USD</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/currencies/audusd" data-gtmid="lateralnavigation-hottopics-link">AUD/USD</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/currencies/usdcad" data-gtmid="lateralnavigation-hottopics-link">USD/CAD</a> </div> </div> </div> <script>
+            FXStreet.Util.createObjectFromBase64String("HotTopicsBar", 'eyJIYXNJdGVtcyI6dHJ1ZX0=');
+    </script> <div id="fxs-sponsorBroker-topBanner" class="fxs_header_sponsor"></div> <div class="fxs_mediaHeader_bar fxs_hidden_s"> <div class="fxs_mediaHeader_content"> <div class="fxs_seo_bar"> <i class="fas fa-caret-left inactive" id="seo-bar-left"></i> <div class="fxs_seo_bar_slider" id="seo-bar-slider"> <div id="seo-bar-slider-inner" class="fxs_seo_bar_slider_inner"> <span class="fxs_seo_bar_title">TRENDING:</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/news/uk-cpi-inflation-expected-to-edge-up-slightly-in-december-core-rate-to-ease-202501150315" data-gtmid="lateralnavigation-hottopics-link">UK CPI</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/currencies/eurusd" data-gtmid="lateralnavigation-hottopics-link">EUR/USD</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/currencies/gbpusd" data-gtmid="lateralnavigation-hottopics-link">GBP/USD</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/markets/commodities/metals/gold" data-gtmid="lateralnavigation-hottopics-link">XAU/USD</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/currencies/audusd" data-gtmid="lateralnavigation-hottopics-link">AUD/USD</a><span class="fxs_seo_bar_divider">|</span> <a class="fxs_seo_bar_link" href="https://www.fxstreet.com/currencies/usdcad" data-gtmid="lateralnavigation-hottopics-link">USD/CAD</a> </div> </div> <i class="fas fa-caret-right" id="seo-bar-right"></i> </div> <script>
+            FXStreet.Util.createObjectFromBase64String("HotTopicsBar", 'eyJIYXNJdGVtcyI6dHJ1ZX0=');
+            </script> <span class="fxs_mediaHeader_icon"></span> <div class="fxs_mediaHeader_items"> <ul class="fxs_mediaHeader_social"> <li> <a 
+                           rel="nofollow noopener noreferrer" 
+                           href="https://whatsapp.com/channel/0029VaDGsU90lwgjJ5Sh8Y45" 
+                           target="_blank" 
+                           title="WhatsApp"
+                           data-gtmid="conversion-followus-WhatsApp" 
+                           data-ga4event-clk-name="follow-us" 
+                           data-ga4event-network="WhatsApp"
+                           > <i class="fab fa-whatsapp" aria-hidden="true"></i> </a> </li> <li> <a 
+                           rel="nofollow noopener noreferrer" 
+                           href="https://t.me/forexnews" 
+                           target="_blank" 
+                           title="Telegram"
+                           data-gtmid="conversion-followus-Telegram" 
+                           data-ga4event-clk-name="follow-us" 
+                           data-ga4event-network="Telegram"
+                           > <i class="fab fa-telegram-plane" aria-hidden="true"></i> </a> </li> <li> <a 
+                           rel="nofollow noopener noreferrer" 
+                           href="https://www.linkedin.com/company/fxstreet" 
+                           target="_blank" 
+                           title="Linkedin"
+                           data-gtmid="conversion-followus-Linkedin" 
+                           data-ga4event-clk-name="follow-us" 
+                           data-ga4event-network="Linkedin"
+                           > <i class="fab fa-linkedin" aria-hidden="true"></i> </a> </li> <li> <a 
+                           rel="nofollow noopener noreferrer" 
+                           href="https://twitter.com/FXStreetNews" 
+                           target="_blank" 
+                           title="Twitter"
+                           data-gtmid="conversion-followus-Twitter" 
+                           data-ga4event-clk-name="follow-us" 
+                           data-ga4event-network="Twitter"
+                           > <i class="fab fa-twitter" aria-hidden="true"></i> </a> </li> <li> <a 
+                           rel="nofollow noopener noreferrer" 
+                           href="http://www.facebook.com/FXstreet" 
+                           target="_blank" 
+                           title="Facebook"
+                           data-gtmid="conversion-followus-Facebook" 
+                           data-ga4event-clk-name="follow-us" 
+                           data-ga4event-network="Facebook"
+                           > <i class="fab fa-facebook" aria-hidden="true"></i> </a> </li> <li> <a 
+                           rel="nofollow noopener noreferrer" 
+                           href="https://www.instagram.com/fx_street/" 
+                           target="_blank" 
+                           title="Instagram"
+                           data-gtmid="conversion-followus-Instagram" 
+                           data-ga4event-clk-name="follow-us" 
+                           data-ga4event-network="Instagram"
+                           > <i class="fab fa-instagram" aria-hidden="true"></i> </a> </li> <li> <a 
+                           rel="nofollow noopener noreferrer" 
+                           href="https://www.youtube.com/user/fxstreetcom/" 
+                           target="_blank" 
+                           title="Youtube"
+                           data-gtmid="conversion-followus-Youtube" 
+                           data-ga4event-clk-name="follow-us" 
+                           data-ga4event-network="Youtube"
+                           > <i class="fab fa-youtube" aria-hidden="true"></i> </a> </li> <li>|</li> <li class="fxs_sectionTitle_header">GET THE APP</li> <li> <a href="https://play.google.com/store/apps/details?id=com.fxstreet.forexnews"> <i class="fxs_google_play"></i> </a> </li> <li> <a href="https://apps.apple.com/app/id636453976"> <i class="fxs_app_store_ios"></i> </a> </li> <li>|</li> <li><i class="fal fa-envelope" aria-hidden="true"></i>&nbsp; &nbsp;<a rel="nofollow" href="/subscriptions">Newsletter</a></li> </ul> </div> </div> </div> <header class="fxs_bgHeader top"> <div id="fxs_socialLogo_header" class="fxs_topHeader_inner fxs_flexbox_justify_between_items_center"> <div class="fxs_flexbox_gap_16_items_center"> <div> <button type="button" id="fxs_showLeftPush" class="fxs_show_navmenu"> <span class="fxs_menu_txt">MENU</span> <i class="fas fa-bars"></i> <span class="fxs_skip">Show navigation</span> </button> <a class="fxs_logo" href="/" title="FXStreet">FXStreet</a> </div> <div id="fxs-sponsorBroker-topBanner-full"></div> </div> <div class="fxs_flexbox_gap_16_items_center fxs_paddingHalf_right"> <div class="fxs_site_clock fxs_btn_group" id="fxs-timezone"></div> <div id="fxs-usermenu" class="fxs_user_menu"></div> </div> <!-- /Main-nav --> </div> </header> <header class="fxs_bgHeader bottom"> <div class="fxs_bottomHeader_inner  fxs_flexbox_justify_between_items_center"> <div class="fxs_reduced_logo_zone"> <a id="fxs_logo_reduced" class="fxs_logo fxs_logo_reduced fxs_inline_flexbox" href="/" title="FXStreet">
+                    FXStreet - The forex market
+                </a> <div id="fxs-sponsorBroker-topBanner-reduced"></div> </div> <div id="fxs_it_horizontalMenu"> <nav class="fxs_nav_menu fxs_main_nav" role="navigation"> <ul> <li fxs-section-entry> <a fxs-desktop-menu-entry id="RATES_CHARTS_SECTION" class="fxs_nav_main_menu_desktop " href="/rates-charts">RATES &amp; CHARTS</a> <div class="fxs_nav_itemsContainer fxs_hideElements"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_2 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/chart" >Live Chart <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/forecast" >Forecast Poll <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/rates" >Rates Table <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/indicators/technical-levels/" >Technical Levels <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/indicators" >Technical Confluences Detector <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_3 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/eurusd" >EUR/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/gbpusd" >GBP/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/usdjpy" >USD/JPY <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/audusd" >AUD/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/nzdusd" >NZD/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/usdcad" >USD/CAD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/gbpjpy" >GBP/JPY <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/eurjpy" >EUR/JPY <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/dollarindexspot" >Dollar Index <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/xauusd" >Gold <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/westtexasintermediate" >Oil <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/rates-charts/sp500" >SP500 <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <a fxs-desktop-menu-entry id="NEWS_SECTION" class="fxs_nav_main_menu_desktop " href="/news">News</a> <div class="fxs_nav_itemsContainer fxs_hideElements"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news" >Forex News <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news?dFR[Category][0]=News&amp;dFR[Tags][0]=Banks" >Institutional Research <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_3 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=EURUSD"  rel="nofollow" >EUR/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=GBPUSD"  rel="nofollow" >GBP/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=USDJPY"  rel="nofollow" >USD/JPY <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=AUDUSD"  rel="nofollow" >AUD/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=NZDUSD"  rel="nofollow" >NZD/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=USDCAD"  rel="nofollow" >USD/CAD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=USDCHF"  rel="nofollow" >USD/CHF <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=EURGBP"  rel="nofollow" >EUR/GBP <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=DollarIndex"  rel="nofollow" >Dollar Index <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news?dFR[Category][0]=News&amp;dFR[Tags][0]=Commodities" >Commodities <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news?dFR[Category][0]=News&amp;dFR[Tags][0]=Bonds" >Bonds <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/news?dFR[Category][0]=News&amp;dFR[Tags][0]=Equities" >Equities <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <a fxs-desktop-menu-entry id="ANALYSIS_SECTION" class="fxs_nav_main_menu_desktop " href="/analysis">Analysis</a> <div class="fxs_nav_itemsContainer fxs_hideElements"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/analysis/latest" >Latest Analysis <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_4 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/currencies/eurusd" >EUR/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/currencies/gbpusd" >GBP/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/currencies/usdjpy" >USD/JPY <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/currencies/audusd" >AUD/USD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/currencies/usdcad" >USD/CAD <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/currencies/us-dollar-index" >Dollar Index <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/markets/commodities/energy/oil" >Oil <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/markets/commodities/metals/gold" >Gold <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/markets/equities" >Stocks <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/markets/commodities" >Commodities <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/bonds" >Bonds <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/technical-analysis/sentiment/risk-appetite" >Risk On/Off <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/technical-analysis/support-resistance" >Support and Resistance <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/technical-analysis/elliott-wave" >Elliott Wave <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/technical-analysis/cycle-analysis" >Cycles <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/technical-analysis/sentiment" >Sentiment <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <a fxs-desktop-menu-entry id="ECONOMIC_CALENDAR_SECTION" class="fxs_nav_main_menu_desktop " href="/economic-calendar">Economic Calendar</a> <div class="fxs_nav_itemsContainer fxs_hideElements"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/economic-calendar" >Economic Calendar <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/economic-calendar/world-interest-rates" >Interest Rates <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/economic-calendar/forex-market-hours" >Market Hours <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_3 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/central-banks/fed" >Fed <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/economic-indicator/cpi" >US CPI <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/economic-indicator/nfp" >Nonfarm Payrolls <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/central-banks/boc" >BoC <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/central-banks/ecb" >ECB <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/central-banks/boe" >BoE <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/central-banks/boj" >BoJ <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/central-banks/rba" >RBA <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/central-banks/rbnz" >RBNZ <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/macroeconomics/central-banks/snb" >SNB <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <a fxs-desktop-menu-entry id="CRYPTOS_SECTION" class="fxs_nav_main_menu_desktop " href="/cryptocurrencies">Cryptos</a> <div class="fxs_nav_itemsContainer fxs_hideElements"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/news" >Latest News <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/industry-news" >Industry News <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/rates-charts" >Rates &amp; Charts <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/resources" >Education <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_3 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/bitcoin" >Bitcoin <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/ethereum" >Ethereum <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/ripple" >Ripple <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/litecoin" >Litecoin <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/bitcoin-cash" >Bitcoin Cash <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/cardano" >Cardano <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/stellar" >Stellar <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/vechain" >VeChain <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/cryptocurrencies/chainlink" >Chainlink <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <a fxs-desktop-menu-entry id="EDUCATION_SECTION" class="fxs_nav_main_menu_desktop " href="/education">Education</a> <div class="fxs_nav_itemsContainer fxs_hideElements"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/education" >Forex Education <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/live-video" >Live Shows <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/live-video/latest" >Webinar Recordings <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/author/ed-ponsi" >Ed Ponsi <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/author/Wayne-McDonell" >Wayne McDonell <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <a fxs-desktop-menu-entry id="BROKERS_SECTION" class="fxs_nav_main_menu_desktop " href="/brokers">Brokers</a> <div class="fxs_nav_itemsContainer fxs_hideElements"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/brokers" >Brokers <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/brokers/reviews" >Broker Reviews <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/brokers/best" >Best of 2025 <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/brokers/press-releases" >Industry News <span class="fxs_label fxs_label_highlight"></span></a> </li> <li> <i class="fas fa-angle-right" aria-hidden="true"></i> <a fxs-desktop-menu-item-entry href="/brokers/cashback" >Trader Cashback <span class="fxs_label fxs_label_highlight"></span></a> </li> </ul> </div> </div> </div> </div> </li> </ul> </nav> </div> <div class="fxs_flexbox_items_center_gap_8 fxs_paddingHalf_right fxs_relative fxs_trading_search_wrapper"> <a href="https://tradingstudio.fxstreet.com/"
+                   class="fxs_headline_tiny fxs_tradingStudio fxs_flexbox_justify_center_items_center fxs_nowrap"
+                   data-gtmid="lateralnavigation-useroptions-tradingroom"> <span>Trading Studio</span> <i class="fal fa-sign-in" aria-hidden="true"></i> </a> <button class="fxs_btn fxs_btn_line fxs_btn_xsmall fxs_close_cookies fxs_paddingHalf_horizontal fxs_resetMargin"
+                            onclick="document.querySelector('#fxs-search-area').classList.toggle('fxs_hideElements')"> <i class="fas fa-search fxs_resetMargin "></i> </button> <div id="fxs-search-area" class="fxs_search_module fxs_bg_lightest_clr fxs_paddingHalf fxs_hideElements"></div> </div> </div> </header> <script>
+        FXStreet.Util.createObjectFromBase64String("SearchManager", 'eyJDb250YWluZXJJZCI6ImZ4cy1zZWFyY2gtYXJlYSIsIlNlYXJjaEljb25JZCI6ImZ4cy1zZWFyY2gtaWNvbiIsIkFwaUFjY291bnQiOiI1MERFVjZQOUswIiwiQXBpS2V5IjoiY2QyZGQxMzhjOGQ2NGY0MGY2ZDA2YTYwNTA4MzEyYjAiLCJJbmRleElkIjoiRnhzSW5kZXhQcm8iLCJUcmFuc2xhdGlvbnMiOnsiQWJvdXRGb3JUZXh0IjoiQWJvdXQge3tIaXRzfX0gcmVzdWx0cyBmb3I6IiwiQWJvdXRUZXh0IjoiQWJvdXQge3tIaXRzfX0gcmVzdWx0cyIsIkFkdmFuY2VkU2VhcmNoIjoiR28gdG8gQWR2YW5jZWQgU2VhcmNoIiwiQWxlcnRDb250ZW50IjoiVGhlcmUgYXJlIG5ldyBwb3N0cyBhdmFpbGFibGUuIFBsZWFzZSwgY2xpY2sgaGVyZSB0byBzZWUgdGhlIG5ldyB1cGRhdGVzIiwiQWxlcnRUaXRsZSI6Ik5ldyBVcGRhdGVzIiwiQWxnb2xpYUZlZWRfQ2xvc2VGaWx0ZXIiOiJDbG9zZSBGaWx0ZXIiLCJBdXRob3JzUGxhY2VIb2xkZXIiOiJTZWFyY2ggZm9yIGF1dGhvcnMiLCJBdXRob3JzVGl0bGUiOiJBdXRob3JzIiwiQnkiOiJCeSIsIkNhdGVnb3JpZXNQbGFjZUhvbGRlciI6IlNlYXJjaCBmb3IgY2F0ZWdvcmllcyIsIkNhdGVnb3JpZXNUaXRsZSI6IkNhdGVnb3JpZXMiLCJDaGFuZ2VLZXlXb3JkcyI6IkNoYW5nZSBrZXl3b3JkcyBhbmQgdHJ5IGl0IGFnYWluIiwiQ2xlYXJBbGxUaXRsZSI6IkNsZWFyIGZpbHRlcnMiLCJDbG9zZUFsZXJ0IjoiQ2xvc2UgYWxlcnQiLCJGaWx0ZXJCeSI6IkZJTFRFUiBCWS4uLiIsIkZpbHRlclRpdGxlIjoiQWR2YW5jZWQgU2VhcmNoIiwiTGl2ZVNwZWVjaCI6IkxpdmUgU3BlZWNoIiwiTWludXRlc0FnbyI6IiBtaW51dGVzIGFnbyIsIk5leHQiOiJOZXh0IHBhZ2UiLCJOb1Jlc3VsdHMiOiJObyByZXN1bHRzIiwiTm9TZWFyY2hSZXN1bHRzIjoiTm8gc2VhcmNoIHJlc3VsdHMhIiwiTm90aWZpY2F0aW9ucyI6Ik5vdGlmaWNhdGlvbnMiLCJQcmV2aW91cyI6IlByZXZpb3VzIHBhZ2UiLCJyZWdpc3RlclRvQWN0aXZhdGUiOiJMb2cgaW4gdG8gbGlzdGVuIHRvIEZYU3RyZWV0IGhlYWRsaW5lcyBmb3IgZnJlZSIsIlNlYXJjaFBsYWNlaG9sZGVyIjoiU2VhcmNoLi4uIiwiU2VhcmNoVGV4dCI6IkZpbmQgaW4gb3VyIGNvbnRlbnQuLi4iLCJzZWVtb3JlIjoiU2VlIE1vcmUgU2lnbmFscyIsIlNob3dMaXN0TGVmdEJ1dHRvbiI6IlNob3cgZmlsdGVycyIsIlRhZ3NQbGFjZUhvbGRlciI6IlNlYXJjaCBmb3IgdGFncyIsIlRhZ3NUaXRsZSI6IlRhZ3MiLCJQcmVtaXVtIjoiUHJlbWl1bSIsIlNwb25zb3JlZCI6IkJSQU5ERUQifSwiTG9naW5VcmwiOiIvYWNjb3VudC9sb2dpbiIsIlByZW1pdW1DYXRlZ29yaWVzIjpbIlByZW1pdW0gQW5hbHlzaXMiLCJTdG9ja3MiLCJDcnlwdG9jdXJyZW5jaWVzIEFuYWx5c2lzIFByZW1pdW0iXSwiU3BvbnNvcmVkQ2F0ZWdvcmllcyI6WyJTcG9uc29yZWQgU3RvY2tzIE5ld3MiLCJTcG9uc29yZWQgQW5hbHlzaXMiLCJTcG9uc29yZWQgQ3J5cHRvIE5ld3MiLCJTcG9uc29yZWQgQ3J5cHRvIE5ld3MgKE5vIEluZGV4KSIsIkNyeXB0b2N1cnJlbmNpZXMgU3BvbnNvcmVkIE5ld3MiLCJTcG9uc29yZWQgRWR1Y2F0aW9uYWwgQXJ0aWNsZXMiLCJQcmVzYWxlIFRva2VuIE5ld3MiXX0=');
+            </script> <script>
+            FXStreet.Util.createObjectFromBase64String("DateTime", 'eyJUaW1lWm9uZUlzRnJvbVVzZXJEZXZpY2UiOmZhbHNlLCJDdXJyZW50VGltZVpvbmUiOnsiVGltZVpvbmVJZCI6IlVUQyIsIlRpbWVTcGFuIjpudWxsLCJFdGNUaW1lU3BhbiI6bnVsbCwiTG9jYXRpb24iOm51bGwsIkN1cnJlbnRUaW1lWm9uZSI6ZmFsc2UsIkhvdXJzVXRjT2Zmc2V0IjowLjB9LCJUaW1lRGlzcGxheUZvcm1hdCI6IkhIOm1tIiwiQ29udGFpbmVySWQiOiJmeHMtdGltZXpvbmUiLCJDaGFuZ2VUaW1lWm9uZVRpdGxlIjoiQ2hhbmdlIHRpbWV6b25lIn0=');
+        </script> <script>
+            FXStreet.Util.createObjectFromBase64String("UserMenu", 'eyJVc2VySW5mbyI6eyJJZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsIklzTG9nZ2VkIjpmYWxzZSwiSXNQcmVtaXVtIjpmYWxzZSwiRW1haWwiOiIiLCJFbWFpbEVuY3J5cHRlZCI6IiIsIlBob25lIjoiIiwiRmlyc3ROYW1lIjoiIiwiQ291bnRyeUNvZGUiOiJJTiIsIlRpbWV6b25lT2Zmc2V0TWludXRlcyI6MCwiRW1haWxDb25maXJtZWQiOmZhbHNlLCJUb2tlbiI6bnVsbCwiUHJlbWl1bUV4cGlyYXRpb25EYXRlIjpudWxsLCJOYW1lSW5pdGlhbCI6bnVsbH0sIlNpZ251cFVybCI6Ii9hY2NvdW50L2xvZ2luP2F1dGhBY3Rpb249c2lnbnVwIiwiTG9naW5VcmwiOiIvYWNjb3VudC9sb2dpbiIsIlNpZ251cExhYmVsIjoiU2lnbiBVcCIsIkxvZ2luTGFiZWwiOiJMb2cgaW4iLCJNeVN1c2NyaXB0aW9uc0xhYmVsIjoiTXkgUHJvZmlsZSIsIk15U3VzY3JpcHRpb25zVXJsIjoiL3Byb2ZpbGUiLCJQcmVtaXVtSW5mb0xhYmVsIjoiU3Vic2NyaWJlIiwiUHJlbWl1bUluZm9VcmwiOiIvaW5mby9wcmVtaXVtIiwiVHJhZGluZ1N0dWRpb0xhYmVsIjoiVHJhZGluZyBTdHVkaW8iLCJUcmFkaW5nU3R1ZGlvVXJsIjoiaHR0cHM6Ly90cmFkaW5nc3R1ZGlvLmZ4c3RyZWV0LmNvbS8iLCJTZWFyY2hMYWJlbCI6IlNlYXJjaCIsIlNlYXJjaFVybCI6Ii9zZWFyY2giLCJMb2dvdXRMYWJlbCI6IkxvZyBvdXQiLCJDb250YWluZXJJZCI6ImZ4cy11c2VybWVudSIsIlRpbWVab25lSXNGcm9tVXNlckRldmljZSI6ZmFsc2UsIkN1cnJlbnRUaW1lWm9uZSI6eyJUaW1lWm9uZUlkIjoiVVRDIiwiVGltZVNwYW4iOm51bGwsIkV0Y1RpbWVTcGFuIjpudWxsLCJMb2NhdGlvbiI6bnVsbCwiQ3VycmVudFRpbWVab25lIjpmYWxzZSwiSG91cnNVdGNPZmZzZXQiOjAuMH0sIlRpbWVEaXNwbGF5Rm9ybWF0IjoiSEg6bW0iLCJUaW1lem9uZUNvbnRhaW5lcklkIjoiZnhzLXRpbWV6b25lLXVzZXItbWVudSIsIkNoYW5nZVRpbWVab25lVGl0bGUiOiJDaGFuZ2UgdGltZXpvbmUiLCJJc0F1dG9tYXRpY1NpdGUiOmZhbHNlfQ==');
+        </script> <script>
+                FXStreet.Util.createObjectFromBase64String("SponsorBroker", 'eyJEYXRhIjp7IlRyYW5zbGF0aW9ucyI6eyJTcG9uc29yQnJva2VyQWNjb3VudFVSTCI6Imh0dHBzOi8vZnhzdHJlZXQucGFnZS5saW5rL0pjR0hyTERDTVVGTE1jdE43IiwiU3BvbnNvckJyb2tlck1lbnVFbnRyeSI6Ik9QRU4gQU4gQUNDT1VOVCBXSVRIIiwiU3BvbnNvckJyb2tlck5hbWUiOiJwZXBwZXJzdG9uZSIsIlNwb25zb3JCcm9rZXJVUkwiOiJodHRwOi8vcHViYWRzLmcuZG91YmxlY2xpY2submV0L2dhbXBhZC9jbGs/aWQ9NjczMTAwMTgwNCZpdT0vNzEzOC9GWFMzMCIsIlNwb25zb3JlZEJ5IjoiU3BvbnNvcmVkIGJ5In0sIkVuYWJsZWQiOnRydWUsIkNvdW50cnlDb2RlIjoiSU4ifSwiUG9zaXRpb24iOiJUb3BCYW5uZXIiLCJDb250YWluZXJJZCI6ImZ4cy1zcG9uc29yQnJva2VyLXRvcEJhbm5lciJ9',"readyForAds");
+            </script> <script>
+                FXStreet.Util.createObjectFromBase64String("SponsorBroker", 'eyJEYXRhIjp7IlRyYW5zbGF0aW9ucyI6eyJTcG9uc29yQnJva2VyQWNjb3VudFVSTCI6Imh0dHBzOi8vZnhzdHJlZXQucGFnZS5saW5rL0pjR0hyTERDTVVGTE1jdE43IiwiU3BvbnNvckJyb2tlck1lbnVFbnRyeSI6Ik9QRU4gQU4gQUNDT1VOVCBXSVRIIiwiU3BvbnNvckJyb2tlck5hbWUiOiJwZXBwZXJzdG9uZSIsIlNwb25zb3JCcm9rZXJVUkwiOiJodHRwOi8vcHViYWRzLmcuZG91YmxlY2xpY2submV0L2dhbXBhZC9jbGs/aWQ9NjczMTAwMTgwNCZpdT0vNzEzOC9GWFMzMCIsIlNwb25zb3JlZEJ5IjoiU3BvbnNvcmVkIGJ5In0sIkVuYWJsZWQiOnRydWUsIkNvdW50cnlDb2RlIjoiSU4ifSwiUG9zaXRpb24iOiJUb3BNYWluIiwiQ29udGFpbmVySWQiOiJmeHMtc3BvbnNvckJyb2tlci10b3BCYW5uZXItZnVsbCJ9',"readyForAds");
+            </script> <script>
+                FXStreet.Util.createObjectFromBase64String("SponsorBroker", 'eyJEYXRhIjp7IlRyYW5zbGF0aW9ucyI6eyJTcG9uc29yQnJva2VyQWNjb3VudFVSTCI6Imh0dHBzOi8vZnhzdHJlZXQucGFnZS5saW5rL0pjR0hyTERDTVVGTE1jdE43IiwiU3BvbnNvckJyb2tlck1lbnVFbnRyeSI6Ik9QRU4gQU4gQUNDT1VOVCBXSVRIIiwiU3BvbnNvckJyb2tlck5hbWUiOiJwZXBwZXJzdG9uZSIsIlNwb25zb3JCcm9rZXJVUkwiOiJodHRwOi8vcHViYWRzLmcuZG91YmxlY2xpY2submV0L2dhbXBhZC9jbGs/aWQ9NjczMTAwMTgwNCZpdT0vNzEzOC9GWFMzMCIsIlNwb25zb3JlZEJ5IjoiU3BvbnNvcmVkIGJ5In0sIkVuYWJsZWQiOnRydWUsIkNvdW50cnlDb2RlIjoiSU4ifSwiUG9zaXRpb24iOiJUb3BNYWluIiwiUmVkdWNlZCI6dHJ1ZSwiQ29udGFpbmVySWQiOiJmeHMtc3BvbnNvckJyb2tlci10b3BCYW5uZXItcmVkdWNlZCJ9',"readyForAds");
+            </script> <script>
+                FXStreet.Util.createObjectFromBase64String("SponsorBroker", 'eyJEYXRhIjp7IlRyYW5zbGF0aW9ucyI6eyJTcG9uc29yQnJva2VyQWNjb3VudFVSTCI6Imh0dHBzOi8vZnhzdHJlZXQucGFnZS5saW5rL0pjR0hyTERDTVVGTE1jdE43IiwiU3BvbnNvckJyb2tlck1lbnVFbnRyeSI6Ik9QRU4gQU4gQUNDT1VOVCBXSVRIIiwiU3BvbnNvckJyb2tlck5hbWUiOiJwZXBwZXJzdG9uZSIsIlNwb25zb3JCcm9rZXJVUkwiOiJodHRwOi8vcHViYWRzLmcuZG91YmxlY2xpY2submV0L2dhbXBhZC9jbGs/aWQ9NjczMTAwMTgwNCZpdT0vNzEzOC9GWFMzMCIsIlNwb25zb3JlZEJ5IjoiU3BvbnNvcmVkIGJ5In0sIkVuYWJsZWQiOnRydWUsIkNvdW50cnlDb2RlIjoiSU4ifSwiUG9zaXRpb24iOiJNZW51RW50cnkiLCJDb250YWluZXJJZCI6ImZ4cy1zcG9zb3JCcm9rZXItbWVudUVudHJ5In0=',"readyForAds");
+            </script> <script>
+    FXStreet.Util.createObjectFromBase64String("AdBlocker", 'eyJFbmFibGVkIjp0cnVlLCJUaW1lc0JlZm9yZUFkdmljZSI6NSwiVHJhbnNsYXRpb25zIjp7IkFkdmljZUNvbnRlbnRIdG1sIjoiPHA+PHN0cm9uZz5GWFN0cmVldCBpcyBhIGZyZWUgd2Vic2l0ZSBzcG9uc29yZWQgYnkgYWR2ZXJ0aXNlbWVudC48L3N0cm9uZz48L3A+PHA+UGxlYXNlIGRpc2FibGUgeW91ciBhZGJsb2NrZXIgc28gd2UgY2FuIGNvbnRpbnVlIHRvIG9mZmVyIG91ciBzZXJ2aWNlcyBmb3IgZnJlZS48L3A+IiwiQ2xvc2VNb2RhbCI6IkNsb3NlIE1vZGFsIn0sIkNvbnRhaW5lcklkIjoiYWRibG9ja2VyXzA1ZWMxYTQxLThlYjAtNGZmZi04MjhiLTEwMWUwMGE2NTAxMiIsIkpzTmFtZSI6IkFkQmxvY2tlciIsIkpzQ3JlYXRlRXZlbnQiOiJsb2FkIiwiTGF6eSI6dHJ1ZX0=', "load");
+</script> <div id="adblocker_05ec1a41-8eb0-4fff-828b-101e00a65012"> </div> <script>
+    FXStreet.Util.createObjectFromBase64String("GlobalAlert", 'eyJIdHRwUHVzaFNlcnZlcktleXNVcmwiOiJodHRwczovL2F1dGhvcml6YXRpb24uZnhzdHJlZXQuY29tL3Rva2VuIiwiSHR0cFB1c2hTZXJ2ZXJVcmwiOiJodHRwczovL3B1c2gtYXBpLmZ4c3RyZWV0LmNvbSIsIkltYWdlVXJsIjoiaHR0cHM6Ly9lZGl0b3JpYWwuZnhzc3RhdGljLmNvbS9pbWFnZXMvR2xvYmFsQWxlcnRzL0NlcnRpZmllZF9CeV9GWFMucG5nIiwiVGl0bGUiOiJGaW5kIHRoZSBwZXJmZWN0IGJyb2tlciB0byB0cmFkZSBVUyBpbmZsYXRpb24hIENMSUNLIEhFUkUgdG8gcmVhZCBhbGwgdGhlIHJldmlld3MiLCJMaW5rIjoiaHR0cHM6Ly93d3cuZnhzdHJlZXQuY29tL2Jyb2tlcnMvcmV2aWV3cz91dG1fbWVkaXVtPXB1c2gmdXRtX3NvdXJjZT1hbGVydCZ1dG1fY2FtcGFpZ249Y29yZS1icm9rZXItcmV2aWV3JnV0bV90ZXJtPUZYUy02NyIsIkdlb2xvY2F0aW9uIjpudWxsLCJDb250YWluZXJJZCI6Imdsb2JhbGFsZXJ0XzFjZDRhMmRkLTBiMDYtNDkyNC05YThmLTUwNTIxZjMzYWM3OSIsIkpzTmFtZSI6Ikdsb2JhbEFsZXJ0IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "load");
+</script> <div id="globalalert_1cd4a2dd-0b06-4924-9a8f-50521f33ac79" role="alert"> </div> <!-- The content rail --> <!-- global alert placeholder --> 
+
+
+ <!--/global alert placeholder --> <!-- The wrapper --> <div class="fxs_wrapper fxs_content_wide"> <div class="fxs_pageSidebar fxs_sidebar_nav" id="cbp-spmenu-s1"> <div id="fxs_it_verticalMenu"> <nav class="fxs_nav_menu fxs_main_nav" role="navigation"> <ul class="fxs_nav_menu_mobile"> <li fxs-section-entry class="fxs_menu_mobile_search"> <form action="/search" method="get"> <input type="text" name="q" placeholder="Search articles"/> <i class="far fa-search"></i> </form> </li> <li fxs-section-entry> <input type="checkbox" id="RATES_CHARTS_SECTION_trigger" class="fxs_mobile-opening-trigger-input" /> <label for="RATES_CHARTS_SECTION_trigger" class="fxs_mobile-opening-trigger-label"> <a id="RATES_CHARTS_SECTION" href="/rates-charts" class="fxs_nav_menu_main_items ">RATES &amp; CHARTS</a> <span class="fxs_mobile-opening-trigger-icon"></span> </label> <div class="fxs_nav_itemsContainer"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_2 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/chart" >Live Chart</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/forecast" >Forecast Poll</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/rates" >Rates Table</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/indicators/technical-levels/" >Technical Levels</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/indicators" >Technical Confluences Detector</a> </li> </ul> </div> <div class="fxs_navItemsBox"> <span class="fxs_headline_tiny">ASSETS</span> <ul class="fxs_subNav_col_3 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/eurusd" >EUR/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/gbpusd" >GBP/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/usdjpy" >USD/JPY</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/audusd" >AUD/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/nzdusd" >NZD/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/usdcad" >USD/CAD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/gbpjpy" >GBP/JPY</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/eurjpy" >EUR/JPY</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/dollarindexspot" >Dollar Index</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/xauusd" >Gold</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/westtexasintermediate" >Oil</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/rates-charts/sp500" >SP500</a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <input type="checkbox" id="NEWS_SECTION_trigger" class="fxs_mobile-opening-trigger-input" /> <label for="NEWS_SECTION_trigger" class="fxs_mobile-opening-trigger-label"> <a id="NEWS_SECTION" href="/news" class="fxs_nav_menu_main_items ">News</a> <span class="fxs_mobile-opening-trigger-icon"></span> </label> <div class="fxs_nav_itemsContainer"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news" >Forex News</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news?dFR[Category][0]=News&amp;dFR[Tags][0]=Banks" >Institutional Research</a> </li> </ul> </div> <div class="fxs_navItemsBox"> <span class="fxs_headline_tiny">LATEST NEWS BY ASSETS</span> <ul class="fxs_subNav_col_3 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=EURUSD"  rel="nofollow" >EUR/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=GBPUSD"  rel="nofollow" >GBP/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=USDJPY"  rel="nofollow" >USD/JPY</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=AUDUSD"  rel="nofollow" >AUD/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=NZDUSD"  rel="nofollow" >NZD/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=USDCAD"  rel="nofollow" >USD/CAD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=USDCHF"  rel="nofollow" >USD/CHF</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=EURGBP"  rel="nofollow" >EUR/GBP</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news/latest/asset?dFR[Category][0]=News&amp;dFR[Tags][0]=DollarIndex"  rel="nofollow" >Dollar Index</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news?dFR[Category][0]=News&amp;dFR[Tags][0]=Commodities" >Commodities</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news?dFR[Category][0]=News&amp;dFR[Tags][0]=Bonds" >Bonds</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/news?dFR[Category][0]=News&amp;dFR[Tags][0]=Equities" >Equities</a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <input type="checkbox" id="ANALYSIS_SECTION_trigger" class="fxs_mobile-opening-trigger-input" /> <label for="ANALYSIS_SECTION_trigger" class="fxs_mobile-opening-trigger-label"> <a id="ANALYSIS_SECTION" href="/analysis" class="fxs_nav_menu_main_items ">Analysis</a> <span class="fxs_mobile-opening-trigger-icon"></span> </label> <div class="fxs_nav_itemsContainer"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/analysis/latest" >Latest Analysis</a> </li> </ul> </div> <div class="fxs_navItemsBox"> <span class="fxs_headline_tiny">EDITORIAL SELECTION</span> <ul class="fxs_subNav_col_4 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/currencies/eurusd" >EUR/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/currencies/gbpusd" >GBP/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/currencies/usdjpy" >USD/JPY</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/currencies/audusd" >AUD/USD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/currencies/usdcad" >USD/CAD</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/currencies/us-dollar-index" >Dollar Index</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/markets/commodities/energy/oil" >Oil</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/markets/commodities/metals/gold" >Gold</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/markets/equities" >Stocks</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/markets/commodities" >Commodities</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/bonds" >Bonds</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/technical-analysis/sentiment/risk-appetite" >Risk On/Off</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/technical-analysis/support-resistance" >Support and Resistance</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/technical-analysis/elliott-wave" >Elliott Wave</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/technical-analysis/cycle-analysis" >Cycles</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/technical-analysis/sentiment" >Sentiment</a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <input type="checkbox" id="ECONOMIC_CALENDAR_SECTION_trigger" class="fxs_mobile-opening-trigger-input" /> <label for="ECONOMIC_CALENDAR_SECTION_trigger" class="fxs_mobile-opening-trigger-label"> <a id="ECONOMIC_CALENDAR_SECTION" href="/economic-calendar" class="fxs_nav_menu_main_items ">Economic Calendar</a> <span class="fxs_mobile-opening-trigger-icon"></span> </label> <div class="fxs_nav_itemsContainer"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/economic-calendar" >Economic Calendar</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/economic-calendar/world-interest-rates" >Interest Rates</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/economic-calendar/forex-market-hours" >Market Hours</a> </li> </ul> </div> <div class="fxs_navItemsBox"> <span class="fxs_headline_tiny">TOP EVENTS</span> <ul class="fxs_subNav_col_3 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/central-banks/fed" >Fed</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/economic-indicator/cpi" >US CPI</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/economic-indicator/nfp" >Nonfarm Payrolls</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/central-banks/boc" >BoC</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/central-banks/ecb" >ECB</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/central-banks/boe" >BoE</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/central-banks/boj" >BoJ</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/central-banks/rba" >RBA</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/central-banks/rbnz" >RBNZ</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/macroeconomics/central-banks/snb" >SNB</a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <input type="checkbox" id="CRYPTOS_SECTION_trigger" class="fxs_mobile-opening-trigger-input" /> <label for="CRYPTOS_SECTION_trigger" class="fxs_mobile-opening-trigger-label"> <a id="CRYPTOS_SECTION" href="/cryptocurrencies" class="fxs_nav_menu_main_items ">Cryptos</a> <span class="fxs_mobile-opening-trigger-icon"></span> </label> <div class="fxs_nav_itemsContainer"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <span class="fxs_headline_tiny">SECTIONS</span> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/news" >Latest News</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/industry-news" >Industry News</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/rates-charts" >Rates &amp; Charts</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/resources" >Education</a> </li> </ul> </div> <div class="fxs_navItemsBox"> <span class="fxs_headline_tiny">SECTIONS</span> <ul class="fxs_subNav_col_3 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/bitcoin" >Bitcoin</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/ethereum" >Ethereum</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/ripple" >Ripple</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/litecoin" >Litecoin</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/bitcoin-cash" >Bitcoin Cash</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/cardano" >Cardano</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/stellar" >Stellar</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/vechain" >VeChain</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/cryptocurrencies/chainlink" >Chainlink</a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <input type="checkbox" id="EDUCATION_SECTION_trigger" class="fxs_mobile-opening-trigger-input" /> <label for="EDUCATION_SECTION_trigger" class="fxs_mobile-opening-trigger-label"> <a id="EDUCATION_SECTION" href="/education" class="fxs_nav_menu_main_items ">Education</a> <span class="fxs_mobile-opening-trigger-icon"></span> </label> <div class="fxs_nav_itemsContainer"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/education" >Forex Education</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/live-video" >Live Shows</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/live-video/latest" >Webinar Recordings</a> </li> </ul> </div> <div class="fxs_navItemsBox"> <span class="fxs_headline_tiny">MOST POPULAR COACHES</span> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/author/ed-ponsi" >Ed Ponsi</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/author/Wayne-McDonell" >Wayne McDonell</a> </li> </ul> </div> </div> </div> </div> </li> <li fxs-section-entry> <input type="checkbox" id="BROKERS_SECTION_trigger" class="fxs_mobile-opening-trigger-input" /> <label for="BROKERS_SECTION_trigger" class="fxs_mobile-opening-trigger-label"> <a id="BROKERS_SECTION" href="/brokers" class="fxs_nav_menu_main_items ">Brokers</a> <span class="fxs_mobile-opening-trigger-icon"></span> </label> <div class="fxs_nav_itemsContainer"> <div class="fxs_bottomHeader_inner"> <div class="fxs_subNav_rates"> <div class="fxs_navItemsBox"> <ul class="fxs_subNav_col_1 fxs_list_unstyled"> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/brokers" >Brokers</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/brokers/reviews" >Broker Reviews</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/brokers/best" >Best of 2025</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/brokers/press-releases" >Industry News</a> </li> <li> <i class="fas fa-circle" aria-hidden="true"></i> <a href="/brokers/cashback" >Trader Cashback</a> </li> </ul> </div> </div> </div> </div> </li> <li id="fxs-sposorBroker-menuEntry" fxs-section-entry></li> </ul> </nav> <div class="fxs_mobile-menu-bottom"> <a
+            rel="nofollow noopener noreferrer"
+            href="/subscriptions"
+            target="_blank"
+            title="Newsletter"
+            class="fxs_mobile-menu-bottom-newsletter"
+            data-gtmid="conversion-followus-Newsletter"
+            data-ga4event-clk-name="follow-us"
+            data-ga4event-network="Newsletter"> <i class="fal fa-envelope" aria-hidden="true"></i> </a> <div class="fxs_mobile-menu-bottom-social-media-wrapper"> <a
+                rel="nofollow noopener noreferrer"
+                href="https://whatsapp.com/channel/0029VaDGsU90lwgjJ5Sh8Y45"
+                target="_blank"
+                title="WhatsApp"
+                class="fxs_mobile-menu-bottom-social-media"> <i class="fab fa-whatsapp" aria-hidden="true"></i> </a> <a
+                rel="nofollow noopener noreferrer"
+                href="https://t.me/forexnews"
+                target="_blank"
+                title="Telegram"
+                class="fxs_mobile-menu-bottom-social-media"> <i class="fab fa-telegram-plane" aria-hidden="true"></i> </a> <a
+                rel="nofollow noopener noreferrer"
+                href="https://www.linkedin.com/company/fxstreet"
+                target="_blank"
+                title="Linkedin"
+                class="fxs_mobile-menu-bottom-social-media"> <i class="fab fa-linkedin" aria-hidden="true"></i> </a> <a
+                rel="nofollow noopener noreferrer"
+                href="https://twitter.com/FXStreetNews"
+                target="_blank"
+                title="Twitter"
+                class="fxs_mobile-menu-bottom-social-media"> <i class="fab fa-twitter" aria-hidden="true"></i> </a> <a
+                rel="nofollow noopener noreferrer"
+                href="http://www.facebook.com/FXstreet"
+                target="_blank"
+                title="Facebook"
+                class="fxs_mobile-menu-bottom-social-media"> <i class="fab fa-facebook" aria-hidden="true"></i> </a> <a
+                rel="nofollow noopener noreferrer"
+                href="https://www.instagram.com/fx_street/"
+                target="_blank"
+                title="Instagram"
+                class="fxs_mobile-menu-bottom-social-media"> <i class="fab fa-instagram" aria-hidden="true"></i> </a> <a
+                rel="nofollow noopener noreferrer"
+                href="https://www.youtube.com/user/fxstreetcom/"
+                target="_blank"
+                title="Youtube"
+                class="fxs_mobile-menu-bottom-social-media"> <i class="fab fa-youtube" aria-hidden="true"></i> </a> </div> </div>
+;
+        </div> </div> <div class="fxs_content"> <div class="fxs_content fxs_sidebar_content"> <div id="fxs_content"> <div class="fxs_contentView"> <div class="fxs_leaderboard fxs_leaderboard_adjust"> 
+ </div> <div class="fxs_leaderboard fxs_leaderboard_transition"> <div class="fxs_roadblock_slide"> 
+
+    <div class="fxs_ad">
+        <div id="advertisenormal_4281515e-6a5c-44ca-8cff-07b39a002088">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W10sIk1vYmlsZVNpemUiOiJbMzYwLCAxMDBdIiwiVGFibGV0U2l6ZSI6Ils3MjgsIDE4MF0iLCJEZXNrdG9wU2l6ZSI6IlsxMDI0LCAzMDBdIiwiRGVza3RvcEhkU2l6ZSI6IlsxMjgwLCAzMDBdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNDI4MTUxNWUtNmE1Yy00NGNhLThjZmYtMDdiMzlhMDAyMDg4IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W10sIk1vYmlsZVNpemUiOiJbMzYwLCAxMDBdIiwiVGFibGV0U2l6ZSI6Ils3MjgsIDE4MF0iLCJEZXNrdG9wU2l6ZSI6IlsxMDI0LCAzMDBdIiwiRGVza3RvcEhkU2l6ZSI6IlsxMjgwLCAzMDBdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNDI4MTUxNWUtNmE1Yy00NGNhLThjZmYtMDdiMzlhMDAyMDg4IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+ </div> </div> <div class="fxs_wallpaper_wrap"> <div class="fxs_wallpaper_img fxs_image_left"> 
+
+    <div class="fxs_ad">
+        <div id="advertisenormal_722cc6be-b349-407a-817c-edf36eb8e645">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W10sIk1vYmlsZVNpemUiOiJbXSIsIlRhYmxldFNpemUiOiJbXSIsIkRlc2t0b3BTaXplIjoiWzU4MCwgMTE5MF0iLCJEZXNrdG9wSGRTaXplIjoiWzU4NSwgMTE5MF0iLCJQb3B1cFNob3dJbnRlcnZhbEluTWludXRlcyI6MCwiQ29va2llR3JvdXAiOm51bGwsIkdyb3VwS2V5Ijoid2FsbHBhcGVyIiwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNzIyY2M2YmUtYjM0OS00MDdhLTgxN2MtZWRmMzZlYjhlNjQ1IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W10sIk1vYmlsZVNpemUiOiJbXSIsIlRhYmxldFNpemUiOiJbXSIsIkRlc2t0b3BTaXplIjoiWzU4MCwgMTE5MF0iLCJEZXNrdG9wSGRTaXplIjoiWzU4NSwgMTE5MF0iLCJQb3B1cFNob3dJbnRlcnZhbEluTWludXRlcyI6MCwiQ29va2llR3JvdXAiOm51bGwsIkdyb3VwS2V5Ijoid2FsbHBhcGVyIiwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNzIyY2M2YmUtYjM0OS00MDdhLTgxN2MtZWRmMzZlYjhlNjQ1IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+ </div> <div class="fxs_wallpaper_img fxs_image_right"> 
+
+    <div class="fxs_ad">
+        <div id="advertisenormal_4862fa7d-12a4-4b0f-a6f3-8f4d1ca45289">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvbmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W10sIk1vYmlsZVNpemUiOiJbXSIsIlRhYmxldFNpemUiOiJbXSIsIkRlc2t0b3BTaXplIjoiWzU3OSwgMTE5MF0iLCJEZXNrdG9wSGRTaXplIjoiWzU4NCwgMTE5MF0iLCJQb3B1cFNob3dJbnRlcnZhbEluTWludXRlcyI6MCwiQ29va2llR3JvdXAiOm51bGwsIkdyb3VwS2V5Ijoid2FsbHBhcGVyIiwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNDg2MmZhN2QtMTJhNC00YjBmLWE2ZjMtOGY0ZDFjYTQ1Mjg5IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvbmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W10sIk1vYmlsZVNpemUiOiJbXSIsIlRhYmxldFNpemUiOiJbXSIsIkRlc2t0b3BTaXplIjoiWzU3OSwgMTE5MF0iLCJEZXNrdG9wSGRTaXplIjoiWzU4NCwgMTE5MF0iLCJQb3B1cFNob3dJbnRlcnZhbEluTWludXRlcyI6MCwiQ29va2llR3JvdXAiOm51bGwsIkdyb3VwS2V5Ijoid2FsbHBhcGVyIiwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNDg2MmZhN2QtMTJhNC00YjBmLWE2ZjMtOGY0ZDFjYTQ1Mjg5IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+ </div> </div> <main id="fxs_it_detail" role="main"> <div fxs_section id="fxs_home" class="fxs_detail"> 
+<div class="fxs_row">
+    <div class="fxs_col fxs_col_100">
+        <div id="Details_C595_Col00" class="sf_colsIn"><script type="text/javascript">
+    FXStreet.Resource.DfpSlots.AdFooterMobile = "7138/FXS30/News"
+</script>
+<div>
+    <header class="fxs_sectionTitle fxs_sectionTitle_innerDetail fxs_clearfix">
+        <h1 class="fxs_sectionTitle_header">Forex News</h1>
+            <div class="fxs_fRight">
+                <div id="fxs_socialmedia_bar_header" class="fxs_socialmedia_bar_header"></div>    
+                <div id="fxs_socialmedia_follow_header" class="fxs_socialmedia_bar_header"></div>
+            </div>
+
+
+    </header>
+</div>
+    <script>
+
+    FXStreet.Util.createObjectFromBase64String("SocialMediaBarBoxed", 'eyJDb250YWluZXJJZCI6ImZ4c19zb2NpYWxtZWRpYV9iYXJfaGVhZGVyIiwiUGFnZVVybCI6Imh0dHBzOi8vd3d3LmZ4c3RyZWV0LmNvbS9uZXdzIn0=');
+
+     FXStreet.Util.createObjectFromBase64String("SocialMediaFollow", 'eyJDb250YWluZXJJZCI6ImZ4c19zb2NpYWxtZWRpYV9mb2xsb3dfaGVhZGVyIiwiRm9sbG93TGlzdCI6W3siQ2xhc3MiOiJmYS13aGF0c2FwcCIsIklzTmV3Ijp0cnVlLCJJc1ByZWZlcmVudCI6dHJ1ZSwiSHJlZiI6Imh0dHBzOi8vd2hhdHNhcHAuY29tL2NoYW5uZWwvMDAyOVZhREdzVTkwbHdnako1U2g4WTQ1IiwiTmFtZSI6IldoYXRzQXBwIiwiRGF0YUd0bUlkIjpudWxsfSx7IkNsYXNzIjoiZmEtdGVsZWdyYW0tcGxhbmUiLCJJc05ldyI6ZmFsc2UsIklzUHJlZmVyZW50Ijp0cnVlLCJIcmVmIjoiaHR0cHM6Ly90Lm1lL2ZvcmV4bmV3cyIsIk5hbWUiOiJUZWxlZ3JhbSIsIkRhdGFHdG1JZCI6bnVsbH0seyJDbGFzcyI6ImZhLWxpbmtlZGluIiwiSXNOZXciOmZhbHNlLCJJc1ByZWZlcmVudCI6ZmFsc2UsIkhyZWYiOiJodHRwczovL3d3dy5saW5rZWRpbi5jb20vY29tcGFueS9meHN0cmVldCIsIk5hbWUiOiJMaW5rZWRpbiIsIkRhdGFHdG1JZCI6bnVsbH0seyJDbGFzcyI6ImZhLXR3aXR0ZXIiLCJJc05ldyI6ZmFsc2UsIklzUHJlZmVyZW50IjpmYWxzZSwiSHJlZiI6Imh0dHBzOi8vdHdpdHRlci5jb20vRlhTdHJlZXROZXdzIiwiTmFtZSI6IlR3aXR0ZXIiLCJEYXRhR3RtSWQiOm51bGx9LHsiQ2xhc3MiOiJmYS1mYWNlYm9vayIsIklzTmV3IjpmYWxzZSwiSXNQcmVmZXJlbnQiOmZhbHNlLCJIcmVmIjoiaHR0cDovL3d3dy5mYWNlYm9vay5jb20vRlhzdHJlZXQiLCJOYW1lIjoiRmFjZWJvb2siLCJEYXRhR3RtSWQiOm51bGx9LHsiQ2xhc3MiOiJmYS1pbnN0YWdyYW0iLCJJc05ldyI6ZmFsc2UsIklzUHJlZmVyZW50IjpmYWxzZSwiSHJlZiI6Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vZnhfc3RyZWV0LyIsIk5hbWUiOiJJbnN0YWdyYW0iLCJEYXRhR3RtSWQiOm51bGx9LHsiQ2xhc3MiOiJmYS15b3V0dWJlIiwiSXNOZXciOmZhbHNlLCJJc1ByZWZlcmVudCI6ZmFsc2UsIkhyZWYiOiJodHRwczovL3d3dy55b3V0dWJlLmNvbS91c2VyL2Z4c3RyZWV0Y29tLyIsIk5hbWUiOiJZb3V0dWJlIiwiRGF0YUd0bUlkIjpudWxsfV0sIlRyYW5zbGF0aW9ucyI6eyJCYWRnZUxhYmVsIjoiTkVXIiwiSGVhZGVyUmVzb3VyY2VzRGVzY3JpcHRpb24iOiJGeHMgSG9tZSBXaWRnZXQgSGVhZGVyIFNoYXJpbmciLCJIZWFkZXJSZXNvdXJjZXNUaXRsZSI6IkZ4cyBIb21lIFdpZGdldCBIZWFkZXIgU2hhcmluZyIsIlNoYXJlT25Hb29nbGVQbHVzUmVzb3VyY2UiOiJTaGFyZSBvbiBHb29nbGUrIiwiU2hhcmVPbkxpbmtlZEluUmVzb3VyY2UiOiJTaGFyZSBvbiBsaW5rZWRJbiIsIlNoYXJlT3B0aW9uc0xhYmVsIjoiU2hhcmUgb3B0aW9ucyIsIlRyaWdnZXJMYWJlbCI6IkpvaW4ifX0=');
+    </script>
+
+<hr class="fxs_divider_wide">
+        </div>
+    </div>
+</div><div class="fxs_row sticky-holder">
+    <div class="fxs_flex_col">
+        <div id="Details_C321_Col00" class="sf_colsIn">
+
+<div class="fxs_latestNews_header">
+    <h3 class="fxs_headline_from_tiny_to_small">Latest News</h3>
+    <hr class="fxs_divider_third"/>
+</div>
+
+<style>
+    @keyframes shineSkeletonSearch {
+        to {
+            background-position: 100% 0,85px 65px,85px 40px,0px 40px;
+        }
+    }
+
+    @keyframes shineForSkeletonAdvanceSearch {
+        to {
+            mask-position: 120% 0;
+            -webkit-mask-position: 120% 0;
+        }
+    }
+
+    div.skeletonSearch {
+        box-sizing: content-box;
+        min-height: 1624px;
+        background-color: #ffffff;
+        background-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% ),
+            linear-gradient( #DDDEDF 13px, transparent 0 ),
+            linear-gradient( #DDDEDF 16px, transparent 0 ),
+            linear-gradient( #DDDEDF 75px, transparent 0 );
+        background-repeat: repeat-y;
+        background-size: 50px 125px,60% 125px,100% 125px,75px 125px;
+        background-position: 0 0,85px 65px,85px 40px,0px 40px;
+        animation: shineSkeletonSearch 1s infinite;
+    }
+
+    div.skeletonAdvanceSearch {
+        position: relative;
+        box-sizing: content-box;
+        min-height: 2620px;
+        background-color: #ffffff;
+        border-radius: 0px 0px 0px 0px;
+        background-image:
+            linear-gradient(#dddedf 16px, transparent 0),
+            linear-gradient(#dddedf 16px, transparent 0),
+            linear-gradient(#dddedf 12px, transparent 0),
+            linear-gradient(#dddedf 16px, transparent 0),
+            linear-gradient(#dddedf 70px, transparent 0);
+        background-repeat: repeat-y;
+        background-size: 44px 153px, 330px 153px, 330px 153px, 330px 153px, 70px 153px;
+        background-position: 90px 80px, 90px 40px, 90px 63px, 89px 20px, 10px 20px;
+    }
+    div.skeletonAdvanceSearch:before {
+        content: ' ';
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        min-height: 2620px;
+        mask-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 80% );
+        -webkit-mask-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 80% );
+        mask-repeat: repeat-y;
+        -webkit-mask-repeat: repeat-y;
+        mask-size: 50px 3035px;
+        -webkit-mask-size: 50px 3035px;
+        mask-position: -20% 0;
+        -webkit-mask-position: -20% 0;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+            linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+            linear-gradient(rgba(255, 255, 255, 1) 12px, transparent 0),
+            linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+            linear-gradient(rgba(255, 255, 255, 1) 70px, transparent 0);
+        background-repeat: repeat-y;
+        background-size: 44px 153px, 330px 153px, 330px 153px, 330px 153px, 70px 153px;
+        background-position: 90px 80px, 90px 40px, 90px 63px, 89px 20px, 10px 20px;
+        animation: shineForSkeletonAdvanceSearch 2s infinite;
+    }
+
+    @media screen and (min-width: 1024px) {
+        div.skeletonAdvanceSearch {
+            position: relative;
+            box-sizing: content-box;
+            min-height: 1600px;
+            background-color: #ffffff;
+            border-radius: 0px 0px 0px 0px;
+            background-image:
+                linear-gradient(#dddedf 16px, transparent 0),
+                linear-gradient(#dddedf 16px, transparent 0),
+                linear-gradient(#dddedf 13px, transparent 0),
+                linear-gradient(#dddedf 16px, transparent 0),
+                linear-gradient(#dddedf 16px, transparent 0),
+                linear-gradient(#dddedf 70px, transparent 0),
+                linear-gradient(#dddedf 16px, transparent 0),
+                linear-gradient(#dddedf 12px, transparent 0),
+                linear-gradient(#dddedf 16px, transparent 0),
+                linear-gradient(#dddedf 70px, transparent 0);
+            background-repeat: repeat-y;
+            background-size: 44px 160px, 44px 160px, 230px 160px, 230px 160px, 230px 160px, 70px 160px, 230px 160px, 230px 160px, 230px 160px, 70px 160px;
+            background-position: 420px 80px, 90px 80px, 420px 62px, 90px 40px, 420px 40px, 340px 20px, 420px 20px, 90px 63px, 89px 20px, 10px 20px;
+        }
+        div.skeletonAdvanceSearch:before {
+            content: ' ';
+            position: absolute;
+            z-index: 1000;
+            min-height: 1600px;
+            width: 100%;
+            mask-image:
+                linear-gradient( 100deg, rgba(255, 255, 255, 0),
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0) 80% );
+            -webkit-mask-image:
+                linear-gradient( 100deg, rgba(255, 255, 255, 0),
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0) 80% );
+            mask-repeat: repeat-y;
+            -webkit-mask-repeat: repeat-y;
+            mask-size: 50px 1760px;
+            -webkit-mask-size: 50px 1760px;
+            mask-position: -20% 0;
+            -webkit-mask-position: -20% 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 13px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 70px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 12px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 16px, transparent 0),
+                linear-gradient(rgba(255, 255, 255, 1) 70px, transparent 0);
+            background-repeat: repeat-y;
+            background-size: 44px 160px, 44px 160px, 230px 160px, 230px 160px, 230px 160px, 70px 160px, 230px 160px, 230px 160px, 230px 160px, 70px 160px;
+            background-position: 420px 80px, 90px 80px, 420px 62px, 90px 40px, 420px 40px, 340px 20px, 420px 20px, 90px 63px, 89px 20px, 10px 20px;
+            animation: shineForSkeletonAdvanceSearch 2s infinite;
+        }
+    }
+</style>
+
+<div id="advancedsearchmanager_f9952c51-5111-474d-a1fa-1d6a2a680f62" class="skeletonSearch"></div>
+
+<script>
+    FXStreet.Util.createObjectFromBase64String("AdvancedSearchManager", 'eyJUcmFuc2xhdGlvbnMiOnsiQWJvdXRGb3JUZXh0IjoiQWJvdXQge3tIaXRzfX0gcmVzdWx0cyBmb3I6IiwiQWJvdXRUZXh0IjoiQWJvdXQge3tIaXRzfX0gcmVzdWx0cyIsIkFkdmFuY2VkU2VhcmNoIjoiR28gdG8gQWR2YW5jZWQgU2VhcmNoIiwiQWxlcnRDb250ZW50IjoiVGhlcmUgYXJlIG5ldyBwb3N0cyBhdmFpbGFibGUuIFBsZWFzZSwgY2xpY2sgaGVyZSB0byBzZWUgdGhlIG5ldyB1cGRhdGVzIiwiQWxlcnRUaXRsZSI6Ik5ldyBVcGRhdGVzIiwiQWxnb2xpYUZlZWRfQ2xvc2VGaWx0ZXIiOiJDbG9zZSBGaWx0ZXIiLCJBdXRob3JzUGxhY2VIb2xkZXIiOiJTZWFyY2ggZm9yIGF1dGhvcnMiLCJBdXRob3JzVGl0bGUiOiJBdXRob3JzIiwiQnkiOiJCeSIsIkNhdGVnb3JpZXNQbGFjZUhvbGRlciI6IlNlYXJjaCBmb3IgY2F0ZWdvcmllcyIsIkNhdGVnb3JpZXNUaXRsZSI6IkNhdGVnb3JpZXMiLCJDaGFuZ2VLZXlXb3JkcyI6IkNoYW5nZSBrZXl3b3JkcyBhbmQgdHJ5IGl0IGFnYWluIiwiQ2xlYXJBbGxUaXRsZSI6IkNsZWFyIGZpbHRlcnMiLCJDbG9zZUFsZXJ0IjoiQ2xvc2UgYWxlcnQiLCJGaWx0ZXJCeSI6IkZJTFRFUiBCWS4uLiIsIkZpbHRlclRpdGxlIjoiQWR2YW5jZWQgU2VhcmNoIiwiTGl2ZVNwZWVjaCI6IkxpdmUgU3BlZWNoIiwiTWludXRlc0FnbyI6IiBtaW51dGVzIGFnbyIsIk5leHQiOiJOZXh0IHBhZ2UiLCJOb1Jlc3VsdHMiOiJObyByZXN1bHRzIiwiTm9TZWFyY2hSZXN1bHRzIjoiTm8gc2VhcmNoIHJlc3VsdHMhIiwiTm90aWZpY2F0aW9ucyI6Ik5vdGlmaWNhdGlvbnMiLCJQcmV2aW91cyI6IlByZXZpb3VzIHBhZ2UiLCJyZWdpc3RlclRvQWN0aXZhdGUiOiJMb2cgaW4gdG8gbGlzdGVuIHRvIEZYU3RyZWV0IGhlYWRsaW5lcyBmb3IgZnJlZSIsIlNlYXJjaFBsYWNlaG9sZGVyIjoiU2VhcmNoLi4uIiwiU2VhcmNoVGV4dCI6IkZpbmQgaW4gb3VyIGNvbnRlbnQuLi4iLCJzZWVtb3JlIjoiU2VlIE1vcmUgU2lnbmFscyIsIlNob3dMaXN0TGVmdEJ1dHRvbiI6IlNob3cgZmlsdGVycyIsIlRhZ3NQbGFjZUhvbGRlciI6IlNlYXJjaCBmb3IgdGFncyIsIlRhZ3NUaXRsZSI6IlRhZ3MiLCJQcmVtaXVtIjoiUHJlbWl1bSIsIlNwb25zb3JlZCI6IkJSQU5ERUQifSwiSW5kZXhJZCI6IkZ4c0luZGV4UHJvIiwiQXBpQWNjb3VudCI6IjUwREVWNlA5SzAiLCJBcGlLZXkiOiJjZDJkZDEzOGM4ZDY0ZjQwZjZkMDZhNjA1MDgzMTJiMCIsIkNhdGVnb3J5RmlsdGVyZWQiOlsiTmV3cyIsIkJyZWFraW5nIE5ld3MiLCJQcmVtaXVtIE5ld3MiXSwiU2hvd1RpdGxlIjpmYWxzZSwiU2hvd0NsZWFyQWxsIjpmYWxzZSwiU2hvd1Jlc3VsdHNGb3VuZCI6ZmFsc2UsIlNob3dUZXh0VG9TcGVlY2hUb2dnbGUiOnRydWUsIlNob3dTZWFyY2hCb3giOnRydWUsIlNlYXJjaFBsYWNlaG9sZGVyIjoiU2VhcmNoLi4uIiwiSGlkZUxhdGVyYWxGaWx0ZXJzIjp0cnVlLCJBbGxvd0ZpbHRlcnNDb2xsYXBzZSI6ZmFsc2UsIkhpZGVUYWdGaWx0ZXIiOmZhbHNlLCJUYWdGaWx0ZXJPbkxhdGVyYWxCYXIiOmZhbHNlLCJUYWdGaWx0ZXJPbkhlYWRlciI6dHJ1ZSwiU2hvd1RvcFBhZ2luYXRvciI6ZmFsc2UsIlNob3dUYWdJbnB1dCI6ZmFsc2UsIkNhdGVnb3J5VGl0bGUiOiIiLCJUYWdzVGl0bGUiOiIiLCJUYWdzUGxhY2Vob2xkZXIiOiJTZWFyY2ggTmV3cyBieSBUZXJtcyIsIlRhZ3NMaW1pdCI6OTk5OSwiU2hvd0F1dGhvckZpbHRlciI6ZmFsc2UsIlNob3dBdXRob3JJbnB1dCI6ZmFsc2UsIkF1dGhvcnNUaXRsZSI6IkFVVEhPUlMiLCJBdXRob3JzUGxhY2Vob2xkZXIiOiJTZWFyY2ggTmV3cyBieSBhdXRob3IiLCJBdXRob3JzTGltaXQiOjEzLCJEZWZhdWx0U3RhdHNGaWx0ZXIiOiJMYXRlc3QgTmV3cyIsIlNob3dSZXN1bHRJbWFnZSI6dHJ1ZSwiRGlzcGxheUdyaWQiOmZhbHNlLCJIdHRwUHVzaFNlcnZlclVybCI6Imh0dHBzOi8vcHVzaC1hcGkuZnhzdHJlZXQuY29tIiwiSHR0cFB1c2hTZXJ2ZXJLZXlzVXJsIjoiaHR0cHM6Ly9hdXRob3JpemF0aW9uLmZ4c3RyZWV0LmNvbS90b2tlbiIsIkh0dHBQdXNoRmVhdHVyZXMiOlsiTmV3c1B1c2hOb3RpZmljYXRpb24iXSwiU291bmRVcmwiOiJodHRwczovL3N0YXRpY2NvbnRlbnQuZnhzc3RhdGljLmNvbS9iYWJlbC1meHN0cmVldC9meHN0cmVldC9fY3NzL3NvdW5kcy9lY2hvZWQtZGluZy5tcDMiLCJUYWdzVG9TaG93IjoiRVVSVVNELEdCUFVTRCxHb2xkLEluZmxhdGlvbixCYW5rcyIsIlNsb3ROYW1lIjoiLzcxMzgvRlhTMzAvTmV3cyIsIlNvdW5kTm90aWZpY2F0aW9uRW5hYmxlZCI6dHJ1ZSwiUHJlbWl1bUNhdGVnb3JpZXMiOlsiUHJlbWl1bSBBbmFseXNpcyIsIlN0b2NrcyIsIkNyeXB0b2N1cnJlbmNpZXMgQW5hbHlzaXMgUHJlbWl1bSJdLCJTcG9uc29yZWRDYXRlZ29yaWVzIjpbIlNwb25zb3JlZCBTdG9ja3MgTmV3cyIsIlNwb25zb3JlZCBBbmFseXNpcyIsIlNwb25zb3JlZCBDcnlwdG8gTmV3cyIsIlNwb25zb3JlZCBDcnlwdG8gTmV3cyAoTm8gSW5kZXgpIiwiQ3J5cHRvY3VycmVuY2llcyBTcG9uc29yZWQgTmV3cyIsIlNwb25zb3JlZCBFZHVjYXRpb25hbCBBcnRpY2xlcyIsIlByZXNhbGUgVG9rZW4gTmV3cyJdLCJKc05hbWUiOiJBZHZhbmNlZFNlYXJjaE1hbmFnZXIiLCJKc0NyZWF0ZUV2ZW50IjoiZ29vZ2xldGFnbG9hZGVkIiwiSGl0c0xpbWl0IjoxNywiTWlsbGlzZWNvbmRzVG9EaXNwbGF5TWludXRlc0FnbyI6MzYwMDAwMCwiQ2F0ZWdvcmllcyI6eyIyMWZiZDExZS0yNjc3LTQ4NmEtODA3Ni1mYmQxOWMyOTdlNDEiOiJFZHVjYXRpb24iLCIyNTRiOWQ3MC03YzRiLTQ4MWItYTk0ZS1hYWFjMGM2MGVkMTQiOiJDcnlwdG8gTmV3cyIsIjJhMGYyMjdjLTViNGItNDVjNS1hNWRjLTg4MTRjMzA0ZDgyYyI6IkNyeXB0byBXcmFwcyIsIjMwMTFmM2E2LWRmYmQtNDYwYS1hYjU0LThiZDU5MjFhMTBhMCI6IkFuYWx5c2lzIiwiMzA1MTdmNjAtMWExZi00YjZhLWE1YzgtMzljYTg5YjhlNDZiIjoiVXBjb21pbmcgU2hvdyIsIjQ2MDlhMzQ3LWE3ZDItNGZhNS04NmEwLWZiNmE5NWRjZWI4MiI6IlN0b2NrcyBDb250cmlidXRvcnMiLCI1NDU3MWE1Yi1mMGMyLTRkYmEtYjI1MS1kNTAxNjUxNjhlZDciOiJTcG9uc29yZWQgU3RvY2tzIE5ld3MiLCI1OTFlZWIzNi1lYjhiLTQ5MDMtOTkwMy0yYzdmNDQ4OTU0YjkiOiJWaWRlbyIsIjYxNmI5YTMxLTdjMTAtNDM1Yi04ZjNlLTgyM2M0MzI1ZmUwNSI6IlVwY29taW5nIFNob3ciLCI2MmQ1MDRmMC1hZTMxLTRkM2QtYmJhNS0xMWZiNDc5ZDUxYWUiOiJOZXdzIiwiNjg3Njg0NjEtMDQ3MC00ZTM0LThhNTItZmFhZDYxNjYxYTNjIjoiQ3J5cHRvY3VycmVuY2llcyBBbmFseXNpcyBQcmVtaXVtIiwiNmM5NzFlYTctNTM4ZC00NTBhLThjZTEtYzZkOTM5M2U0MzdlIjoiUHJlbWl1bSBFZHVjYXRpb24iLCI3ZTVjNTNlNi04ZDU2LTQwNDYtYTU2YS0wNTVhNjJhYjhhYTIiOiJQcmVtaXVtIENyeXB0byBOZXdzIiwiODE1MjE0MDQtM2RmZC00NTE0LTk3MGItOGNjYWM0ZGQyYjIyIjoiQW5hbHlzaXMiLCI4NzM5OTliNy1lZTQyLTQ0NTUtOTllNi04Njg3NzJlOTkyZmIiOiJTcG9uc29yZWQgQ3J5cHRvIE5ld3MiLCI4YzFlMzg2Yy03OWIyLTQ2MzctOWFkOS0zNWFjOGZiYjM2M2UiOiJCcmVha2luZyBOZXdzIiwiOTY3ZjZiODYtY2JkNS00NDM0LTlmODctOTI0OGI0ZDI4OGM5IjoiQ3J5cHRvY3VycmVuY2llcyBTcG9uc29yZWQgTmV3cyIsImE1ODQ1NDY5LTRjMzktNGE2Zi04NGQyLWZmNGM3ZTJmOWQxMCI6IlNwb25zb3JlZCBFZHVjYXRpb25hbCBBcnRpY2xlcyIsImFlNzA1ODE3LWZlYmEtNDBhOS1hZDYyLWQ0ZjlhNzlhMzY1NCI6IkNyeXB0byBBbmFseXNpcyIsImI1OTgzMjgxLTE1NDAtNGI0Mi04ZTFkLThkYWE3ZTdiODIyZSI6IlByZW1pdW0gVXBjb21pbmcgU2hvdyIsImI5NjE2ZTM4LWUzMmYtNDQ5NS04NDliLWYwZDVjMTk5OGZlMSI6IlByZXNhbGUgVG9rZW4gTmV3cyIsImMyYTE4YTcyLWY5NmMtNDViYy1hZjYzLWEzYzczNGZjZTlhNyI6IlByZW1pdW0gQW5hbHlzaXMiLCJjMzljOGM0My1lMmRkLTQ0N2EtOWNiYS0xM2E1ZTY0MzlkODAiOiJCcmVha2luZyBDcnlwdG8gTmV3cyIsImNjZjA5ZTVhLTJjNzctNDdjZi05ZWFkLTkyM2IxY2Y3NmFmZSI6IlZpZGVvIiwiZDgyNzBhOWMtODExOC00YjZhLWEzMDktMWNjNDY5Y2ExM2EyIjoiU3RvY2tzIiwiZGNkZjI5MjctZjY0Mi00NDg4LWE0ODktNmE1OTUzNTY1OGU3IjoiU3BvbnNvcmVkIEFuYWx5c2lzIiwiZThjNjE4YjYtYWViYi00ZWViLWI0ODctZjI3YWIxNzBhZDk2IjoiTmV3cyIsImVkZDQ3MTU3LWIyYmMtNGM2NC05Yjk2LWUyYjdhZDA1Njg1YSI6IlByZW1pdW0gVmlkZW8iLCJmNGIwYjc2Zi02Yzk2LTQwZmQtYWMxYS02MjcyYjE5NDQ4N2YiOiJQcmVtaXVtIE5ld3MiLCJmZDcyYmU1Mi1iNDM5LTQ4Y2ItYjVlOS1hYzIyNGRkMTBkYmYiOiJDcnlwdG8ifSwiQ29udGFpbmVySWQiOiJhZHZhbmNlZHNlYXJjaG1hbmFnZXJfZjk5NTJjNTEtNTExMS00NzRkLWExZmEtMWQ2YTJhNjgwZjYyIiwiTGF6eSI6dHJ1ZX0=', "googletagloaded");
+</script>
+        </div>
+    </div>
+    <div class="fxs_flex_col fxs_flex_ad_col sticky">
+        <div id="Details_C321_Col01" class="sf_colsIn fxs_content_adContainer">    
+ 
+
+<div id="greybox_2db8c0c7-1e2c-435e-85a8-e70f6fa214c3"></div>
+
+<script>
+    FXStreet.Util.createReactObjectFromBase64String("Greybox", 'eyJUZW1wbGF0ZVVybCI6bnVsbCwiQWN0aXZlQ2FtcGFpZ24iOm51bGwsIk5ld3NsZXR0ZXJNb2RlbCI6eyJOZXdzbGV0dGVycyI6W3siSWQiOjEsIk5hbWUiOiJBc2lhbiBTZXNzaW9uIiwiRGVzY3JpcHRpb24iOiJHZXQgcmVhZHkgZm9yIHlvdXIgdHJhZGluZyBzZXNzaW9uIGJlZm9yZSB0aGUgbWFya2V0IG9wZW5zIGluIFN5ZG5leS4gU3Vic2NyaWJlIHRvIHJlY2VpdmUgb3VyIG11c3QtcmVhZCB0cmFkaW5nIGluc2lnaHRzLiIsIkRlZmF1bHQiOmZhbHNlLCJTdWJzY3JpYmVkIjp0cnVlLCJBcmNoaXZlVXJsIjoiaHR0cDovL2VlcHVybC5jb20vaTdOeUFRIiwiVGltZSI6IldlZWtkYXlzIOKAkyAyMTowMCBHTVQiLCJJY29uIjoiZmFzIGZhLXllbi1zaWduIn0seyJJZCI6MiwiTmFtZSI6IkV1cm9wZWFuIFNlc3Npb24iLCJEZXNjcmlwdGlvbiI6IkdldCByZWFkeSBmb3IgeW91ciB0cmFkaW5nIHNlc3Npb24gYmVmb3JlIHRoZSBtYXJrZXQgb3BlbnMgaW4gTG9uZG9uLiBTdWJzY3JpYmUgdG8gcmVjZWl2ZSBvdXIgbXVzdC1yZWFkIHRyYWRpbmcgaW5zaWdodHMuIiwiRGVmYXVsdCI6ZmFsc2UsIlN1YnNjcmliZWQiOnRydWUsIkFyY2hpdmVVcmwiOiJodHRwOi8vZWVwdXJsLmNvbS9pN1EtVEUiLCJUaW1lIjoiV2Vla2RheXMg4oCTIDY6MDAgR01UIiwiSWNvbiI6ImZhcyBmYS1ldXJvLXNpZ24ifSx7IklkIjozLCJOYW1lIjoiQW1lcmljYW4gU2Vzc2lvbiIsIkRlc2NyaXB0aW9uIjoiR2V0IHJlYWR5IGZvciB5b3VyIHRyYWRpbmcgc2Vzc2lvbiBiZWZvcmUgdGhlIG1hcmtldCBvcGVucyBpbiBOZXcgWW9yay4gU3Vic2NyaWJlIHRvIHJlY2VpdmUgb3VyIG11c3QtcmVhZCB0cmFkaW5nIGluc2lnaHRzLiIsIkRlZmF1bHQiOmZhbHNlLCJTdWJzY3JpYmVkIjp0cnVlLCJBcmNoaXZlVXJsIjoiaHR0cDovL2VlcHVybC5jb20vaTdNRDgyIiwiVGltZSI6IldlZWtkYXlzIOKAkyAxMzowMCBHTVQiLCJJY29uIjoiZmFzIGZhLWRvbGxhci1zaWduIn0seyJJZCI6NCwiTmFtZSI6IlRoZSBXZWVrIEFoZWFkIiwiRGVzY3JpcHRpb24iOiJHZXQgcHJlcGFyZWQgZm9yIHRoZSBjb21pbmcgd2VlayEgU3Vic2NyaWJlIHRvIHJlY2VpdmUgbmV4dCB3ZWVrJ3MgbWFpbiBldmVudHMgYW5kIHRoZSBob3R0ZXN0IG1hcmtldCBzdG9yaWVzIHRvIHN0YXkgYWhlYWQuIiwiRGVmYXVsdCI6ZmFsc2UsIlN1YnNjcmliZWQiOnRydWUsIkFyY2hpdmVVcmwiOm51bGwsIlRpbWUiOiJTdW5kYXlzIOKAkyA4OjAwIEdNVCIsIkljb24iOiJmYXMgZmEtY2hhcnQtbGluZSJ9LHsiSWQiOjYsIk5hbWUiOiJQcm9tb3MgJiBEaXNjb3VudHMiLCJEZXNjcmlwdGlvbiI6IkRvbid0IG1pc3Mgb3VyIGV4Y2x1c2l2ZSBkZWFscyBhbmQgZGlzY291bnRzLiBTdWJzY3JpYmUgdG8gcmVjZWl2ZSBvdXIgb2ZmZXJzIGluIHlvdXIgaW5ib3ggbm93LiIsIkRlZmF1bHQiOmZhbHNlLCJTdWJzY3JpYmVkIjp0cnVlLCJBcmNoaXZlVXJsIjpudWxsLCJUaW1lIjoiVGltZWx5IiwiSWNvbiI6ImZhcyBmYS1iZWxsIn0seyJJZCI6NSwiTmFtZSI6IlNwZWNpYWwgYWxlcnRzIiwiRGVzY3JpcHRpb24iOiJEb27igJl0IG1pc3Mgb3V0IGFueSB1cGRhdGUgYnkgZ2V0dGluZyBub3RpZmllZCBhYm91dCBvdXIgc3BlY2lhbCBsaXZlIGNvdmVyYWdlcywgYnJlYWtpbmcgbmV3cyBhbmQgRlhTdHJlZXQgbm92ZWx0aWVzLiIsIkRlZmF1bHQiOmZhbHNlLCJTdWJzY3JpYmVkIjp0cnVlLCJBcmNoaXZlVXJsIjpudWxsLCJUaW1lIjoiVGltZWx5IiwiSWNvbiI6ImZhcyBmYS1iZWxsIn0seyJJZCI6OSwiTmFtZSI6IkN1cnJlbmNpZXMgRm9yZWNhc3QiLCJEZXNjcmlwdGlvbiI6Ik91ciBleHBlcnRzIGZvcmVjYXN0IHBvbGwgaXMgcmVhZHkhIE91ciBkZXZvdGVkIGNvbnRyaWJ1dG9ycyBhbmQgYmFua3MgcHJlZGljdGlvbnMgZm9yIHRoZSBuZXh0IHdlZWssIG1vbnRoIGFuZCBxdWFydGVyIGluIHRoZSAxMCBtb3N0LXZhbHVlZCBjdXJyZW5jeSBwYWlycy4iLCJEZWZhdWx0IjpmYWxzZSwiU3Vic2NyaWJlZCI6dHJ1ZSwiQXJjaGl2ZVVybCI6bnVsbCwiVGltZSI6IkZyaWRheXMg4oCTIDE2OjAwIEdNVCIsIkljb24iOiJmYXMgZmEtYmlub2N1bGFycyJ9LHsiSWQiOjE0LCJOYW1lIjoiQ3J5cHRvY3VycmVuY2llcyIsIkRlc2NyaXB0aW9uIjoiRG9u4oCZdCBtaXNzIG91dCBvdXIgd2Vla2x5IG5ld3NsZXR0ZXIgd2l0aCBhIGRlZXAgYW5hbHlzaXMgb2YgdGhlIGhvdHRlc3QgY3J5cHRvY3VycmVuY2llcyBpbiB0aGUgbWFya2V0ISIsIkRlZmF1bHQiOmZhbHNlLCJTdWJzY3JpYmVkIjp0cnVlLCJBcmNoaXZlVXJsIjpudWxsLCJUaW1lIjoiTW9uZGF5cyDigJMgMTY6MDAgR01UIiwiSWNvbiI6ImZhYiBmYS1iaXRjb2luIn1dLCJFbWFpbCI6IiIsIlZpZXdUeXBlIjoiR3JleWJveCIsIlJlQ2FwdGNoYUtleSI6IjZMZHpBWkVVQUFBQUFFc3RkUFN2dndTUW42aUVFRDZPZlVqbjQxUVAiLCJUcmFuc2xhdGlvbnMiOnsiQ2xvc2VBbGVydCI6IkNsb3NlIGFsZXJ0IiwiQ29uZ3JhdHNBbGVydExhYmVsIjoiRG9uZSEiLCJDb25ncmF0c0FsZXJ0VGV4dCI6IldlIGhhdmUgc2F2ZWQgeW91ciBuZXdzbGV0dGVycyBwcmVmZXJlbmNlcyBhbmQgc2VudCB5b3UgYW4gZW1haWwgY29uZmlybWF0aW9uIChjaGVjayB5b3VyIHNwYW0gZm9sZGVyIHRvbykiLCJFbWFpbENhbm5vdEJlTnVsbCI6IkVtYWlsIGNhbm5vdCBiZSBudWxsIiwiRW1haWxJc05vdFZhbGlkIjoiRW1haWwgaXMgbm90IHZhbGlkIiwiRXJyb3JBbGVydExhYmVsIjoiRXJyb3IhIiwiRXJyb3JBbGVydFRleHQiOiJUaGUgZW1haWwgYWRkcmVzcyB5b3UgZW50ZXJlZCBpcyBub3QgdmFsaWQhIFRyeSBhZ2FpbiEiLCJFcnJvckNhcHRjaGFBbGVydFRleHQiOiJQbGVhc2UgY29uZmlybSB0aGUgY2FwdGNoYSB2YWxpZGF0aW9uISIsIk1lc3NhZ2VSZXNvdXJjZXNEZXNjcmlwdGlvbiI6IkZ4cyBIb21lIE5ld3NsZXR0ZXIgTWVzc2FnZXMgV2lkZ2V0IiwiTWVzc2FnZVJlc291cmNlc1RpdGxlIjoiRnhzIEhvbWUgTmV3c2xldHRlciBNZXNzYWdlcyBXaWRnZXQiLCJkZXNjcmlwdGlvbiI6IlN0YXkgdXAgdG8gc3BlZWQgd2l0aCBvdXIgbGF0ZXN0IG5ld3MgYW5kIGFuYWx5c2lzLiA8c3Ryb25nPkdldCBleGNsdXNpdmUgY29udGVudCBkaXJlY3RseSB0byB5b3VyIGluYm94PC9zdHJvbmc+IGluIG9uZSBlYXN5IHN0ZXAuIiwiZGlzY2xhaW1lciI6IkJ5IHN1YnNjcmliaW5nIHlvdSBhZ3JlZSB0byBvdXIgPGEgaHJlZj0nL2luZm8vdGVybXMtY29uZGl0aW9ucyc+VGVybXMgYW5kIGNvbmRpdGlvbnM8L2E+IiwiZG9udG1pc3NvdXQiOiJEb27igJl0IG1pc3Mgb3V0ISIsImVtYWlsRXJyb3IiOiJUaGUgZW1haWwgYWRkcmVzcyB5b3UgZW50ZXJlZCBpcyBub3QgdmFsaWQhIFRyeSBhZ2FpbiEiLCJFbWFpbFBsYWNlaG9sZGVyVGV4dCI6IllvdXIgRW1haWwgYWRkcmVzcyIsImVudGVyZW1haWwiOiJFbnRlciB5b3UgZW1haWwgYWRkcmVzcyIsIkVycm9yVGVybXNBbGVydFRleHQiOiJZb3UgbXVzdCBhY2NlcHQgb3VyIHRlcm1zIGFuZCBjb25kaXRpb25zIiwiZmFpbGVkUmVDQVBUQ0hBIjoiRmFpbGVkIHJlQ0FQVENIQSBjaGVjay4gUGxlYXNlLCByZWZyZXNoIHRoZSBwYWdlIGFuZCB0cnkgYWdhaW4uIiwiZ2V0YWxsdXBkYXRlcyI6IkdldCBhbGwgdXBkYXRlcyIsImdyZXlib3hkZXNjcmlwdGlvbiI6IkdldCBhbGwgb3VyIGV4Y2x1c2l2ZSBjb250ZW50IGRpcmVjdGx5IHRvIHlvdXIgaW5ib3ggaW4gb25lIGVhc3kgc3RlcCEiLCJMb2dnZWRNYW5hZ2VOZXdzbGV0dGVyc1YyIjoiSGVyZSB5b3UgY2FuIG1hbmFnZSBhbmQgc3Vic2NyaWJlIHRvIGFsbCBvdXIgbmV3c2xldHRlcnMuIiwiTWFuYWdlQnV0dG9uIjoiTWFuYWdlIiwibmV3c2xldHRlciI6Im5ld3NsZXR0ZXIiLCJOZXdzbGV0dGVyRGlzY2xhaW1lclYyIjoiQnkgc2lnbmluZyB1cCB0byB0aGlzIG5ld3NsZXR0ZXJzLCB5b3UgYWdyZWUgdG8gb3VyIDxhIGhyZWY9XCIvaW5mby90ZXJtcy1jb25kaXRpb25zXCI+PHN0cm9uZz50ZXJtcyBhbmQgY29uZGl0aW9uczwvc3Ryb25nPjwvYT4gYW5kIGFja25vd2xlZGdlIG91ciA8YSBocmVmPVwiL2luZm8vdGVybXMtY29uZGl0aW9uc1wiPjxzdHJvbmc+cHJpdmFjeSBwb2xpY3k8L3N0cm9uZz48L2E+LiIsIm5ld3NsZXR0ZXJsaW5rIjoiTW9yZSBpbmZvIGFib3V0IG5ld3NsZXR0ZXJzIiwibmV3c2xldHRlcnNlbGVjdGVkIjoiTmV3c2xldHRlcnMgc2VsZWN0ZWQiLCJuZXdzbGV0dGVyc3VybCI6Ii9zdWJzY3JpcHRpb25zIiwiTm90TG9nZ2VkTWFuYWdlTmV3c2xldHRlcnNWMiI6IkhlcmUgeW91IGNhbiBtYW5hZ2UgYW5kIHN1YnNjcmliZSB0byBhbGwgb3VyIG5ld3NsZXR0ZXJzLiA8YnIgLz5QbGVhc2UgZW50ZXIgeW91ciBlbWFpbCBmaXJzdC4iLCJQcmV2aWV3QnV0dG9uVGV4dCI6IlByZXZpZXciLCJSZWFkQW5kQWNjZXB0IjoiSSBoYXZlIHJlYWQgYW5kIEkgYWNjZXB0Iiwic2VuZEVycm9yIjoiU29tZXRoaW5nIHdlbnQgd3JvbmcsIHBsZWFzZSB0cnkgYWdhaW4uIiwic2VuZFN1Y2Nlc3MiOiJUaGFuayB5b3UhIFdl4oCZdmUgc2F2ZWQgeW91ciBjaGFuZ2VzLiA8YSBocmVmPVwiL2FjY291bnQvbG9naW5cIiB0aXRsZT1cIkxvZ2luXCI+TG9naW48L2E+IG9yIDxhIGhyZWY9XCIvYWNjb3VudC9sb2dpblwiIHRpdGxlPVwiU2lnbiB1cFwiPnNpZ24gdXA8L2E+IHRvIG1hbmFnZSB5b3VyIGVtYWlsIHByZWZlcmVuY2VzLiIsInNlbmRTdWNjZXNzTG9nZ2VkIjoiVGhhbmsgeW91ISBXZeKAmXZlIHNhdmVkIHlvdXIgY2hhbmdlcy4gVXBkYXRlIGl0IGFueXRpbWUgaW4gPGEgaHJlZj1cIi9zdWJzY3JpcHRpb25zXCIgdGl0bGU9XCJFbWFpbCBQcmVmZXJlbmNlc1wiPkVtYWlsIFByZWZlcmVuY2VzPC9hPi4iLCJTaGFyZU9uRmFjZWJvb2tMYWJlbCI6IlNoYXJlIG9uIEZhY2Vib29rIiwiU2hhcmVPbkdvb2dsZVBsdXNMYWJlbCI6IlNoYXJlIG9uIEdvb2dsZSsiLCJTaGFyZU9uTGlua2VkSW5MYWJlbCI6IlNoYXJlIG9uIGxpbmtlZEluIiwiU2hhcmVPblR3aXR0ZXJMYWJlbCI6IlNoYXJlIG9uIFR3aXR0ZXIiLCJTb2NpYWxUaXRsZSI6IlN0YXkgPHNwYW4+Q29ubmVjdGVkPC9zcGFuPiIsInN1YnNjcmliZSI6IlN1YnNjcmliZSIsInN1YnNjcmliZWFsbCI6IlN1YnNjcmliZSB0byBhbGwiLCJTdWJzY3JpYmVCdXR0b25UZXh0IjoiU3Vic2NyaWJlIiwiU3Vic2NyaWJlZEJ1dHRvblRleHQiOiJTdWJzY3JpYmVkIiwiU3Vic2NyaWJlZFRvQWxsIjoiU3Vic2NyaWJlZCB0byBhbGwiLCJTdWJzY3JpYmVTdWNjZWVkIjoiU3Vic2NyaWJlZCBzdWNjZXNzZnVsbHkhIiwiU3Vic2NyaWJlVG9OZXdzbGV0dGVyIjoiPHNwYW4+R2V0IEZvcmV4IGhlYWRsaW5lczwvc3Bhbj4gaW4geW91ciBlbWFpbCIsIlN1YnNjcmliZVRvTmV3c2xldHRlcl9FbWFpbE5vdFZhbGlkTWVzc2FnZSI6IlRoZSBlbWFpbCBhZGRyZXNzIHlvdSBlbnRlcmVkIGlzIG5vdCB2YWxpZCEgVHJ5IGFnYWluISIsIlN1YnNjcmliZVRvTmV3c2xldHRlcl9FbXB0eUxpc3QiOiJTZWxlY3QgYXQgbGVhc3Qgb25lIG5ld3NsZXR0ZXIgdG8gZ2V0IHN1YnNjcmliZWQiLCJTdWJzY3JpYmVUb05ld3NsZXR0ZXJfU3VjY2Vzc01lc3NhZ2UiOiJUaGFuayB5b3UhIFdlIGhhdmUgc2F2ZWQgeW91ciBzdWJzY3JpcHRpb25zLiBMb2dpbiBvciBzaWduIHVwIHRvIG1hbmFnZSB5b3VyIHByZWZlcmVuY2VzLiIsIlN1YnNjcmliZVRvTmV3c2xldHRlckJlbmVmaXRCYXJTZXBhcmF0ZWQiOiJUaGUgaG90dGVzdCBtYXJrZXQgbmV3c3xDdXJyZW5jaWVzIEZvcmVjYXN0fEV4cGVydHMgY29tbWVudGFyaWVzfEVjb25vbWljIENhbGVuZGFyIiwiU3Vic2NyaWJlVG9OZXdzbGV0dGVySW5wdXRQbGFjZWhvbGRlciI6IkVudGVyIHlvdXIgRW1haWwgYWRkcmVzcyIsIlN1YnNjcmliZVRvTmV3c2xldHRlclJlc291cmNlc0Rlc2NyaXB0aW9uIjoiRnhzIEhvbWUgTmV3c2xldHRlciBXaWRnZXQiLCJTdWJzY3JpYmVUb05ld3NsZXR0ZXJSZXNvdXJjZXNUaXRsZSI6IkZ4cyBIb21lIE5ld3NsZXR0ZXIgV2lkZ2V0ICIsIlN1YnNjcmliZVRvTmV3c2xldHRlclRleHQiOiJTdWJzY3JpYmUgdG8gRlhTdHJlZXQncyBuZXdzbGV0dGVycyBhbmQgZ2V0OiIsIlRlcm1zQ29uZGl0aW9ucyI6IkZYU3RyZWV0IHRlcm1zIGFuZCBjb25kaXRpb25zIiwiVGVybXNDb25kaXRpb25zVXJsIjoiL2luZm8vdGVybXMtY29uZGl0aW9ucyJ9LCJKc05hbWUiOiJTdWJzY3JpYmVUb05ld3NsZXR0ZXJWMiIsIkNvbnRhaW5lcklkIjoic3Vic2NyaWJldG9uZXdzbGV0dGVydjJfNjQ1MmYxNTItZjBiOS00OGEzLTkzOTMtMzJlODAxYmVhOTIyIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfSwiR3JleWJveEFzTmV3c2xldHRlckNvdW50cnlDb2RlIjpbIlRSIl0sIkhpZ2hJbmNvbWVDb3VudHJpZXMiOlsiQVUiLCJBVCIsIkJFIiwiQ0EiLCJESyIsIkZJIiwiRlIiLCJERSIsIklFIiwiSVQiLCJKUCIsIkxVIiwiTkwiLCJOWiIsIk5PIiwiUFQiLCJTRyIsIkVTIiwiU0UiLCJDSCIsIlVLIiwiVVMiLCJCRyIsIkNaIiwiRUUiLCJHUiIsIkhSIiwiQ1kiLCJMViIsIkxUIiwiSFUiLCJNVCIsIlBMIiwiUk8iLCJTSSIsIkFMIiwiSVMiLCJMSSIsIlRSIiwiSUwiLCJaQSIsIktSIiwiSEsiLCJDTCIsIk1YIiwiQVIiLCJCUiIsIkFFIiwiUUEiLCJTQSIsIkdCIl0sIkFsd2F5c09uTW9kZSI6IndoYXRzYXBwdGVsZWdyYW0iLCJTb2NpYWxNZWRpYUNoYW5uZWxzTGlua3MiOnsiV2hhdHNhcHBVUkwiOiJodHRwczovL3doYXRzYXBwLmNvbS9jaGFubmVsLzAwMjlWYURHc1U5MGx3Z2pKNVNoOFk0NSIsIlRlbGVncmFtVVJMIjoiaHR0cHM6Ly90Lm1lL2ZvcmV4bmV3cyJ9LCJKc0NyZWF0ZUV2ZW50IjoibG9hZEdyZXlib3giLCJDb250YWluZXJJZCI6ImdyZXlib3hfMmRiOGMwYzctMWUyYy00MzVlLTg1YTgtZTcwZjZmYTIxNGMzIiwiSnNOYW1lIjoiR3JleWJveCIsIkxhenkiOnRydWV9', "loadGreybox");
+</script>
+
+
+
+
+<div class="fxs_marginBase_top"></div>
+<style>
+    @media screen and (min-width: 1024px) {
+    #none {display:none;}
+    }
+</style>
+
+<hr id="none" class="fxs_divider_third" />
+<h3 class="fxs_subsectionTitle">Broker promotions
+</h3>
+<div class="fxs_marginBase_top"></div>
+    <div class="fxs_ad">
+        <div id="advertisenormal_641c45cf-5acb-4fd3-bb6b-ca1bece396b3">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjEifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNjQxYzQ1Y2YtNWFjYi00ZmQzLWJiNmItY2ExYmVjZTM5NmIzIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjEifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNjQxYzQ1Y2YtNWFjYi00ZmQzLWJiNmItY2ExYmVjZTM5NmIzIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+
+<hr class="fxs_divider_third" />
+    <div class="fxs_ad">
+        <div id="advertisenormal_de76ba42-458d-450c-8c3e-6a96499507bc">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjIifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfZGU3NmJhNDItNDU4ZC00NTBjLThjM2UtNmE5NjQ5OTUwN2JjIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjIifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfZGU3NmJhNDItNDU4ZC00NTBjLThjM2UtNmE5NjQ5OTUwN2JjIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+
+<hr class="fxs_divider_third" />
+    <div class="fxs_ad">
+        <div id="advertisenormal_8baf0dfd-e09c-4a2e-9f94-c4ba734670ed">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjMifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfOGJhZjBkZmQtZTA5Yy00YTJlLTlmOTQtYzRiYTczNDY3MGVkIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjMifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfOGJhZjBkZmQtZTA5Yy00YTJlLTlmOTQtYzRiYTczNDY3MGVkIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+
+<hr class="fxs_divider_third" />
+    <div class="fxs_ad">
+        <div id="advertisenormal_57d2cf49-b634-40fc-8da7-34bb31acdd17">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjQifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNTdkMmNmNDktYjYzNC00MGZjLThkYTctMzRiYjMxYWNkZDE3IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjQifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfNTdkMmNmNDktYjYzNC00MGZjLThkYTctMzRiYjMxYWNkZDE3IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+
+<hr class="fxs_divider_third" />
+    <div class="fxs_ad">
+        <div id="advertisenormal_91480bb5-9f93-46b2-a646-167cf21a91cd">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjUifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfOTE0ODBiYjUtOWY5My00NmIyLWE2NDYtMTY3Y2YyMWE5MWNkIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjUifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfOTE0ODBiYjUtOWY5My00NmIyLWE2NDYtMTY3Y2YyMWE5MWNkIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+
+<hr class="fxs_divider_third" />
+    <div class="fxs_ad">
+        <div id="advertisenormal_3c1ccd45-d6c0-41a2-95e3-2e3b6b2b72d9">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjYifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfM2MxY2NkNDUtZDZjMC00MWEyLTk1ZTMtMmUzYjZiMmI3MmQ5IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W3siS2V5IjoicHJvbW8iLCJWYWx1ZSI6IjYifV0sIk1vYmlsZVNpemUiOiJbMzEwLCAzNV0iLCJUYWJsZXRTaXplIjoiWzMxMCwgMzVdIiwiRGVza3RvcFNpemUiOiJbMzEwLCAzNV0iLCJEZXNrdG9wSGRTaXplIjoiWzMxMCwgMzVdIiwiUG9wdXBTaG93SW50ZXJ2YWxJbk1pbnV0ZXMiOjAsIkNvb2tpZUdyb3VwIjpudWxsLCJHcm91cEtleSI6bnVsbCwiSnNOYW1lIjoiQWR2ZXJ0aXNlTm9ybWFsIiwiQ29udGFpbmVySWQiOiJhZHZlcnRpc2Vub3JtYWxfM2MxY2NkNDUtZDZjMC00MWEyLTk1ZTMtMmUzYjZiMmI3MmQ5IiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+
+<hr class="fxs_divider_third" />
+<h3 class="fxs_subtitle">Editors&rsquo; Picks
+</h3>
+
+
+        <div fxs_sf_widget fxs_name="editorialhighlight_medium_1caf9b1c-e3ff-4feb-9a5e-e84e23e98c4e" class="fxs_col editorialhighlight editorialhighlight_medium">
+            <a class="fxs_anchor_image" href="https://www.fxstreet.com/currencies/gbpusd" title="GBP/USD trades with mild negative bias around 1.2200 ahead of UK/US inflation data" data-element="image" data-layout="editorialhighlight_medium" data-name="Editorial GBP/USD">
+                <img
+                    class="lazyload"
+                    data-src="https://editorial.fxsstatic.com/images/i/GBP-bearish-animal_Medium.png"
+                    alt="GBP/USD trades with mild negative bias around 1.2200 ahead of UK/US inflation data">
+            </a>
+            <h3 class="fxs_headline_small">
+                    <a href="https://www.fxstreet.com/currencies/gbpusd" title="GBP/USD trades with mild negative bias around 1.2200 ahead of UK/US inflation data" data-element="title" data-layout="editorialhighlight_medium" data-name="Editorial GBP/USD">GBP/USD trades with mild negative bias around 1.2200 ahead of UK/US inflation data</a>
+            </h3>
+            <div class="fxs_entryPlain_txt"><p>GBP/USD struggles to capitalize on this week&rsquo;s modest bounce from a multi-year low. Stagflation fears and UK fiscal concerns undermine the GBP and weigh on the major. Subdued USD demand acts as a tailwind for the pair ahead of the UK/US CPI prints.</p>
+</div>
+            <div class="fxs_marginBase_top"></div>
+            <a href="https://www.fxstreet.com/news?q=&amp;hPP=17&amp;idx=FxsIndexPro&amp;p=0&amp;dFR%5BTags%5D%5B0%5D=GBPUSD" rel="nofollow" class="fxs_more" data-element="more" data-layout="editorialhighlight_medium" data-name="Editorial GBP/USD">
+                <span>GBP/USD News</span>
+                <span class="fas fa-angle-double-left"></span>
+                <span class="fas fa-angle-double-right"></span>
+            </a>
+            <div class="fxs_marginBase_top fxs_clearfix"></div>
+        </div>
+
+
+
+        <div fxs_sf_widget fxs_name="editorialhighlight_medium_ddf86bbb-8093-41e9-8e11-0baa9898af94" class="fxs_col editorialhighlight editorialhighlight_medium">
+            <a class="fxs_anchor_image" href="https://www.fxstreet.com/currencies/usdjpy" title="USD/JPY drops below 157.50 after BoJ Ueda's comments" data-element="image" data-layout="editorialhighlight_medium" data-name="Editorial USD/JPY">
+                <img
+                    class="lazyload"
+                    data-src="https://editorial.fxsstatic.com/images/i/USDJPY-bearish-object_Medium.png"
+                    alt="USD/JPY drops below 157.50 after BoJ Ueda's comments">
+            </a>
+            <h3 class="fxs_headline_small">
+                    <a href="https://www.fxstreet.com/currencies/usdjpy" title="USD/JPY drops below 157.50 after BoJ Ueda's comments" data-element="title" data-layout="editorialhighlight_medium" data-name="Editorial USD/JPY">USD/JPY drops below 157.50 after BoJ Ueda's comments</a>
+            </h3>
+            <div class="fxs_entryPlain_txt"><p>USD/JPY has come under renewed selling pressure and drops below 157.50 in the early European morning on Wednesday. The pair retraces from near 158.00 after BoJ Governor Ueda talks up the odds of a rate hike next week. Meanwhile, US Dollar stays subdued ahead of the crucial US CPI report.&nbsp;</p>
+</div>
+            <div class="fxs_marginBase_top"></div>
+            <a href="https://www.fxstreet.com/news?q=usdjpy&amp;hPP=17&amp;idx=FxsIndexPro&amp;p=0" rel="nofollow" class="fxs_more" data-element="more" data-layout="editorialhighlight_medium" data-name="Editorial USD/JPY">
+                <span>USD/JPY News</span>
+                <span class="fas fa-angle-double-left"></span>
+                <span class="fas fa-angle-double-right"></span>
+            </a>
+            <div class="fxs_marginBase_top fxs_clearfix"></div>
+        </div>
+            
+        </div>
+    </div>
+</div>
+<hr class="fxs_divider_third">
+    <div class="fxs_ad">
+        <div id="advertisenormal_40b636c4-cccc-49d3-99f6-1de6de4c44d7">
+        <script type="text/javascript">
+                    if (FXStreet.Global.AsyncDfp) {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W10sIk1vYmlsZVNpemUiOiJbMjUwLCAyNTBdIiwiVGFibGV0U2l6ZSI6Ils3MjgsIDkwXSIsIkRlc2t0b3BTaXplIjoiWzcyOCwgOTBdIiwiRGVza3RvcEhkU2l6ZSI6Ils3MjgsIDkwXSIsIlBvcHVwU2hvd0ludGVydmFsSW5NaW51dGVzIjowLCJDb29raWVHcm91cCI6bnVsbCwiR3JvdXBLZXkiOm51bGwsIkpzTmFtZSI6IkFkdmVydGlzZU5vcm1hbCIsIkNvbnRhaW5lcklkIjoiYWR2ZXJ0aXNlbm9ybWFsXzQwYjYzNmM0LWNjY2MtNDlkMy05OWY2LTFkZTZkZTRjNDRkNyIsIkpzQ3JlYXRlRXZlbnQiOiJsb2FkIiwiTGF6eSI6dHJ1ZX0=', "readyForAds");
+                    } else {
+                        FXStreet.Util.createObjectFromBase64String("AdvertiseNormal", 'eyJTbG90TmFtZSI6IjcxMzgvRlhTMzAvTmV3cyIsIkFkdmVydGlzZVR5cGUiOjAsIkxhYmVscyI6W10sIk1vYmlsZVNpemUiOiJbMjUwLCAyNTBdIiwiVGFibGV0U2l6ZSI6Ils3MjgsIDkwXSIsIkRlc2t0b3BTaXplIjoiWzcyOCwgOTBdIiwiRGVza3RvcEhkU2l6ZSI6Ils3MjgsIDkwXSIsIlBvcHVwU2hvd0ludGVydmFsSW5NaW51dGVzIjowLCJDb29raWVHcm91cCI6bnVsbCwiR3JvdXBLZXkiOm51bGwsIkpzTmFtZSI6IkFkdmVydGlzZU5vcm1hbCIsIkNvbnRhaW5lcklkIjoiYWR2ZXJ0aXNlbm9ybWFsXzQwYjYzNmM0LWNjY2MtNDlkMy05OWY2LTFkZTZkZTRjNDRkNyIsIkpzQ3JlYXRlRXZlbnQiOiJsb2FkIiwiTGF6eSI6dHJ1ZX0=', "googletagloaded");
+                    }
+        </script>
+        </div>
+    </div>
+
+<hr class="fxs_divider_third">
+<h3 class="fxs_headline_highlight"><a href="https://www.fxstreet.com/economic-calendar">UPCOMING CALENDAR EVENTS <span class="fa fa-angle-double-right"></span></a></h3>
+
+
+<script type="text/javascript">
+    var fxcalendar_config = {
+        host: "https://calendar.fxsstatic.com",
+        timezone: "UTC",
+        rows: "15",
+        pastevents: 3,
+        hoursbefore: "20",
+        showcountryname: 1,
+        columns: "actual,consensus,country,date,event,previous,time,volatility,countrycurrency",
+        culture: "en",
+        css: "calendar-widget.min",
+        countrycode: "DE,AU,CA,CN,EMU,DE,ES,US,FR,GR,IT,JP,NZ,PT,UK,CH"
+    }
+</script>
+
+<div id="fxst_calendar"></div>
+<h3 class="fxs_subtitle">Editors&rsquo; Picks
+</h3><div class="fxs_row">
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C648_Col00" class="sf_colsIn">
+
+
+        <div fxs_sf_widget fxs_name="editorialhighlight_medium_43a312c5-6f52-458d-8e73-f49e8d3f1f86" class="fxs_col editorialhighlight editorialhighlight_medium">
+            <a class="fxs_anchor_image" href="https://www.fxstreet.com/markets/commodities/metals/gold" title="Gold price remains depressed amid risk-on mood; traders keenly await US CPI report" data-element="image" data-layout="editorialhighlight_medium" data-name="Editorial Gold">
+                <img
+                    class="lazyload"
+                    data-src="https://editorial.fxsstatic.com/images/i/Commodities_Gold-2_Medium.jpg"
+                    alt="Gold price remains depressed amid risk-on mood; traders keenly await US CPI report">
+            </a>
+            <h3 class="fxs_headline_small">
+                    <a href="https://www.fxstreet.com/markets/commodities/metals/gold" title="Gold price remains depressed amid risk-on mood; traders keenly await US CPI report" data-element="title" data-layout="editorialhighlight_medium" data-name="Editorial Gold">Gold price remains depressed amid risk-on mood; traders keenly await US CPI report</a>
+            </h3>
+            <div class="fxs_entryPlain_txt"><p>Gold price attracts some sellers as the risk-on mood undermines demand for safe-haven assets. The prospects for a slower Fed rate cut contribute to driving flows away from the XAU/USD pair. A softer USD and geopolitical risks could support the precious metal ahead of the US CPI report.</p>
+</div>
+            <div class="fxs_marginBase_top"></div>
+            <a href="https://www.fxstreet.com/news?q=&amp;hPP=17&amp;idx=FxsIndexPro&amp;p=0&amp;dFR%5BTags%5D%5B0%5D=Gold" rel="nofollow" class="fxs_more" data-element="more" data-layout="editorialhighlight_medium" data-name="Editorial Gold">
+                <span>Gold News</span>
+                <span class="fas fa-angle-double-left"></span>
+                <span class="fas fa-angle-double-right"></span>
+            </a>
+            <div class="fxs_marginBase_top fxs_clearfix"></div>
+        </div>
+
+        </div>
+    </div>
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C648_Col01" class="sf_colsIn">
+
+
+        <div fxs_sf_widget fxs_name="editorialhighlight_medium_75d875fc-b15b-4063-847d-19d7dbacc1a8" class="fxs_col editorialhighlight editorialhighlight_medium">
+            <a class="fxs_anchor_image" href="https://www.fxstreet.com/cryptocurrencies/news/top-3-price-prediction-bitcoin-ethereum-ripple-btc-eth-rebound-xrp-rallies-ahead-of-cpi-data-202501150459" title="Bitcoin and Ethereum rebound, Ripple rallies ahead of CPI data" data-element="image" data-layout="editorialhighlight_medium" data-name="MISCELLANEOUS 4 HP">
+                <img
+                    class="lazyload"
+                    data-src="https://editorial.fxsstatic.com/images/i/BTC-bullish-animal_Medium.png"
+                    alt="Bitcoin and Ethereum rebound, Ripple rallies ahead of CPI data">
+            </a>
+            <h3 class="fxs_headline_small">
+                    <a href="https://www.fxstreet.com/cryptocurrencies/news/top-3-price-prediction-bitcoin-ethereum-ripple-btc-eth-rebound-xrp-rallies-ahead-of-cpi-data-202501150459" title="Bitcoin and Ethereum rebound, Ripple rallies ahead of CPI data" data-element="title" data-layout="editorialhighlight_medium" data-name="MISCELLANEOUS 4 HP">Bitcoin and Ethereum rebound, Ripple rallies ahead of CPI data</a>
+            </h3>
+            <div class="fxs_entryPlain_txt"><p>Bitcoin and Ethereum prices continue to recover on Wednesday after finding support around their key levels this week. On the other hand, Ripple remains strong and found support around its upper symmetrical triangle boundary, suggesting a rally continuation.&nbsp;</p>
+</div>
+            <div class="fxs_marginBase_top"></div>
+            <a href="https://www.fxstreet.com/cryptocurrencies/news/top-3-price-prediction-bitcoin-ethereum-ripple-btc-eth-rebound-xrp-rallies-ahead-of-cpi-data-202501150459" rel="nofollow" class="fxs_more" data-element="more" data-layout="editorialhighlight_medium" data-name="MISCELLANEOUS 4 HP">
+                <span>Read more</span>
+                <span class="fas fa-angle-double-left"></span>
+                <span class="fas fa-angle-double-right"></span>
+            </a>
+            <div class="fxs_marginBase_top fxs_clearfix"></div>
+        </div>
+
+        </div>
+    </div>
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C648_Col02" class="sf_colsIn">
+
+
+        <div fxs_sf_widget fxs_name="editorialhighlight_medium_7a2f0d14-15b4-44e3-94bf-a8b4c4f25af0" class="fxs_col editorialhighlight editorialhighlight_medium">
+            <a class="fxs_anchor_image" href="https://www.fxstreet.com/cryptocurrencies/news/top-3-price-prediction-bitcoin-ethereum-ripple-btc-eth-rebound-xrp-rallies-ahead-of-cpi-data-202501150459" title="Top 3 Price Prediction Bitcoin, Ethereum, Ripple: BTC &amp; ETH rebound, XRP rallies ahead of CPI data" data-element="image" data-layout="editorialhighlight_medium" data-name="Crypto 1 (HP upleft box)">
+                <img
+                    class="lazyload"
+                    data-src="https://editorial.fxsstatic.com/images/i/BTC-bullish-animal_Medium.png"
+                    alt="Top 3 Price Prediction Bitcoin, Ethereum, Ripple: BTC &amp; ETH rebound, XRP rallies ahead of CPI data">
+            </a>
+            <h3 class="fxs_headline_small">
+                    <a href="https://www.fxstreet.com/cryptocurrencies/news/top-3-price-prediction-bitcoin-ethereum-ripple-btc-eth-rebound-xrp-rallies-ahead-of-cpi-data-202501150459" title="Top 3 Price Prediction Bitcoin, Ethereum, Ripple: BTC &amp; ETH rebound, XRP rallies ahead of CPI data" data-element="title" data-layout="editorialhighlight_medium" data-name="Crypto 1 (HP upleft box)">Top 3 Price Prediction Bitcoin, Ethereum, Ripple: BTC &amp; ETH rebound, XRP rallies ahead of CPI data</a>
+            </h3>
+            <div class="fxs_entryPlain_txt"><p>Bitcoin and Ethereum prices continue to recover on Wednesday after finding support around their key levels this week. On the other hand, Ripple remains strong and found support around its upper symmetrical triangle boundary.</p>
+</div>
+            <div class="fxs_marginBase_top"></div>
+            <a href="https://www.fxstreet.com/cryptocurrencies/news" rel="nofollow" class="fxs_more" data-element="more" data-layout="editorialhighlight_medium" data-name="Crypto 1 (HP upleft box)">
+                <span>More Cryptocurrencies News</span>
+                <span class="fas fa-angle-double-left"></span>
+                <span class="fas fa-angle-double-right"></span>
+            </a>
+            <div class="fxs_marginBase_top fxs_clearfix"></div>
+        </div>
+
+        </div>
+    </div>
+</div>
+<div class="fxs_marginBase_top"></div>
+<h3 class="fxs_headline_highlight">MORE NEWS &amp; ANALYSIS </h3><div class="fxs_row">
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C653_Col00" class="sf_colsIn">
+
+<h3 class="fxs_subtitle">FOREX MAJORS
+</h3>            <div id="postlistmultifeed_8157687f-9ffd-4af1-bc2b-f465b266f24e" class="skeletonPostListMultiFeed"></div>
+
+
+<style>
+    @keyframes shineSkeletonPostListMultiFeed {
+        to {
+            background-position: 100% 0,64px 32px,0px 4px,65px 4px;
+        }
+    }
+
+    div.skeletonPostListMultiFeed {
+        box-sizing: content-box;
+        min-height: 360px;;
+        background-color: transparent;
+        background-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 80% ),
+            linear-gradient( #dddedf 12px, transparent 0 ),
+            linear-gradient( #dddedf 50px, transparent 0 ),
+            linear-gradient( #dddedf 22px, transparent 0 );
+        background-repeat: repeat-y;
+        background-size: 50px 73px,50% 73px,50px 73px,90% 73px;
+        background-position: 0 0,64px 32px,0px 4px,65px 4px;
+        animation: shineSkeletonPostListMultiFeed 1s infinite;
+    }
+</style>
+
+<script>
+    FXStreet.Util.createObjectFromBase64String("PostListMultiFeed", 'eyJUYWtlIjo0LCJIaWdobGlnaHRlZEZpcnN0SXRlbSI6ZmFsc2UsIldpdGhJbWFnZSI6ZmFsc2UsIlRhZ0lkcyI6IjVmOTFhZDhmLTI2Y2QtNDY0My05MjMzLTQ2YmQxOGIwM2E3MCxhNjc0NGMxOS1mZTg4LTQ4OGYtODA0NC1mYjFmNTc0Y2E4MTgsNzFmMDg0YWEtODYzNi00NWE4LWIwOGMtYmE0MWEwOTFiZTg1LDMxY2RmYmEwLTViMDAtNGU1YS1hODVjLWUwODNkZjI2ODlhMSw5MTk1MzYyNy0zZTJjLTQzM2QtOTdlMy02YTUwZDgzYzNmOWQsMmI5MDVlODAtNzRlYi00MjI0LTgxNjMtZGUyNTU3YTczNzUwLGE2MjIxY2VhLTFmMmYtNDZjNi1hNjIzLWJjMDg1NDEyYWM0YyIsIkZlZWRJZHMiOiI2MmQ1MDRmMC1hZTMxLTRkM2QtYmJhNS0xMWZiNDc5ZDUxYWUiLCJTaXplQ2xhc3NOYW1lIjpudWxsLCJUYWdzSWRzIjpbIjVmOTFhZDhmLTI2Y2QtNDY0My05MjMzLTQ2YmQxOGIwM2E3MCIsImE2NzQ0YzE5LWZlODgtNDg4Zi04MDQ0LWZiMWY1NzRjYTgxOCIsIjcxZjA4NGFhLTg2MzYtNDVhOC1iMDhjLWJhNDFhMDkxYmU4NSIsIjMxY2RmYmEwLTViMDAtNGU1YS1hODVjLWUwODNkZjI2ODlhMSIsIjkxOTUzNjI3LTNlMmMtNDMzZC05N2UzLTZhNTBkODNjM2Y5ZCIsIjJiOTA1ZTgwLTc0ZWItNDIyNC04MTYzLWRlMjU1N2E3Mzc1MCIsImE2MjIxY2VhLTFmMmYtNDZjNi1hNjIzLWJjMDg1NDEyYWM0YyJdLCJGZWVkc0lkcyI6WyI2MmQ1MDRmMC1hZTMxLTRkM2QtYmJhNS0xMWZiNDc5ZDUxYWUiXSwiSHRtbCI6bnVsbCwiUG9zdEltYWdlcyI6dHJ1ZSwiQXV0aG9ySW1hZ2VzIjpmYWxzZSwiVXNlUGVyc29uYWxpemVyIjpmYWxzZSwiUGVyc29uYWxpemVyU2VydmljZUtleSI6IjVkMjc5ZTY4ODY2NzQyMzc4Y2Q3N2YzY2E2NzQ3ZDcwIiwiUGVyc29uYWxpemVyQmFzZVVyaSI6Imh0dHBzOi8vZnhzLXBlcnNvbmFsaXplci5jb2duaXRpdmVzZXJ2aWNlcy5henVyZS5jb20vIiwiQ291bnRyeUNvZGUiOiJJTiIsIlJlbmRlck9uQ2xpZW50Ijp0cnVlLCJTa2VsZXRvbkhlaWdodCI6MzYwLCJKc05hbWUiOiJQb3N0TGlzdE11bHRpRmVlZCIsIlJlc3BvbnNpdmVHcm91cElkIjpudWxsLCJSZXNwb25zaXZlVGFyZ2V0U2l6ZSI6MCwiUmVzcG9uc2l2ZUFib3ZlT3JFcXVhbCI6dHJ1ZSwiQ29udGFpbmVySWQiOiJwb3N0bGlzdG11bHRpZmVlZF84MTU3Njg3Zi05ZmZkLTRhZjEtYmMyYi1mNDY1YjI2NmYyNGUiLCJKc0NyZWF0ZUV2ZW50IjoibG9hZCIsIkxhenkiOnRydWV9', "load");
+</script>
+        </div>
+    </div>
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C653_Col01" class="sf_colsIn">
+
+<h3 class="fxs_subtitle">SIGNATURES
+</h3>            <div id="postlistmultifeed_a3b7e9e1-eeb3-42cb-bcd6-9803cba17acf" class="skeletonPostListMultiFeed"></div>
+
+
+<style>
+    @keyframes shineSkeletonPostListMultiFeed {
+        to {
+            background-position: 100% 0,64px 32px,0px 4px,65px 4px;
+        }
+    }
+
+    div.skeletonPostListMultiFeed {
+        box-sizing: content-box;
+        min-height: 360px;;
+        background-color: transparent;
+        background-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 80% ),
+            linear-gradient( #dddedf 12px, transparent 0 ),
+            linear-gradient( #dddedf 50px, transparent 0 ),
+            linear-gradient( #dddedf 22px, transparent 0 );
+        background-repeat: repeat-y;
+        background-size: 50px 73px,50% 73px,50px 73px,90% 73px;
+        background-position: 0 0,64px 32px,0px 4px,65px 4px;
+        animation: shineSkeletonPostListMultiFeed 1s infinite;
+    }
+</style>
+
+<script>
+    FXStreet.Util.createObjectFromBase64String("PostListMultiFeed", 'eyJUYWtlIjo0LCJIaWdobGlnaHRlZEZpcnN0SXRlbSI6ZmFsc2UsIldpdGhJbWFnZSI6ZmFsc2UsIlRhZ0lkcyI6bnVsbCwiRmVlZElkcyI6IjMwMTFmM2E2LWRmYmQtNDYwYS1hYjU0LThiZDU5MjFhMTBhMCw2NGVhYWQ0MS04NTNkLTQ0MGQtOWU0YS01ZTBkZDUzOGY5ZDAsZDgyNzBhOWMtODExOC00YjZhLWEzMDktMWNjNDY5Y2ExM2EyLDgxNTIxNDA0LTNkZmQtNDUxNC05NzBiLThjY2FjNGRkMmIyMiw0NjA5YTM0Ny1hN2QyLTRmYTUtODZhMC1mYjZhOTVkY2ViODIiLCJTaXplQ2xhc3NOYW1lIjpudWxsLCJUYWdzSWRzIjpbXSwiRmVlZHNJZHMiOlsiMzAxMWYzYTYtZGZiZC00NjBhLWFiNTQtOGJkNTkyMWExMGEwIiwiNjRlYWFkNDEtODUzZC00NDBkLTllNGEtNWUwZGQ1MzhmOWQwIiwiZDgyNzBhOWMtODExOC00YjZhLWEzMDktMWNjNDY5Y2ExM2EyIiwiODE1MjE0MDQtM2RmZC00NTE0LTk3MGItOGNjYWM0ZGQyYjIyIiwiNDYwOWEzNDctYTdkMi00ZmE1LTg2YTAtZmI2YTk1ZGNlYjgyIl0sIkh0bWwiOm51bGwsIlBvc3RJbWFnZXMiOmZhbHNlLCJBdXRob3JJbWFnZXMiOnRydWUsIlVzZVBlcnNvbmFsaXplciI6ZmFsc2UsIlBlcnNvbmFsaXplclNlcnZpY2VLZXkiOiI1ZDI3OWU2ODg2Njc0MjM3OGNkNzdmM2NhNjc0N2Q3MCIsIlBlcnNvbmFsaXplckJhc2VVcmkiOiJodHRwczovL2Z4cy1wZXJzb25hbGl6ZXIuY29nbml0aXZlc2VydmljZXMuYXp1cmUuY29tLyIsIkNvdW50cnlDb2RlIjoiSU4iLCJSZW5kZXJPbkNsaWVudCI6dHJ1ZSwiU2tlbGV0b25IZWlnaHQiOjM2MCwiSnNOYW1lIjoiUG9zdExpc3RNdWx0aUZlZWQiLCJSZXNwb25zaXZlR3JvdXBJZCI6bnVsbCwiUmVzcG9uc2l2ZVRhcmdldFNpemUiOjAsIlJlc3BvbnNpdmVBYm92ZU9yRXF1YWwiOnRydWUsIkNvbnRhaW5lcklkIjoicG9zdGxpc3RtdWx0aWZlZWRfYTNiN2U5ZTEtZWViMy00MmNiLWJjZDYtOTgwM2NiYTE3YWNmIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "load");
+</script>
+        </div>
+    </div>
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C653_Col02" class="sf_colsIn">
+
+<h3 class="fxs_subtitle">CRYPTOCURRENCIES
+</h3>            <div id="postlistmultifeed_15e684d0-e03c-45a7-babb-ece209af8a61" class="skeletonPostListMultiFeed"></div>
+
+
+<style>
+    @keyframes shineSkeletonPostListMultiFeed {
+        to {
+            background-position: 100% 0,64px 32px,0px 4px,65px 4px;
+        }
+    }
+
+    div.skeletonPostListMultiFeed {
+        box-sizing: content-box;
+        min-height: 360px;;
+        background-color: transparent;
+        background-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 80% ),
+            linear-gradient( #dddedf 12px, transparent 0 ),
+            linear-gradient( #dddedf 50px, transparent 0 ),
+            linear-gradient( #dddedf 22px, transparent 0 );
+        background-repeat: repeat-y;
+        background-size: 50px 73px,50% 73px,50px 73px,90% 73px;
+        background-position: 0 0,64px 32px,0px 4px,65px 4px;
+        animation: shineSkeletonPostListMultiFeed 1s infinite;
+    }
+</style>
+
+<script>
+    FXStreet.Util.createObjectFromBase64String("PostListMultiFeed", 'eyJUYWtlIjo0LCJIaWdobGlnaHRlZEZpcnN0SXRlbSI6ZmFsc2UsIldpdGhJbWFnZSI6ZmFsc2UsIlRhZ0lkcyI6bnVsbCwiRmVlZElkcyI6IjI1NGI5ZDcwLTdjNGItNDgxYi1hOTRlLWFhYWMwYzYwZWQxNCwyYTBmMjI3Yy01YjRiLTQ1YzUtYTVkYy04ODE0YzMwNGQ4MmMiLCJTaXplQ2xhc3NOYW1lIjpudWxsLCJUYWdzSWRzIjpbXSwiRmVlZHNJZHMiOlsiMjU0YjlkNzAtN2M0Yi00ODFiLWE5NGUtYWFhYzBjNjBlZDE0IiwiMmEwZjIyN2MtNWI0Yi00NWM1LWE1ZGMtODgxNGMzMDRkODJjIl0sIkh0bWwiOm51bGwsIlBvc3RJbWFnZXMiOnRydWUsIkF1dGhvckltYWdlcyI6ZmFsc2UsIlVzZVBlcnNvbmFsaXplciI6ZmFsc2UsIlBlcnNvbmFsaXplclNlcnZpY2VLZXkiOiI1ZDI3OWU2ODg2Njc0MjM3OGNkNzdmM2NhNjc0N2Q3MCIsIlBlcnNvbmFsaXplckJhc2VVcmkiOiJodHRwczovL2Z4cy1wZXJzb25hbGl6ZXIuY29nbml0aXZlc2VydmljZXMuYXp1cmUuY29tLyIsIkNvdW50cnlDb2RlIjoiSU4iLCJSZW5kZXJPbkNsaWVudCI6dHJ1ZSwiU2tlbGV0b25IZWlnaHQiOjM2MCwiSnNOYW1lIjoiUG9zdExpc3RNdWx0aUZlZWQiLCJSZXNwb25zaXZlR3JvdXBJZCI6bnVsbCwiUmVzcG9uc2l2ZVRhcmdldFNpemUiOjAsIlJlc3BvbnNpdmVBYm92ZU9yRXF1YWwiOnRydWUsIkNvbnRhaW5lcklkIjoicG9zdGxpc3RtdWx0aWZlZWRfMTVlNjg0ZDAtZTAzYy00NWE3LWJhYmItZWNlMjA5YWY4YTYxIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "load");
+</script>
+        </div>
+    </div>
+</div><div class="fxs_row">
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C660_Col00" class="sf_colsIn">
+
+<h3 class="fxs_subtitle">INSTITUTIONAL BANKS
+</h3>            <div id="postlistmultifeed_dd5f4e77-a0f9-4eb7-8c42-127983f0728c" class="skeletonPostListMultiFeed"></div>
+
+
+<style>
+    @keyframes shineSkeletonPostListMultiFeed {
+        to {
+            background-position: 100% 0,64px 32px,0px 4px,65px 4px;
+        }
+    }
+
+    div.skeletonPostListMultiFeed {
+        box-sizing: content-box;
+        min-height: 360px;;
+        background-color: transparent;
+        background-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 80% ),
+            linear-gradient( #dddedf 12px, transparent 0 ),
+            linear-gradient( #dddedf 50px, transparent 0 ),
+            linear-gradient( #dddedf 22px, transparent 0 );
+        background-repeat: repeat-y;
+        background-size: 50px 73px,50% 73px,50px 73px,90% 73px;
+        background-position: 0 0,64px 32px,0px 4px,65px 4px;
+        animation: shineSkeletonPostListMultiFeed 1s infinite;
+    }
+</style>
+
+<script>
+    FXStreet.Util.createObjectFromBase64String("PostListMultiFeed", 'eyJUYWtlIjo0LCJIaWdobGlnaHRlZEZpcnN0SXRlbSI6ZmFsc2UsIldpdGhJbWFnZSI6ZmFsc2UsIlRhZ0lkcyI6ImNhNTg3NzNmLThmNDktNGIwYy1hOTZhLWRkMmJhOTg0MDc5OSIsIkZlZWRJZHMiOiI2MmQ1MDRmMC1hZTMxLTRkM2QtYmJhNS0xMWZiNDc5ZDUxYWUiLCJTaXplQ2xhc3NOYW1lIjpudWxsLCJUYWdzSWRzIjpbImNhNTg3NzNmLThmNDktNGIwYy1hOTZhLWRkMmJhOTg0MDc5OSJdLCJGZWVkc0lkcyI6WyI2MmQ1MDRmMC1hZTMxLTRkM2QtYmJhNS0xMWZiNDc5ZDUxYWUiXSwiSHRtbCI6bnVsbCwiUG9zdEltYWdlcyI6dHJ1ZSwiQXV0aG9ySW1hZ2VzIjpmYWxzZSwiVXNlUGVyc29uYWxpemVyIjpmYWxzZSwiUGVyc29uYWxpemVyU2VydmljZUtleSI6IjVkMjc5ZTY4ODY2NzQyMzc4Y2Q3N2YzY2E2NzQ3ZDcwIiwiUGVyc29uYWxpemVyQmFzZVVyaSI6Imh0dHBzOi8vZnhzLXBlcnNvbmFsaXplci5jb2duaXRpdmVzZXJ2aWNlcy5henVyZS5jb20vIiwiQ291bnRyeUNvZGUiOiJJTiIsIlJlbmRlck9uQ2xpZW50Ijp0cnVlLCJTa2VsZXRvbkhlaWdodCI6MzYwLCJKc05hbWUiOiJQb3N0TGlzdE11bHRpRmVlZCIsIlJlc3BvbnNpdmVHcm91cElkIjpudWxsLCJSZXNwb25zaXZlVGFyZ2V0U2l6ZSI6MCwiUmVzcG9uc2l2ZUFib3ZlT3JFcXVhbCI6dHJ1ZSwiQ29udGFpbmVySWQiOiJwb3N0bGlzdG11bHRpZmVlZF9kZDVmNGU3Ny1hMGY5LTRlYjctOGM0Mi0xMjc5ODNmMDcyOGMiLCJKc0NyZWF0ZUV2ZW50IjoibG9hZCIsIkxhenkiOnRydWV9', "load");
+</script>
+        </div>
+    </div>
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C660_Col01" class="sf_colsIn">
+
+<h3 class="fxs_subtitle">CENTRAL BANKS
+</h3>            <div id="postlistmultifeed_8555c2c9-ffa7-41af-b2fb-ac49d8ae8e53" class="skeletonPostListMultiFeed"></div>
+
+
+<style>
+    @keyframes shineSkeletonPostListMultiFeed {
+        to {
+            background-position: 100% 0,64px 32px,0px 4px,65px 4px;
+        }
+    }
+
+    div.skeletonPostListMultiFeed {
+        box-sizing: content-box;
+        min-height: 360px;;
+        background-color: transparent;
+        background-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 80% ),
+            linear-gradient( #dddedf 12px, transparent 0 ),
+            linear-gradient( #dddedf 50px, transparent 0 ),
+            linear-gradient( #dddedf 22px, transparent 0 );
+        background-repeat: repeat-y;
+        background-size: 50px 73px,50% 73px,50px 73px,90% 73px;
+        background-position: 0 0,64px 32px,0px 4px,65px 4px;
+        animation: shineSkeletonPostListMultiFeed 1s infinite;
+    }
+</style>
+
+<script>
+    FXStreet.Util.createObjectFromBase64String("PostListMultiFeed", 'eyJUYWtlIjo0LCJIaWdobGlnaHRlZEZpcnN0SXRlbSI6ZmFsc2UsIldpdGhJbWFnZSI6ZmFsc2UsIlRhZ0lkcyI6ImEzODAwZTZiLTkyMWYtNGIyZi1hNjA3LWExYzkyNTY3ZjcyNiw4Mzc4ZDRhNy1iMGZhLTQ4NTItOTZmZi03MzJhOTgxNzZlMmQsZTZlOTM5ZDktN2JkOC00MzM3LTljYmQtMzkwZmM1ZTg5YjU0LGYyOWQ4ODNjLWQ2ODUtNDdkNC04MTUyLTU4ZmJiMWZmZjA0Yiw3OWNkNDliMi1iMTU1LTQ1N2MtODRlMS00NGUxYTgzMWRiODEsMDAyYTZhNzEtNzZiMS00ZWU4LTljMzQtMzkzM2M1ZjQ1YTZhLDhkOTliMWZlLWUwMjAtNGFlYy04NDQzLWQ4YTdiNTQ2NTgxYSxjNWNhYjM3Ny00ZTc3LTQwNGEtOGU3My02ZDRiNDVjYWM4MjIiLCJGZWVkSWRzIjoiNjJkNTA0ZjAtYWUzMS00ZDNkLWJiYTUtMTFmYjQ3OWQ1MWFlIiwiU2l6ZUNsYXNzTmFtZSI6bnVsbCwiVGFnc0lkcyI6WyJhMzgwMGU2Yi05MjFmLTRiMmYtYTYwNy1hMWM5MjU2N2Y3MjYiLCI4Mzc4ZDRhNy1iMGZhLTQ4NTItOTZmZi03MzJhOTgxNzZlMmQiLCJlNmU5MzlkOS03YmQ4LTQzMzctOWNiZC0zOTBmYzVlODliNTQiLCJmMjlkODgzYy1kNjg1LTQ3ZDQtODE1Mi01OGZiYjFmZmYwNGIiLCI3OWNkNDliMi1iMTU1LTQ1N2MtODRlMS00NGUxYTgzMWRiODEiLCIwMDJhNmE3MS03NmIxLTRlZTgtOWMzNC0zOTMzYzVmNDVhNmEiLCI4ZDk5YjFmZS1lMDIwLTRhZWMtODQ0My1kOGE3YjU0NjU4MWEiLCJjNWNhYjM3Ny00ZTc3LTQwNGEtOGU3My02ZDRiNDVjYWM4MjIiXSwiRmVlZHNJZHMiOlsiNjJkNTA0ZjAtYWUzMS00ZDNkLWJiYTUtMTFmYjQ3OWQ1MWFlIl0sIkh0bWwiOm51bGwsIlBvc3RJbWFnZXMiOnRydWUsIkF1dGhvckltYWdlcyI6ZmFsc2UsIlVzZVBlcnNvbmFsaXplciI6ZmFsc2UsIlBlcnNvbmFsaXplclNlcnZpY2VLZXkiOiI1ZDI3OWU2ODg2Njc0MjM3OGNkNzdmM2NhNjc0N2Q3MCIsIlBlcnNvbmFsaXplckJhc2VVcmkiOiJodHRwczovL2Z4cy1wZXJzb25hbGl6ZXIuY29nbml0aXZlc2VydmljZXMuYXp1cmUuY29tLyIsIkNvdW50cnlDb2RlIjoiSU4iLCJSZW5kZXJPbkNsaWVudCI6dHJ1ZSwiU2tlbGV0b25IZWlnaHQiOjM2MCwiSnNOYW1lIjoiUG9zdExpc3RNdWx0aUZlZWQiLCJSZXNwb25zaXZlR3JvdXBJZCI6bnVsbCwiUmVzcG9uc2l2ZVRhcmdldFNpemUiOjAsIlJlc3BvbnNpdmVBYm92ZU9yRXF1YWwiOnRydWUsIkNvbnRhaW5lcklkIjoicG9zdGxpc3RtdWx0aWZlZWRfODU1NWMyYzktZmZhNy00MWFmLWIyZmItYWM0OWQ4YWU4ZTUzIiwiSnNDcmVhdGVFdmVudCI6ImxvYWQiLCJMYXp5Ijp0cnVlfQ==', "load");
+</script>
+        </div>
+    </div>
+    <div class="fxs_col fxs_col_33">
+        <div id="Details_C660_Col02" class="sf_colsIn">
+
+<h3 class="fxs_subtitle">ECONOMIC INDICATOR
+</h3>            <div id="postlistmultifeed_0203af09-3284-4670-a5e4-e9411fb2202c" class="skeletonPostListMultiFeed"></div>
+
+
+<style>
+    @keyframes shineSkeletonPostListMultiFeed {
+        to {
+            background-position: 100% 0,64px 32px,0px 4px,65px 4px;
+        }
+    }
+
+    div.skeletonPostListMultiFeed {
+        box-sizing: content-box;
+        min-height: 360px;;
+        background-color: transparent;
+        background-image:
+            linear-gradient( 100deg, rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 80% ),
+            linear-gradient( #dddedf 12px, transparent 0 ),
+            linear-gradient( #dddedf 50px, transparent 0 ),
+            linear-gradient( #dddedf 22px, transparent 0 );
+        background-repeat: repeat-y;
+        background-size: 50px 73px,50% 73px,50px 73px,90% 73px;
+        background-position: 0 0,64px 32px,0px 4px,65px 4px;
+        animation: shineSkeletonPostListMultiFeed 1s infinite;
+    }
+</style>
+
+<script>
+    FXStreet.Util.createObjectFromBase64String("PostListMultiFeed", 'eyJUYWtlIjo0LCJIaWdobGlnaHRlZEZpcnN0SXRlbSI6ZmFsc2UsIldpdGhJbWFnZSI6ZmFsc2UsIlRhZ0lkcyI6ImNkODQwNTVlLTFlM2YtNDYwMi1hM2RlLWMwZDRhYTViYjVkMSxmNGIxOTYzMi04ZjUyLTQ0YWItOWMyYy0wYjU2YWQwZGNjZjMsZjEwZjJjNTAtYWVkYy00NmJmLWFmOWQtN2NlMDYyYWI5MTczLGZhNjMyNjFhLTYyMDctNGNlZC05ZTc4LThiZDRiMGMyNDkyNiwzYzY0YjYwNy00ZjViLTQ0OTQtOWViOC05NTMxNTVjNTI1OGMsZDdiZmU4ZmUtNzU4Yy00NTNiLTlkN2EtYjQ0MWQ1Zjg4Mjk4LGFjOWQ2NzQzLWRhNzktNDY0My04ZDhlLTI2YWE1MTFlYWIzMCxlMDc0YTAzYS0wODI2LTRmYWItYmRhYy00NmViOGNkODA1ZWIsNTBkNDE0OTctZWFiNS00MmE4LWIxZTItNTA1OGQxYzFiMjFiLGUwZjJlYmFmLTZkMWUtNDNjYy05MzI4LWI0MTViN2ZhZWYzZCw1YjM1MzBhMC02MDkzLTRkNmItODBiNC05NGM5MGE3MTc4MGQsZDdlZTc2NWEtNjI5NS00ZGFmLWFkMjMtMmQ3N2ZjYWU2NGQ2LDM1MjI3NTBiLTcwZjUtNDhmOC05N2E3LTZhOWFkZDNhMDU4MSxmZWU5NWU1Yi0xMGQ2LTQ2N2MtYjYxNS02ZDY2NzIxYWI4NDcsYWUwZjM3M2MtODM4NS00MDgwLTg5MTAtOWE4NTMwZmU0YmI4LDI0ZGEwOTI4LTczYWMtNDNjMi04ZDJhLWExMjhlODZkNjZhOCw1ODRlNGMxMy03NTM5LTRhYzktOGM4ZS0xYjgwY2M3MGZlMWUsYWZiYzc1YTMtMjZiNS00NTlkLWEwYTEtYWQ0Njk3NjU2NGRmLDg3NzllNDFmLWUxYWItNDVjNi05YzQyLWRhZmQ4NjYxZGQ1YyxmMzgyNTA0ZC03NDEzLTRiNjMtYjI0Zi0xYzVjMjA0YWVmNGMsNmIzNWJkODQtMDRhYy00ZGQxLTk2NzQtMzkwNzg3ZDJjMzkwLDA4YzBkNTI5LTBiY2EtNGQ2OC05MGFjLTE0NTdmMTA1YjAzMSwwYmE4YjYzNS03YmZlLTQ1OGUtODQ1OS0yMmU3MTYyYWRjYTIsNDUyZmViYjEtZjgxOC00ODAyLWExZDUtZGZhZTQyODlhNGI2LDk5OTY4MjgzLWNlOGItNGJiMi05MTZkLWUyZGQ4MTk1Y2QxNCIsIkZlZWRJZHMiOiI2MmQ1MDRmMC1hZTMxLTRkM2QtYmJhNS0xMWZiNDc5ZDUxYWUiLCJTaXplQ2xhc3NOYW1lIjpudWxsLCJUYWdzSWRzIjpbImNkODQwNTVlLTFlM2YtNDYwMi1hM2RlLWMwZDRhYTViYjVkMSIsImY0YjE5NjMyLThmNTItNDRhYi05YzJjLTBiNTZhZDBkY2NmMyIsImYxMGYyYzUwLWFlZGMtNDZiZi1hZjlkLTdjZTA2MmFiOTE3MyIsImZhNjMyNjFhLTYyMDctNGNlZC05ZTc4LThiZDRiMGMyNDkyNiIsIjNjNjRiNjA3LTRmNWItNDQ5NC05ZWI4LTk1MzE1NWM1MjU4YyIsImQ3YmZlOGZlLTc1OGMtNDUzYi05ZDdhLWI0NDFkNWY4ODI5OCIsImFjOWQ2NzQzLWRhNzktNDY0My04ZDhlLTI2YWE1MTFlYWIzMCIsImUwNzRhMDNhLTA4MjYtNGZhYi1iZGFjLTQ2ZWI4Y2Q4MDVlYiIsIjUwZDQxNDk3LWVhYjUtNDJhOC1iMWUyLTUwNThkMWMxYjIxYiIsImUwZjJlYmFmLTZkMWUtNDNjYy05MzI4LWI0MTViN2ZhZWYzZCIsIjViMzUzMGEwLTYwOTMtNGQ2Yi04MGI0LTk0YzkwYTcxNzgwZCIsImQ3ZWU3NjVhLTYyOTUtNGRhZi1hZDIzLTJkNzdmY2FlNjRkNiIsIjM1MjI3NTBiLTcwZjUtNDhmOC05N2E3LTZhOWFkZDNhMDU4MSIsImZlZTk1ZTViLTEwZDYtNDY3Yy1iNjE1LTZkNjY3MjFhYjg0NyIsImFlMGYzNzNjLTgzODUtNDA4MC04OTEwLTlhODUzMGZlNGJiOCIsIjI0ZGEwOTI4LTczYWMtNDNjMi04ZDJhLWExMjhlODZkNjZhOCIsIjU4NGU0YzEzLTc1MzktNGFjOS04YzhlLTFiODBjYzcwZmUxZSIsImFmYmM3NWEzLTI2YjUtNDU5ZC1hMGExLWFkNDY5NzY1NjRkZiIsIjg3NzllNDFmLWUxYWItNDVjNi05YzQyLWRhZmQ4NjYxZGQ1YyIsImYzODI1MDRkLTc0MTMtNGI2My1iMjRmLTFjNWMyMDRhZWY0YyIsIjZiMzViZDg0LTA0YWMtNGRkMS05Njc0LTM5MDc4N2QyYzM5MCIsIjA4YzBkNTI5LTBiY2EtNGQ2OC05MGFjLTE0NTdmMTA1YjAzMSIsIjBiYThiNjM1LTdiZmUtNDU4ZS04NDU5LTIyZTcxNjJhZGNhMiIsIjQ1MmZlYmIxLWY4MTgtNDgwMi1hMWQ1LWRmYWU0Mjg5YTRiNiIsIjk5OTY4MjgzLWNlOGItNGJiMi05MTZkLWUyZGQ4MTk1Y2QxNCJdLCJGZWVkc0lkcyI6WyI2MmQ1MDRmMC1hZTMxLTRkM2QtYmJhNS0xMWZiNDc5ZDUxYWUiXSwiSHRtbCI6bnVsbCwiUG9zdEltYWdlcyI6dHJ1ZSwiQXV0aG9ySW1hZ2VzIjpmYWxzZSwiVXNlUGVyc29uYWxpemVyIjpmYWxzZSwiUGVyc29uYWxpemVyU2VydmljZUtleSI6IjVkMjc5ZTY4ODY2NzQyMzc4Y2Q3N2YzY2E2NzQ3ZDcwIiwiUGVyc29uYWxpemVyQmFzZVVyaSI6Imh0dHBzOi8vZnhzLXBlcnNvbmFsaXplci5jb2duaXRpdmVzZXJ2aWNlcy5henVyZS5jb20vIiwiQ291bnRyeUNvZGUiOiJJTiIsIlJlbmRlck9uQ2xpZW50Ijp0cnVlLCJTa2VsZXRvbkhlaWdodCI6MzYwLCJKc05hbWUiOiJQb3N0TGlzdE11bHRpRmVlZCIsIlJlc3BvbnNpdmVHcm91cElkIjpudWxsLCJSZXNwb25zaXZlVGFyZ2V0U2l6ZSI6MCwiUmVzcG9uc2l2ZUFib3ZlT3JFcXVhbCI6dHJ1ZSwiQ29udGFpbmVySWQiOiJwb3N0bGlzdG11bHRpZmVlZF8wMjAzYWYwOS0zMjg0LTQ2NzAtYTVlNC1lOTQxMWZiMjIwMmMiLCJKc0NyZWF0ZUV2ZW50IjoibG9hZCIsIkxhenkiOnRydWV9', "load");
+</script>
+        </div>
+    </div>
+</div>
+
+<hr class="fxs_divider_first">
+
+<style>
+    @keyframes shineSkeletonBrokersFooter {
+        to {
+            background-position: 100% 0,0px 146px,0px 20px;
+        }
+    }
+
+    div.skeletonWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        min-height: 194px;
+        margin: 10px auto;
+    }
+
+    div.skeletonBrokersFooter {
+        box-sizing: content-box;
+        display: none;
+        min-height: 194px;
+        height: 202px;
+        width: 215px;
+        background-color: #ffffff;
+        background-image: linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% ), linear-gradient( #dddedf 36px, transparent 0 ), linear-gradient( #dddedf 110px, transparent 0 );
+        background-repeat: repeat-y;
+        background-size: 50px 290px,202px 290px,202px 290px;
+        background-position: 0 0,0px 146px,0px 20px;
+        animation: shineSkeletonBrokersFooter 1s infinite;
+    }
+
+    div.skeletonBrokersFooter:first-child {
+        display: inline-block;
+    }
+
+    @media screen and (min-width: 500px) {
+        div.skeletonBrokersFooter:nth-child(2) {
+            display: inline-block;
+        }
+    }
+
+    @media screen and (min-width: 740px) {
+        div.skeletonBrokersFooter:nth-child(3) {
+            display: inline-block;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        div.skeletonBrokersFooter:nth-child(4) {
+            display: inline-block;
+        }
+    }
+
+    @media screen and (min-width: 1580px) {
+        div.skeletonBrokersFooter:last-child {
+            display: inline-block;
+        }
+    }
+</style>
+
+<div id="brokersfooter_f9a416d7-e5fe-439f-89df-21c68e578ee8" class="skeletonWrapper">
+    <div class="skeletonBrokersFooter"></div>
+    <div class="skeletonBrokersFooter"></div>
+    <div class="skeletonBrokersFooter"></div>
+    <div class="skeletonBrokersFooter"></div>
+    <div class="skeletonBrokersFooter"></div>
+</div>
+
+<script>
+    FXStreet.Util.createObjectFromBase64String("BrokersFooter", 'eyJCcm9rZXJzIjpbXSwiVGFrZSI6NSwiVHJhbnNsYXRpb25zIjp7IkJyb2tlcnNJbkxvY2F0aW9uIjoiQmVzdCBicm9rZXJzIGluIHlvdXIgbG9jYXRpb24iLCJCcm9rZXJzUGFnZVVybCI6Imh0dHBzOi8vd3d3LmZ4c3RyZWV0LmNvbS9icm9rZXJzIiwiT3BlbkxpdmVBY2NvdW50IjoiT3BlbiBhY2NvdW50IiwiUmVhZFJldmlld0xhYmVsIjoiUmVhZCByZXZpZXcifSwiSXNDYWxsZWRCeUpzIjp0cnVlLCJJc0ZvcmV4IjpmYWxzZSwiSXNDcnlwdG8iOmZhbHNlLCJDb250YWluZXJJZCI6ImJyb2tlcnNmb290ZXJfZjlhNDE2ZDctZTVmZS00MzlmLTg5ZGYtMjFjNjhlNTc4ZWU4IiwiSnNOYW1lIjoiQnJva2Vyc0Zvb3RlciIsIkpzQ3JlYXRlRXZlbnQiOiJsb2FkIiwiTGF6eSI6dHJ1ZX0=', "readyForAds");
+</script> </div> 
+ </main> <div id="pageLoading" class="fxs_feedbackLoading_msg"> <i class="fas fa-sync fa-spin"></i> <span class="fxs_loadingStatus"></span> </div> </div> </div> </div> </div> <div class="fxs_stickyAd-mobile fxs_txt_center"> <div class="fxs_stickyAd-mobile-btn"><i class="fas fa-times" aria-hidden="true"></i></div> <div id="fxs_stickyFooterAd"></div> </div> <div id="fxs_native_ad_footer"></div> <div id="fxs_donation_box"></div> <!-- Site footer --> <footer class="fxs_footer fxs_modal_footer"> <div class="fxs_copy_disclaimer"> <div class="fxs_terms_nav"> <small class="fxs_copyRight">&#169;2025 &quot;FXStreet&quot; All Rights Reserved</small> <ul class="fxs_plainInlined_list fxs_txt_size_nano"> <li class="fxs_btn_group"> <button type="button" class="fxs_btn fxs_btn_phantom fxs_btn_dd" data-toggle="dropdown" data-gtmid="lateralnavigation-footer-aboutdropdown">About Us <i class="fas fa-caret-up"></i></button> <ul class="fxs_dropdownList dropup"> <li> <a href="https://www.fxstreet.com/info/about-us" data-gtmid="lateralnavigation-footer-aboutus"> <span>About Us</span> </a> </li> <li> <a href="https://www.fxstreet.com/info/editorial-guidelines" data-gtmid="lateralnavigation-footer-edguidelines"> <span>Editorial Guidelines</span> </a> </li> <li> <a href="https://www.fxstreet.com/info/ethical-code" data-gtmid="lateralnavigation-footer-ethcode"> <span>Ethical Code</span> </a> </li> <li> <a href="https://www.fxstreet.com/info/corporate-identity" data-gtmid="lateralnavigation-footer-https://www.fxstreet.com/info/corporate-identity"> <span>Corporate Identity</span> </a> </li> <li> <a href="/info/prevention" data-gtmid="lateralnavigation-footer-/info/prevention"> <span>Consumer Advice</span> </a> </li> </ul> </li> <li><a href="http://about.fxstreet.com/blog/" class="fxs_mutedLink" title="FXStreet Blog" data-gtmid="lateralnavigation-footer-blog">FXStreet Blog</a></li> <li><a href="/info/sitemap/" class="fxs_mutedLink" title="Site Map" data-gtmid="lateralnavigation-footer-sitemap">Site Map</a></li> <li><a href="/info/terms-conditions" class="fxs_mutedLink" title="Terms and conditions" data-gtmid="lateralnavigation-footer-termscond">Terms and conditions</a></li> <li><a href="/info/contact-us/" class="fxs_mutedLink" title="Contact us" data-gtmid="lateralnavigation-footer-contactus">Contact us</a></li> <li><a href="https://www.fxstreet.com/info/advertising-and-sponsorship/" class="fxs_mutedLink" title="Advertising" data-gtmid="lateralnavigation-footer-advertising">Advertising</a></li> <li><a href="/info/jobs/" class="fxs_mutedLink" title="Jobs" data-gtmid="lateralnavigation-footer-jobs">Jobs</a></li> <li class="fxs_btn_group"> <button type="button" class="fxs_btn fxs_btn_phantom fxs_btn_dd" data-toggle="dropdown" data-gtmid="lateralnavigation-footer-languagesdropdown">Languages <i class="fas fa-caret-up"></i></button> <ul class="fxs_dropdownList dropup"> <li class="fxs_dropdownHeader">Edition</li> <li><a href="https://www.fxstreet.es" data-gtmid="lateralnavigation-footer-languages-es-es"><b class="tags-flag-custom es-es"></b> Espa&#241;ol </a></li> <li><a href="https://www.fxstreet.it" data-gtmid="lateralnavigation-footer-languages-it-it"><b class="tags-flag-custom it-it"></b> Italiano </a></li> <li><a href="https://www.fxstreet-id.com" data-gtmid="lateralnavigation-footer-languages-id-id"><b class="tags-flag-custom id-id"></b> Bahasa Indonesia </a></li> <li><a href="https://pt.fxstreet.com" data-gtmid="lateralnavigation-footer-languages-pt-br"><b class="tags-flag-custom pt-br"></b> Portugu&#234;s </a></li> <li><a href="https://www.fxstreet.jp" data-gtmid="lateralnavigation-footer-languages-ja-jp"><b class="tags-flag-custom ja-jp"></b> 日本語 </a></li> <li><a href="https://www.fxstreet.hk" data-gtmid="lateralnavigation-footer-languages-zh-cn"><b class="tags-flag-custom zh-cn"></b> 繁體中文 </a></li> <li><a href="http://www.fxstreet.cn" data-gtmid="lateralnavigation-footer-languages-zh-cht"><b class="tags-flag-custom zh-cht"></b> 简体中文 </a></li> <li><a href="https://www.fxstreet.ru.com" data-gtmid="lateralnavigation-footer-languages-ru-ru"><b class="tags-flag-custom ru-ru"></b> Русский </a></li> <li><a href="https://www.fxstreet.fr" data-gtmid="lateralnavigation-footer-languages-fr-fr"><b class="tags-flag-custom fr-fr"></b> Fran&#231;ais </a></li> <li><a href="https://ar.fxstreet.com" data-gtmid="lateralnavigation-footer-languages-ar-sa"><b class="tags-flag-custom ar-sa"></b> العربية </a></li> <li><a href="https://www.fxstreet.de.com" data-gtmid="lateralnavigation-footer-languages-de-de"><b class="tags-flag-custom de-de"></b> Deutsch </a></li> <li><a href="https://www.fxstreet.hu" data-gtmid="lateralnavigation-footer-languages-hu-hu"><b class="tags-flag-custom hu-hu"></b> Magyar </a></li> <li><a href="https://www.fxstreet.com.tr" data-gtmid="lateralnavigation-footer-languages-tr-tr"><b class="tags-flag-custom tr-tr"></b> T&#252;rk&#231;e </a></li> <li><a href="https://www.fxstreet-vn.com" data-gtmid="lateralnavigation-footer-languages-vi-vn"><b class="tags-flag-custom vi-vn"></b> Tiếng Việt </a></li> </ul> </li> </ul> </div> <button type="button"
+                class="fxs_btn fxs_btn_phantom fxs_btn_dd fxs_fRight"
+                data-toggle="dropdown"> <span>Disclaimer </span> <i class="fas fa-caret-up"></i> </button> <div class="fxs_disclaimer_block"> <p>Note: All information on this page is subject to change. The use of this website constitutes acceptance of our user agreement. Please read our privacy policy and legal disclaimer.</p><p>Trading foreign exchange on margin carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you as well as for you. Before deciding to trade foreign exchange you should carefully consider your investment objectives, level of experience and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. You should be aware of all the risks associated with foreign exchange trading and seek advice from an independent financial advisor if you have any doubts.</p><p>Opinions expressed at FXStreet are those of the individual authors and do not necessarily represent the opinion of FXStreet or its management. FXStreet has not verified the accuracy or basis-in-fact of any claim or statement made by any independent author: errors and omissions may occur. Any opinions, news, research, analyses, prices or other information contained on this website, by FXStreet, its employees, clients or contributors, is provided as general market commentary and does not constitute investment advice. FXStreet will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.</p> </div> <div class="fxs_btn_group fxs_fRight fxs_footer_follow"> <button type="button"
+                        class="fxs_btn fxs_btn_phantom fxs_btn_dd fxs_fRight"
+                        data-toggle="dropdown"> <span>
+Follow us                    </span> <i class="fas fa-caret-up"></i> </button> <ul class="fxs_dropdownList dropup "> <li class="WhatsApp"> <a rel="nofollow noopener noreferrer"
+                           href="https://whatsapp.com/channel/0029VaDGsU90lwgjJ5Sh8Y45"
+                           target="_blank"
+                           title="WhatsApp"
+                           data-gtmid="conversion-followus-WhatsApp"
+                           data-ga4event-clk-name="follow-us"
+                           data-ga4event-network="WhatsApp"> <i class="fab fa-whatsapp" aria-hidden="true"></i> <span>WhatsApp</span> </a> </li> <li class="Telegram"> <a rel="nofollow noopener noreferrer"
+                           href="https://t.me/forexnews"
+                           target="_blank"
+                           title="Telegram"
+                           data-gtmid="conversion-followus-Telegram"
+                           data-ga4event-clk-name="follow-us"
+                           data-ga4event-network="Telegram"> <i class="fab fa-telegram-plane" aria-hidden="true"></i> <span>Telegram</span> </a> </li> <li class="Linkedin"> <a rel="nofollow noopener noreferrer"
+                           href="https://www.linkedin.com/company/fxstreet"
+                           target="_blank"
+                           title="Linkedin"
+                           data-gtmid="conversion-followus-Linkedin"
+                           data-ga4event-clk-name="follow-us"
+                           data-ga4event-network="Linkedin"> <i class="fab fa-linkedin" aria-hidden="true"></i> <span>Linkedin</span> </a> </li> <li class="Twitter"> <a rel="nofollow noopener noreferrer"
+                           href="https://twitter.com/FXStreetNews"
+                           target="_blank"
+                           title="Twitter"
+                           data-gtmid="conversion-followus-Twitter"
+                           data-ga4event-clk-name="follow-us"
+                           data-ga4event-network="Twitter"> <i class="fab fa-twitter" aria-hidden="true"></i> <span>Twitter</span> </a> </li> <li class="Facebook"> <a rel="nofollow noopener noreferrer"
+                           href="http://www.facebook.com/FXstreet"
+                           target="_blank"
+                           title="Facebook"
+                           data-gtmid="conversion-followus-Facebook"
+                           data-ga4event-clk-name="follow-us"
+                           data-ga4event-network="Facebook"> <i class="fab fa-facebook" aria-hidden="true"></i> <span>Facebook</span> </a> </li> <li class="Instagram"> <a rel="nofollow noopener noreferrer"
+                           href="https://www.instagram.com/fx_street/"
+                           target="_blank"
+                           title="Instagram"
+                           data-gtmid="conversion-followus-Instagram"
+                           data-ga4event-clk-name="follow-us"
+                           data-ga4event-network="Instagram"> <i class="fab fa-instagram" aria-hidden="true"></i> <span>Instagram</span> </a> </li> <li class="Youtube"> <a rel="nofollow noopener noreferrer"
+                           href="https://www.youtube.com/user/fxstreetcom/"
+                           target="_blank"
+                           title="Youtube"
+                           data-gtmid="conversion-followus-Youtube"
+                           data-ga4event-clk-name="follow-us"
+                           data-ga4event-network="Youtube"> <i class="fab fa-youtube" aria-hidden="true"></i> <span>Youtube</span> </a> </li> </ul> </div> </div> </footer> <script>
+    FXStreet.Resource.Translations['GenericResources'] = {"By":"By","followus":"Follow us","FullStory":"Full Story","GenericResourcesDescription":"Fxs IT Generic","GenericResourcesTitle":"Fxs IT Generic","Language":"en","Months":"Jan,Feb,Mar,Apr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dec","Premium":"Premium","ReturnText":"Return","Sponsored":"BRANDED","SponsoredContent":"Sponsored content","TimeZoneEtc":"Etc/GMT","TimeZoneUTC":"GMT"};
+    FXStreet.Util.createReactObject("NativeAdFooter", {
+        ContainerId: "fxs_native_ad_footer",
+        AdSlot: "/7138/FXS30/News",
+        ItemsContentType: 1,
+        ItemsTake: 10,
+        GetItemsUrl: "/api/PostApi/GetItems",
+        Translations: {"latestNews":"Latest News"},
+        DisabledNews: false,
+    }, "readyForAds", true);
+</script> <!-- /Site footer --> </div> <!-- /The wrapper --> <script type="text/javascript">
+    var fxs_widget_config = {
+        Host: "https://staticcontent.fxsstatic.com/",
+        ServerName: "https://staticcontent.fxsstatic.com/",
+        StaticContentQueryStringRefresh: "?t=" + "202501141533",
+        Culture: "en",
+        AuthorizationUrl: "https://authorization.fxstreet.com/token",
+        JsCores: [],
+        CssCores: ["core1580.min.css", "core1280.min.css", "core1150.min.css", "core1024.min.css", "core920.min.css", "core768.min.css", "core680.min.css", "core420.min.css", "core375.min.css", "core320.min.css", "core.min.css"],
+        FontAwesome: [],
+        FontGoogle: [],
+        Resources: {
+            scripts: {
+            },
+            styles: {
+            }
+        }
+    };
+</script> <script>
+
+            FXStreet.Util.createObjectFromBase64String("TemplateBase", "eyJWZXJ0aWNhbE1lbnVJZCI6ImZ4c19pdF92ZXJ0aWNhbE1lbnUiLCJIb3Jpem9udGFsTWVudUlkIjoiZnhzX2l0X2hvcml6b250YWxNZW51In0=");
+        </script> <script>
+                FXStreet.Util.createObject("HomeAndTopicsAnalytics", {}, "load");
+            </script> <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9023af851db97f67',t:'MTczNjkyMTI0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body> </html>
